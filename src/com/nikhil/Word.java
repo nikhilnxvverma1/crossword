@@ -8,6 +8,19 @@ public class Word {
     int col;
     boolean down;
 
+    public Word(String name, String description) {
+        this.name = name;
+        this.description = description;
+    }
+
+    @Override
+    public String toString() {
+        return "Word{" +
+                "name='" + name + '\'' +
+                ", description='" + description + '\'' +
+                '}';
+    }
+
     private boolean checkAgainstBoundaries(){
         return false;// TODO
     }
