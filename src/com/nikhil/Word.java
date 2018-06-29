@@ -1,8 +1,6 @@
 package com.nikhil;
 
-/**
- * Created by nikhilverma on 6/14/18.
- */
+/** String to be inserted as part of the crossword puzzle.*/
 public class Word {
     String name;
     String description;
