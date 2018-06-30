@@ -9,12 +9,12 @@ import java.util.List;
 /** Responsible for reading word list and generating main crossword. */
 public class CrosswordFactory {
 
-    public static void generateCrosswordFromCSV(String filename) throws IOException{
+    public static Grid generateCrosswordFromCSV(String filename) throws IOException{
 
         try{
             List<Word> wordList = readWordList(filename);
             printWordList(wordList);
-
+            return new Grid(wordList);
         }catch (IOException ex){
             throw ex;
         }

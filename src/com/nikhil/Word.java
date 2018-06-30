@@ -7,6 +7,7 @@ public class Word {
     int row;
     int col;
     boolean down;
+    boolean placed = false;
 
     public Word(String name, String description) {
         this.name = name;
@@ -21,15 +22,4 @@ public class Word {
                 '}';
     }
 
-    private boolean checkAgainstBoundaries(){
-        return false;// TODO
-    }
-
-    private boolean checkAgainstOtherWords(){
-        return false;// TODO
-    }
-
-    private boolean checkAgainstAdjacencyWithOtherWords(){
-        return false;// TODO
-    }
 }
