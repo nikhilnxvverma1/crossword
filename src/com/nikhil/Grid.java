@@ -1,13 +1,12 @@
 package com.nikhil;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
 /** Final rendition of the crossword puzzle.*/
 public class Grid {
 
-    List<Word> wordList;
+    private List<Word> wordList;
     private static Random random = new Random();
 
     public Grid(List<Word> wordList) {
@@ -16,11 +15,14 @@ public class Grid {
 
     private void placeWordsInGrid(){
 
-        //place a random word in the grid
-        int randomIndex = random.nextInt(wordList.size());
-        Word trunk = wordList.get(randomIndex);
+        //place the longest word in the grid
+        Word trunk = getLongestUnplacedWord();
 
-        // TODO place this word vertically in the grid
+        // place this word vertically in the grid
+        trunk.placed = true;
+        trunk.vertical = true;
+        trunk.row = 0;
+        trunk.col = 0;
     }
 
     private Word getLongestUnplacedWord(){
@@ -64,6 +66,17 @@ public class Grid {
         assert !randomUnplacedWord.placed : "Random unplaced word is actually placed";
 
         return randomUnplacedWord;
+    }
+
+    private boolean isPlacementOfWordAllowed(Word wordToPlace,int r,int c,boolean vertical){
+        for(Word word : wordList){
+            if(word==wordToPlace){
+                continue;
+            }
+
+            // TODO check if this word is intersecting with word to place or not
+        }
+        return false;
     }
 
 

@@ -6,7 +6,7 @@ public class Word {
     String description;
     int row;
     int col;
-    boolean down;
+    boolean vertical;
     boolean placed = false;
 
     public Word(String name, String description) {
