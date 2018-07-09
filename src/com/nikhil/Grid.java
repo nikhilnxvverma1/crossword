@@ -68,13 +68,37 @@ public class Grid {
         return randomUnplacedWord;
     }
 
-    private boolean isPlacementOfWordAllowed(Word wordToPlace,int r,int c,boolean vertical){
+    /**
+     * Checks if the word to place actually is possible given the current status of the word list.
+     * This does not place the word.
+     * @param wordToPlace the word to place
+     * @param r row
+     * @param c column
+     * @param wordToPlaceIsVertical weather the word is vertical or horizontal
+     * @return true if it is possible, false otherwise
+     */
+    private boolean isPlacementOfWordAllowed(Word wordToPlace,int r,int c,boolean wordToPlaceIsVertical){
+
+        //check linearly against the word list
+        //if any word is intersecting with word to place or not
         for(Word word : wordList){
+
+            //skip this word if it is same as the word to place
             if(word==wordToPlace){
                 continue;
             }
 
-            // TODO check if this word is intersecting with word to place or not
+
+            if(word.vertical && wordToPlaceIsVertical){ //both words are vertical
+
+            }else if(word.vertical && !wordToPlaceIsVertical){ // only word to place is horizontal
+
+            }else if(!word.vertical && wordToPlaceIsVertical){ // only word to place is vertical
+
+            }else{ // both words horizontal
+
+            }
+
         }
         return false;
     }
