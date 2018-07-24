@@ -19,10 +19,7 @@ public class Grid {
         Word trunk = getLongestUnplacedWord();
 
         // place this word vertically in the grid
-        trunk.placed = true;
-        trunk.vertical = true;
-        trunk.row = 0;
-        trunk.col = 0;
+        trunk.placeAt(0,0,true);
     }
 
     private Word getLongestUnplacedWord(){
@@ -98,9 +95,9 @@ public class Grid {
                     placementAllowed = !isCoinciding(word,word.row,wordToPlace,r);
                 }
             }else if(word.vertical && !wordToPlaceIsVertical){ // only word to place is horizontal
-
+                placementAllowed = intersectionAllowed(wordToPlace,word,word.col-c,r-word.row);
             }else if(!word.vertical && wordToPlaceIsVertical){ // only word to place is vertical
-
+                placementAllowed = intersectionAllowed(word,wordToPlace,c-word.col,word.row-r);
             }else{ // both words horizontal
                 //check for same row and then coinciding of the words
                 if(word.row == r){

@@ -22,4 +22,16 @@ public class Word {
                 '}';
     }
 
+    public void placeAt(int row,int col,boolean vertical){
+        this.row = row;
+        this.col = col;
+        this.vertical = vertical;
+        this.placed = true;
+    }
+
+    public void shiftBy(int dRow,int dCol){
+        this.row += dRow;
+        this.col += dCol;
+    }
+
 }
