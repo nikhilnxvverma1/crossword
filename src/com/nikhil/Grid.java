@@ -152,5 +152,105 @@ public class Grid {
         }
     }
 
+    /**
+     * Shifts the position of each word by just enough an equal amount such that no position is negative and the top
+     * left corner of the grid is at (0,0)
+     */
+    public void normalize(){
+
+        //find the min row and col values.
+        int minRow=99999;
+        int minCol=99999;
+
+        for(Word word : wordList){
+
+            if(word.row < minRow){
+                minRow = word.row;
+            }
+
+            if(word.col < minCol){
+                minCol = word.col;
+            }
+        }
+
+        // Since the minimum row and column values denote the top left coordinate of the grid,
+        // we shift the entire grid by negative the amount of that
+        for(Word word : wordList){
+           word.shiftBy(-minRow,-minCol);
+        }
+    }
+
+    /**
+     * Prints the status of the grid by traversing each word and placing its characters in a square grid
+     */
+    public void print(){
+
+        char [][] squareGrid = buildEmptySquareGridForCurrentPlacement();
+
+        // TODO place words in this square grid
+
+        // print this 2d char array
+        print(squareGrid);
+    }
+
+    private void print(char [][]grid){
+        for(int i=0;i<grid.length;i++){
+            for(int j=0;j<grid[i].length;j++){
+                System.out.print(grid[i][j]+" ");
+            }
+            System.out.println("");
+        }
+    }
+
+    private char[][] buildEmptySquareGridForCurrentPlacement(){
+
+        // find the length and the width of the grid and b/w the maximum of two, use that as width of grid
+        int side = sideOfGrid();
+
+        // initialize all values of the square grid with letter '0'
+        char [][] square = new char[side][side];
+
+        for (int i=0;i<side;i++){
+            for(int j=0;j<side;j++){
+                square[i][j]='0';
+            }
+        }
+        return square;
+    }
+
+    private int sideOfGrid(){
+
+        //find the min row and col values.
+        int minRow=99999;
+        int minCol=99999;
+
+        //also find the max row and col values.
+        int maxRow=-99999;
+        int maxCol=-99999;
+
+        for(Word word : wordList){
+
+            if(word.row < minRow){
+                minRow = word.row;
+            }
+
+            if(word.col < minCol){
+                minCol = word.col;
+            }
+
+            if(word.row > maxRow){
+                minRow = word.row;
+            }
+
+            if(word.col > maxCol){
+                minCol = word.col;
+            }
+        }
+
+        int height = Math.abs(maxRow-minRow);
+        int width = Math.abs(maxCol-minCol);
+
+        return height > width ? height : width;
+    }
 
 }
