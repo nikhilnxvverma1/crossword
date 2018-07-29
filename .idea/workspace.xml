@@ -55,18 +55,18 @@
       <file leaf-file-name="Grid.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/nikhil/Grid.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="951">
-              <caret line="212" column="33" lean-forward="true" selection-start-line="212" selection-start-column="33" selection-end-line="212" selection-end-column="33" />
+            <state relative-caret-position="1146">
+              <caret line="243" column="0" lean-forward="true" selection-start-line="243" selection-start-column="0" selection-end-line="243" selection-end-column="0" />
               <folding>
                 <element signature="docComment;class#Grid#0" expanded="false" />
                 <element signature="method#getLongestUnplacedWord#0;class#Grid#0" expanded="false" />
                 <element signature="method#getRandomUnplacedWord#0;class#Grid#0" expanded="false" />
                 <element signature="docComment;method#isPlacementOfWordAllowed#0;class#Grid#0" expanded="false" />
                 <element signature="method#isPlacementOfWordAllowed#0;class#Grid#0" expanded="false" />
-                <element signature="e#2223#2261#0" expanded="false" />
-                <element signature="e#2374#2425#0" expanded="false" />
-                <element signature="e#2614#2639#0" expanded="false" />
-                <element signature="e#3256#3280#0" expanded="false" />
+                <element signature="e#2315#2353#0" expanded="false" />
+                <element signature="e#2468#2519#0" expanded="false" />
+                <element signature="e#2716#2741#0" expanded="false" />
+                <element signature="e#3385#3409#0" expanded="false" />
                 <element signature="method#isCoinciding#0;class#Grid#0" expanded="false" />
                 <element signature="docComment;method#intersectionAllowed#0;class#Grid#0" expanded="false" />
                 <element signature="method#intersectionAllowed#0;class#Grid#0" expanded="false" />
@@ -483,7 +483,14 @@
       <option name="project" value="LOCAL" />
       <updated>1532411001539</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Methods for helping in printing the grid">
+      <created>1532719926478</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1532719926479</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -533,7 +540,8 @@
     <MESSAGE value="Incomplete word placement check and intersection option class" />
     <MESSAGE value="Word intersection method check, coinciding of words check" />
     <MESSAGE value="Simple methods in word class, modifications in grid placement" />
-    <option name="LAST_COMMIT_MESSAGE" value="Simple methods in word class, modifications in grid placement" />
+    <MESSAGE value="Methods for helping in printing the grid" />
+    <option name="LAST_COMMIT_MESSAGE" value="Methods for helping in printing the grid" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -591,10 +599,10 @@
             <element signature="method#getRandomUnplacedWord#0;class#Grid#0" expanded="false" />
             <element signature="docComment;method#isPlacementOfWordAllowed#0;class#Grid#0" expanded="false" />
             <element signature="method#isPlacementOfWordAllowed#0;class#Grid#0" expanded="false" />
-            <element signature="e#2223#2261#0" expanded="false" />
-            <element signature="e#2374#2425#0" expanded="false" />
-            <element signature="e#2614#2639#0" expanded="false" />
-            <element signature="e#3256#3280#0" expanded="false" />
+            <element signature="e#2315#2353#0" expanded="false" />
+            <element signature="e#2468#2519#0" expanded="false" />
+            <element signature="e#2716#2741#0" expanded="false" />
+            <element signature="e#3385#3409#0" expanded="false" />
             <element signature="method#isCoinciding#0;class#Grid#0" expanded="false" />
             <element signature="docComment;method#intersectionAllowed#0;class#Grid#0" expanded="false" />
             <element signature="method#intersectionAllowed#0;class#Grid#0" expanded="false" />
@@ -663,10 +671,10 @@
             <element signature="method#getRandomUnplacedWord#0;class#Grid#0" expanded="false" />
             <element signature="docComment;method#isPlacementOfWordAllowed#0;class#Grid#0" expanded="false" />
             <element signature="method#isPlacementOfWordAllowed#0;class#Grid#0" expanded="false" />
-            <element signature="e#2223#2261#0" expanded="false" />
-            <element signature="e#2374#2425#0" expanded="false" />
-            <element signature="e#2614#2639#0" expanded="false" />
-            <element signature="e#3256#3280#0" expanded="false" />
+            <element signature="e#2315#2353#0" expanded="false" />
+            <element signature="e#2468#2519#0" expanded="false" />
+            <element signature="e#2716#2741#0" expanded="false" />
+            <element signature="e#3385#3409#0" expanded="false" />
             <element signature="method#isCoinciding#0;class#Grid#0" expanded="false" />
             <element signature="docComment;method#intersectionAllowed#0;class#Grid#0" expanded="false" />
             <element signature="method#intersectionAllowed#0;class#Grid#0" expanded="false" />
@@ -719,10 +727,10 @@
             <element signature="method#getRandomUnplacedWord#0;class#Grid#0" expanded="false" />
             <element signature="docComment;method#isPlacementOfWordAllowed#0;class#Grid#0" expanded="false" />
             <element signature="method#isPlacementOfWordAllowed#0;class#Grid#0" expanded="false" />
-            <element signature="e#2223#2261#0" expanded="false" />
-            <element signature="e#2374#2425#0" expanded="false" />
-            <element signature="e#2614#2639#0" expanded="false" />
-            <element signature="e#3256#3280#0" expanded="false" />
+            <element signature="e#2315#2353#0" expanded="false" />
+            <element signature="e#2468#2519#0" expanded="false" />
+            <element signature="e#2716#2741#0" expanded="false" />
+            <element signature="e#3385#3409#0" expanded="false" />
             <element signature="method#isCoinciding#0;class#Grid#0" expanded="false" />
             <element signature="docComment;method#intersectionAllowed#0;class#Grid#0" expanded="false" />
             <element signature="method#intersectionAllowed#0;class#Grid#0" expanded="false" />
@@ -806,18 +814,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/nikhil/Grid.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="951">
-          <caret line="212" column="33" lean-forward="true" selection-start-line="212" selection-start-column="33" selection-end-line="212" selection-end-column="33" />
+        <state relative-caret-position="1146">
+          <caret line="243" column="0" lean-forward="true" selection-start-line="243" selection-start-column="0" selection-end-line="243" selection-end-column="0" />
           <folding>
             <element signature="docComment;class#Grid#0" expanded="false" />
             <element signature="method#getLongestUnplacedWord#0;class#Grid#0" expanded="false" />
             <element signature="method#getRandomUnplacedWord#0;class#Grid#0" expanded="false" />
             <element signature="docComment;method#isPlacementOfWordAllowed#0;class#Grid#0" expanded="false" />
             <element signature="method#isPlacementOfWordAllowed#0;class#Grid#0" expanded="false" />
-            <element signature="e#2223#2261#0" expanded="false" />
-            <element signature="e#2374#2425#0" expanded="false" />
-            <element signature="e#2614#2639#0" expanded="false" />
-            <element signature="e#3256#3280#0" expanded="false" />
+            <element signature="e#2315#2353#0" expanded="false" />
+            <element signature="e#2468#2519#0" expanded="false" />
+            <element signature="e#2716#2741#0" expanded="false" />
+            <element signature="e#3385#3409#0" expanded="false" />
             <element signature="method#isCoinciding#0;class#Grid#0" expanded="false" />
             <element signature="docComment;method#intersectionAllowed#0;class#Grid#0" expanded="false" />
             <element signature="method#intersectionAllowed#0;class#Grid#0" expanded="false" />
