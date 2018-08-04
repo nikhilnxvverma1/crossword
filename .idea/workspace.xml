@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="62e803dd-4cfa-4ea2-8922-95e894dee4a2" name="Default" comment="">
+    <list default="true" id="62e803dd-4cfa-4ea2-8922-95e894dee4a2" name="Default" comment="Untested implementation of print method. Minor refactoring">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/nikhil/Grid.java" afterPath="$PROJECT_DIR$/src/com/nikhil/Grid.java" />
     </list>
@@ -22,8 +22,8 @@
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/nikhil/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="17" column="1" lean-forward="false" selection-start-line="17" selection-start-column="1" selection-end-line="17" selection-end-column="1" />
+            <state relative-caret-position="165">
+              <caret line="11" column="41" lean-forward="false" selection-start-line="11" selection-start-column="41" selection-end-line="11" selection-end-column="41" />
               <folding />
             </state>
           </provider>
@@ -34,10 +34,7 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="180">
               <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-              <folding>
-                <element signature="e#160#161#0" expanded="false" />
-                <element signature="e#200#201#0" expanded="false" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -46,7 +43,7 @@
         <entry file="file://$PROJECT_DIR$/src/com/nikhil/Word.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="465">
-              <caret line="31" column="25" lean-forward="true" selection-start-line="31" selection-start-column="25" selection-end-line="31" selection-end-column="25" />
+              <caret line="31" column="25" lean-forward="false" selection-start-line="31" selection-start-column="25" selection-end-line="31" selection-end-column="25" />
               <folding />
             </state>
           </provider>
@@ -55,21 +52,26 @@
       <file leaf-file-name="Grid.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/nikhil/Grid.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1146">
-              <caret line="243" column="0" lean-forward="true" selection-start-line="243" selection-start-column="0" selection-end-line="243" selection-end-column="0" />
+            <state relative-caret-position="311">
+              <caret line="334" column="0" lean-forward="true" selection-start-line="334" selection-start-column="0" selection-end-line="334" selection-end-column="0" />
               <folding>
                 <element signature="docComment;class#Grid#0" expanded="false" />
                 <element signature="method#getLongestUnplacedWord#0;class#Grid#0" expanded="false" />
                 <element signature="method#getRandomUnplacedWord#0;class#Grid#0" expanded="false" />
                 <element signature="docComment;method#isPlacementOfWordAllowed#0;class#Grid#0" expanded="false" />
                 <element signature="method#isPlacementOfWordAllowed#0;class#Grid#0" expanded="false" />
-                <element signature="e#2315#2353#0" expanded="false" />
-                <element signature="e#2468#2519#0" expanded="false" />
-                <element signature="e#2716#2741#0" expanded="false" />
-                <element signature="e#3385#3409#0" expanded="false" />
+                <element signature="e#2366#2404#0" expanded="false" />
+                <element signature="e#2519#2570#0" expanded="false" />
+                <element signature="e#2767#2792#0" expanded="false" />
+                <element signature="e#3436#3460#0" expanded="false" />
                 <element signature="method#isCoinciding#0;class#Grid#0" expanded="false" />
                 <element signature="docComment;method#intersectionAllowed#0;class#Grid#0" expanded="false" />
                 <element signature="method#intersectionAllowed#0;class#Grid#0" expanded="false" />
+                <element signature="docComment;method#normalize#0;class#Grid#0" expanded="false" />
+                <element signature="method#normalize#0;class#Grid#0" expanded="false" />
+                <element signature="e#6507#6593#0" expanded="false" />
+                <element signature="docComment;method#print#0;class#Grid#0" expanded="false" />
+                <element signature="e#9489#9587#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -79,7 +81,7 @@
         <entry file="file://$PROJECT_DIR$/src/com/nikhil/IntersectionOption.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="165">
-              <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+              <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -89,7 +91,7 @@
         <entry file="file://$PROJECT_DIR$/src/com/nikhil/CrosswordFactory.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="180">
-              <caret line="16" column="36" lean-forward="false" selection-start-line="16" selection-start-column="36" selection-end-line="16" selection-end-column="36" />
+              <caret line="16" column="26" lean-forward="false" selection-start-line="16" selection-start-column="26" selection-end-line="16" selection-end-column="26" />
               <folding />
             </state>
           </provider>
@@ -161,6 +163,8 @@
     </navigator>
     <panes>
       <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -193,8 +197,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -490,7 +492,14 @@
       <option name="project" value="LOCAL" />
       <updated>1532719926479</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Untested implementation of print method. Minor refactoring">
+      <created>1532907738628</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1532907738628</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -500,6 +509,7 @@
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -516,14 +526,13 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39883834" sideWeight="0.49791667" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3988036" sideWeight="0.49791667" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" x="100" y="100" width="1720" height="880" />
+      <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" x="100" y="100" width="1720" height="880" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
@@ -541,11 +550,12 @@
     <MESSAGE value="Word intersection method check, coinciding of words check" />
     <MESSAGE value="Simple methods in word class, modifications in grid placement" />
     <MESSAGE value="Methods for helping in printing the grid" />
-    <option name="LAST_COMMIT_MESSAGE" value="Methods for helping in printing the grid" />
+    <MESSAGE value="Untested implementation of print method. Minor refactoring" />
+    <option name="LAST_COMMIT_MESSAGE" value="Untested implementation of print method. Minor refactoring" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="1" />
+      <option name="time" value="6" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -554,6 +564,80 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/com/nikhil/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="1" lean-forward="false" selection-start-line="17" selection-start-column="1" selection-end-line="17" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/nikhil/Crossword.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/nikhil/Word.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="465">
+          <caret line="31" column="25" lean-forward="true" selection-start-line="31" selection-start-column="25" selection-end-line="31" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/nikhil/Grid.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="docComment;class#Grid#0" expanded="false" />
+            <element signature="method#getLongestUnplacedWord#0;class#Grid#0" expanded="false" />
+            <element signature="method#getRandomUnplacedWord#0;class#Grid#0" expanded="false" />
+            <element signature="docComment;method#isPlacementOfWordAllowed#0;class#Grid#0" expanded="false" />
+            <element signature="method#isPlacementOfWordAllowed#0;class#Grid#0" expanded="false" />
+            <element signature="e#2366#2404#0" expanded="false" />
+            <element signature="e#2519#2570#0" expanded="false" />
+            <element signature="e#2767#2792#0" expanded="false" />
+            <element signature="e#3436#3460#0" expanded="false" />
+            <element signature="method#isCoinciding#0;class#Grid#0" expanded="false" />
+            <element signature="docComment;method#intersectionAllowed#0;class#Grid#0" expanded="false" />
+            <element signature="method#intersectionAllowed#0;class#Grid#0" expanded="false" />
+            <element signature="docComment;method#normalize#0;class#Grid#0" expanded="false" />
+            <element signature="method#normalize#0;class#Grid#0" expanded="false" />
+            <element signature="e#6507#6593#0" expanded="false" />
+            <element signature="docComment;method#print#0;class#Grid#0" expanded="false" />
+            <element signature="e#9489#9587#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/nikhil/IntersectionOption.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/nikhil/CrosswordFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="16" column="36" lean-forward="false" selection-start-line="16" selection-start-column="36" selection-end-line="16" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/random.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="19" column="62" lean-forward="false" selection-start-line="19" selection-start-column="62" selection-end-line="19" selection-end-column="62" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/nikhil/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -574,10 +658,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
           <caret line="14" column="0" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-          <folding>
-            <element signature="e#160#161#0" expanded="false" />
-            <element signature="e#200#201#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -599,13 +680,18 @@
             <element signature="method#getRandomUnplacedWord#0;class#Grid#0" expanded="false" />
             <element signature="docComment;method#isPlacementOfWordAllowed#0;class#Grid#0" expanded="false" />
             <element signature="method#isPlacementOfWordAllowed#0;class#Grid#0" expanded="false" />
-            <element signature="e#2315#2353#0" expanded="false" />
-            <element signature="e#2468#2519#0" expanded="false" />
-            <element signature="e#2716#2741#0" expanded="false" />
-            <element signature="e#3385#3409#0" expanded="false" />
+            <element signature="e#2366#2404#0" expanded="false" />
+            <element signature="e#2519#2570#0" expanded="false" />
+            <element signature="e#2767#2792#0" expanded="false" />
+            <element signature="e#3436#3460#0" expanded="false" />
             <element signature="method#isCoinciding#0;class#Grid#0" expanded="false" />
             <element signature="docComment;method#intersectionAllowed#0;class#Grid#0" expanded="false" />
             <element signature="method#intersectionAllowed#0;class#Grid#0" expanded="false" />
+            <element signature="docComment;method#normalize#0;class#Grid#0" expanded="false" />
+            <element signature="method#normalize#0;class#Grid#0" expanded="false" />
+            <element signature="e#6507#6593#0" expanded="false" />
+            <element signature="docComment;method#print#0;class#Grid#0" expanded="false" />
+            <element signature="e#9489#9587#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -638,10 +724,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
           <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-          <folding>
-            <element signature="e#160#161#0" expanded="false" />
-            <element signature="e#200#201#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -671,13 +754,18 @@
             <element signature="method#getRandomUnplacedWord#0;class#Grid#0" expanded="false" />
             <element signature="docComment;method#isPlacementOfWordAllowed#0;class#Grid#0" expanded="false" />
             <element signature="method#isPlacementOfWordAllowed#0;class#Grid#0" expanded="false" />
-            <element signature="e#2315#2353#0" expanded="false" />
-            <element signature="e#2468#2519#0" expanded="false" />
-            <element signature="e#2716#2741#0" expanded="false" />
-            <element signature="e#3385#3409#0" expanded="false" />
+            <element signature="e#2366#2404#0" expanded="false" />
+            <element signature="e#2519#2570#0" expanded="false" />
+            <element signature="e#2767#2792#0" expanded="false" />
+            <element signature="e#3436#3460#0" expanded="false" />
             <element signature="method#isCoinciding#0;class#Grid#0" expanded="false" />
             <element signature="docComment;method#intersectionAllowed#0;class#Grid#0" expanded="false" />
             <element signature="method#intersectionAllowed#0;class#Grid#0" expanded="false" />
+            <element signature="docComment;method#normalize#0;class#Grid#0" expanded="false" />
+            <element signature="method#normalize#0;class#Grid#0" expanded="false" />
+            <element signature="e#6507#6593#0" expanded="false" />
+            <element signature="docComment;method#print#0;class#Grid#0" expanded="false" />
+            <element signature="e#9489#9587#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -694,10 +782,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
           <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-          <folding>
-            <element signature="e#160#161#0" expanded="false" />
-            <element signature="e#200#201#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -727,13 +812,18 @@
             <element signature="method#getRandomUnplacedWord#0;class#Grid#0" expanded="false" />
             <element signature="docComment;method#isPlacementOfWordAllowed#0;class#Grid#0" expanded="false" />
             <element signature="method#isPlacementOfWordAllowed#0;class#Grid#0" expanded="false" />
-            <element signature="e#2315#2353#0" expanded="false" />
-            <element signature="e#2468#2519#0" expanded="false" />
-            <element signature="e#2716#2741#0" expanded="false" />
-            <element signature="e#3385#3409#0" expanded="false" />
+            <element signature="e#2366#2404#0" expanded="false" />
+            <element signature="e#2519#2570#0" expanded="false" />
+            <element signature="e#2767#2792#0" expanded="false" />
+            <element signature="e#3436#3460#0" expanded="false" />
             <element signature="method#isCoinciding#0;class#Grid#0" expanded="false" />
             <element signature="docComment;method#intersectionAllowed#0;class#Grid#0" expanded="false" />
             <element signature="method#intersectionAllowed#0;class#Grid#0" expanded="false" />
+            <element signature="docComment;method#normalize#0;class#Grid#0" expanded="false" />
+            <element signature="method#normalize#0;class#Grid#0" expanded="false" />
+            <element signature="e#6507#6593#0" expanded="false" />
+            <element signature="docComment;method#print#0;class#Grid#0" expanded="false" />
+            <element signature="e#9489#9587#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -761,10 +851,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/nikhil/Main.java">
+    <entry file="file://$PROJECT_DIR$/src/com/nikhil/Word.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="1" lean-forward="false" selection-start-line="17" selection-start-column="1" selection-end-line="17" selection-end-column="1" />
+        <state relative-caret-position="465">
+          <caret line="31" column="25" lean-forward="false" selection-start-line="31" selection-start-column="25" selection-end-line="31" selection-end-column="25" />
           <folding />
         </state>
       </provider>
@@ -773,17 +863,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
           <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-          <folding>
-            <element signature="e#160#161#0" expanded="false" />
-            <element signature="e#200#201#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/nikhil/CrosswordFactory.java">
+    <entry file="file://$PROJECT_DIR$/src/com/nikhil/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="16" column="36" lean-forward="false" selection-start-line="16" selection-start-column="36" selection-end-line="16" selection-end-column="36" />
+        <state relative-caret-position="165">
+          <caret line="11" column="41" lean-forward="false" selection-start-line="11" selection-start-column="41" selection-end-line="11" selection-end-column="41" />
           <folding />
         </state>
       </provider>
@@ -796,39 +883,44 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/nikhil/IntersectionOption.java">
+    <entry file="file://$PROJECT_DIR$/src/com/nikhil/CrosswordFactory.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+        <state relative-caret-position="180">
+          <caret line="16" column="26" lean-forward="false" selection-start-line="16" selection-start-column="26" selection-end-line="16" selection-end-column="26" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/nikhil/Word.java">
+    <entry file="file://$PROJECT_DIR$/src/com/nikhil/IntersectionOption.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="31" column="25" lean-forward="true" selection-start-line="31" selection-start-column="25" selection-end-line="31" selection-end-column="25" />
+        <state relative-caret-position="165">
+          <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/nikhil/Grid.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1146">
-          <caret line="243" column="0" lean-forward="true" selection-start-line="243" selection-start-column="0" selection-end-line="243" selection-end-column="0" />
+        <state relative-caret-position="311">
+          <caret line="334" column="0" lean-forward="true" selection-start-line="334" selection-start-column="0" selection-end-line="334" selection-end-column="0" />
           <folding>
             <element signature="docComment;class#Grid#0" expanded="false" />
             <element signature="method#getLongestUnplacedWord#0;class#Grid#0" expanded="false" />
             <element signature="method#getRandomUnplacedWord#0;class#Grid#0" expanded="false" />
             <element signature="docComment;method#isPlacementOfWordAllowed#0;class#Grid#0" expanded="false" />
             <element signature="method#isPlacementOfWordAllowed#0;class#Grid#0" expanded="false" />
-            <element signature="e#2315#2353#0" expanded="false" />
-            <element signature="e#2468#2519#0" expanded="false" />
-            <element signature="e#2716#2741#0" expanded="false" />
-            <element signature="e#3385#3409#0" expanded="false" />
+            <element signature="e#2366#2404#0" expanded="false" />
+            <element signature="e#2519#2570#0" expanded="false" />
+            <element signature="e#2767#2792#0" expanded="false" />
+            <element signature="e#3436#3460#0" expanded="false" />
             <element signature="method#isCoinciding#0;class#Grid#0" expanded="false" />
             <element signature="docComment;method#intersectionAllowed#0;class#Grid#0" expanded="false" />
             <element signature="method#intersectionAllowed#0;class#Grid#0" expanded="false" />
+            <element signature="docComment;method#normalize#0;class#Grid#0" expanded="false" />
+            <element signature="method#normalize#0;class#Grid#0" expanded="false" />
+            <element signature="e#6507#6593#0" expanded="false" />
+            <element signature="docComment;method#print#0;class#Grid#0" expanded="false" />
+            <element signature="e#9489#9587#0" expanded="false" />
           </folding>
         </state>
       </provider>

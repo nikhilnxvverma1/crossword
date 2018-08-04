@@ -13,6 +13,7 @@ public class Grid {
 
     public Grid(List<Word> wordList) {
         this.wordList = wordList;
+        this.placeWordsInGrid();
     }
 
     private void placeWordsInGrid() {
@@ -22,6 +23,8 @@ public class Grid {
 
         // place this word vertically in the grid
         trunk.placeAt(0, 0, true);
+
+        print();
     }
 
     private Word getLongestUnplacedWord() {
@@ -189,6 +192,8 @@ public class Grid {
      */
     public void print() {
 
+        System.out.println("Grid:");
+
         //find the min row and col values.
         int minRow = 99999;
         int minCol = 99999;
@@ -207,13 +212,26 @@ public class Grid {
                 minCol = word.col;
             }
 
-            if (word.row > maxRow) {
-                minRow = word.row;
+            // for max row and column find the end of the word
+
+            if(word.vertical){
+                if (word.row + word.name.length() > maxRow) {
+                    maxRow = word.row + word.name.length();
+                }
+
+                if (word.col > maxCol) {
+                    maxCol = word.col;
+                }
+            }else{
+                if (word.row > maxRow) {
+                    maxRow = word.row;
+                }
+
+                if (word.col + word.name.length() > maxCol) {
+                    maxCol = word.col + word.name.length();
+                }
             }
 
-            if (word.col > maxCol) {
-                minCol = word.col;
-            }
         }
 
         int height = Math.abs(maxRow - minRow);
@@ -239,6 +257,9 @@ public class Grid {
                     row = Math.abs(word.row - minRow);
                     col = Math.abs(word.col - minCol) + i;
                 }
+
+                // place this character at the identified spot
+                squareGrid[row][col] = word.name.charAt(i);
             }
         }
 
@@ -271,6 +292,7 @@ public class Grid {
         return square;
     }
 
+    @Deprecated
     private int sideOfGrid() {
 
         //find the min row and col values.
@@ -291,13 +313,26 @@ public class Grid {
                 minCol = word.col;
             }
 
-            if (word.row > maxRow) {
-                minRow = word.row;
+            // for max row and column find the end of the word
+
+            if(word.vertical){
+                if (word.row + word.name.length() > maxRow) {
+                    maxRow = word.row + word.name.length();
+                }
+
+                if (word.col > maxCol) {
+                    maxCol = word.col;
+                }
+            }else{
+                if (word.row > maxRow) {
+                    maxRow = word.row;
+                }
+
+                if (word.col + word.name.length() > maxCol) {
+                    maxCol = word.col + word.name.length();
+                }
             }
 
-            if (word.col > maxCol) {
-                minCol = word.col;
-            }
         }
 
         int height = Math.abs(maxRow - minRow);
