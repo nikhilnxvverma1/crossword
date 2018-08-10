@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="62e803dd-4cfa-4ea2-8922-95e894dee4a2" name="Default" comment="Untested implementation of print method. Minor refactoring">
+    <list default="true" id="62e803dd-4cfa-4ea2-8922-95e894dee4a2" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/crossword/com/nikhil/Main.class" afterPath="$PROJECT_DIR$/out/production/crossword/com/nikhil/Main.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/nikhil/Grid.java" afterPath="$PROJECT_DIR$/src/com/nikhil/Grid.java" />
     </list>
@@ -52,10 +53,11 @@
       <file leaf-file-name="Grid.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/nikhil/Grid.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="311">
-              <caret line="334" column="0" lean-forward="true" selection-start-line="334" selection-start-column="0" selection-end-line="334" selection-end-column="0" />
+            <state relative-caret-position="696">
+              <caret line="244" column="76" lean-forward="true" selection-start-line="244" selection-start-column="76" selection-end-line="244" selection-end-column="76" />
               <folding>
                 <element signature="docComment;class#Grid#0" expanded="false" />
+                <element signature="method#Grid#0;class#Grid#0" expanded="false" />
                 <element signature="method#getLongestUnplacedWord#0;class#Grid#0" expanded="false" />
                 <element signature="method#getRandomUnplacedWord#0;class#Grid#0" expanded="false" />
                 <element signature="docComment;method#isPlacementOfWordAllowed#0;class#Grid#0" expanded="false" />
@@ -71,7 +73,9 @@
                 <element signature="method#normalize#0;class#Grid#0" expanded="false" />
                 <element signature="e#6507#6593#0" expanded="false" />
                 <element signature="docComment;method#print#0;class#Grid#0" expanded="false" />
-                <element signature="e#9489#9587#0" expanded="false" />
+                <element signature="method#print#1;class#Grid#0" expanded="false" />
+                <element signature="e#9730#9828#0" expanded="false" />
+                <element signature="method#sideOfGrid#0;class#Grid#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -499,7 +503,14 @@
       <option name="project" value="LOCAL" />
       <updated>1532907738628</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Debugging print method of grid class">
+      <created>1533395977617</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1533395977617</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -515,7 +526,7 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39883834" sideWeight="0.50208336" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32901296" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2962246" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -526,7 +537,7 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3988036" sideWeight="0.49791667" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3988036" sideWeight="0.49791667" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -551,11 +562,12 @@
     <MESSAGE value="Simple methods in word class, modifications in grid placement" />
     <MESSAGE value="Methods for helping in printing the grid" />
     <MESSAGE value="Untested implementation of print method. Minor refactoring" />
-    <option name="LAST_COMMIT_MESSAGE" value="Untested implementation of print method. Minor refactoring" />
+    <MESSAGE value="Debugging print method of grid class" />
+    <option name="LAST_COMMIT_MESSAGE" value="Debugging print method of grid class" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="6" />
+      <option name="time" value="7" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -594,6 +606,7 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="docComment;class#Grid#0" expanded="false" />
+            <element signature="method#Grid#0;class#Grid#0" expanded="false" />
             <element signature="method#getLongestUnplacedWord#0;class#Grid#0" expanded="false" />
             <element signature="method#getRandomUnplacedWord#0;class#Grid#0" expanded="false" />
             <element signature="docComment;method#isPlacementOfWordAllowed#0;class#Grid#0" expanded="false" />
@@ -609,7 +622,9 @@
             <element signature="method#normalize#0;class#Grid#0" expanded="false" />
             <element signature="e#6507#6593#0" expanded="false" />
             <element signature="docComment;method#print#0;class#Grid#0" expanded="false" />
-            <element signature="e#9489#9587#0" expanded="false" />
+            <element signature="method#print#1;class#Grid#0" expanded="false" />
+            <element signature="e#9730#9828#0" expanded="false" />
+            <element signature="method#sideOfGrid#0;class#Grid#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -676,6 +691,7 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="docComment;class#Grid#0" expanded="false" />
+            <element signature="method#Grid#0;class#Grid#0" expanded="false" />
             <element signature="method#getLongestUnplacedWord#0;class#Grid#0" expanded="false" />
             <element signature="method#getRandomUnplacedWord#0;class#Grid#0" expanded="false" />
             <element signature="docComment;method#isPlacementOfWordAllowed#0;class#Grid#0" expanded="false" />
@@ -691,7 +707,9 @@
             <element signature="method#normalize#0;class#Grid#0" expanded="false" />
             <element signature="e#6507#6593#0" expanded="false" />
             <element signature="docComment;method#print#0;class#Grid#0" expanded="false" />
-            <element signature="e#9489#9587#0" expanded="false" />
+            <element signature="method#print#1;class#Grid#0" expanded="false" />
+            <element signature="e#9730#9828#0" expanded="false" />
+            <element signature="method#sideOfGrid#0;class#Grid#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -750,6 +768,7 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="docComment;class#Grid#0" expanded="false" />
+            <element signature="method#Grid#0;class#Grid#0" expanded="false" />
             <element signature="method#getLongestUnplacedWord#0;class#Grid#0" expanded="false" />
             <element signature="method#getRandomUnplacedWord#0;class#Grid#0" expanded="false" />
             <element signature="docComment;method#isPlacementOfWordAllowed#0;class#Grid#0" expanded="false" />
@@ -765,7 +784,9 @@
             <element signature="method#normalize#0;class#Grid#0" expanded="false" />
             <element signature="e#6507#6593#0" expanded="false" />
             <element signature="docComment;method#print#0;class#Grid#0" expanded="false" />
-            <element signature="e#9489#9587#0" expanded="false" />
+            <element signature="method#print#1;class#Grid#0" expanded="false" />
+            <element signature="e#9730#9828#0" expanded="false" />
+            <element signature="method#sideOfGrid#0;class#Grid#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -808,6 +829,7 @@
           <caret line="12" column="28" lean-forward="false" selection-start-line="12" selection-start-column="28" selection-end-line="12" selection-end-column="28" />
           <folding>
             <element signature="docComment;class#Grid#0" expanded="false" />
+            <element signature="method#Grid#0;class#Grid#0" expanded="false" />
             <element signature="method#getLongestUnplacedWord#0;class#Grid#0" expanded="false" />
             <element signature="method#getRandomUnplacedWord#0;class#Grid#0" expanded="false" />
             <element signature="docComment;method#isPlacementOfWordAllowed#0;class#Grid#0" expanded="false" />
@@ -823,7 +845,9 @@
             <element signature="method#normalize#0;class#Grid#0" expanded="false" />
             <element signature="e#6507#6593#0" expanded="false" />
             <element signature="docComment;method#print#0;class#Grid#0" expanded="false" />
-            <element signature="e#9489#9587#0" expanded="false" />
+            <element signature="method#print#1;class#Grid#0" expanded="false" />
+            <element signature="e#9730#9828#0" expanded="false" />
+            <element signature="method#sideOfGrid#0;class#Grid#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -901,10 +925,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/nikhil/Grid.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="311">
-          <caret line="334" column="0" lean-forward="true" selection-start-line="334" selection-start-column="0" selection-end-line="334" selection-end-column="0" />
+        <state relative-caret-position="696">
+          <caret line="244" column="76" lean-forward="true" selection-start-line="244" selection-start-column="76" selection-end-line="244" selection-end-column="76" />
           <folding>
             <element signature="docComment;class#Grid#0" expanded="false" />
+            <element signature="method#Grid#0;class#Grid#0" expanded="false" />
             <element signature="method#getLongestUnplacedWord#0;class#Grid#0" expanded="false" />
             <element signature="method#getRandomUnplacedWord#0;class#Grid#0" expanded="false" />
             <element signature="docComment;method#isPlacementOfWordAllowed#0;class#Grid#0" expanded="false" />
@@ -920,7 +945,9 @@
             <element signature="method#normalize#0;class#Grid#0" expanded="false" />
             <element signature="e#6507#6593#0" expanded="false" />
             <element signature="docComment;method#print#0;class#Grid#0" expanded="false" />
-            <element signature="e#9489#9587#0" expanded="false" />
+            <element signature="method#print#1;class#Grid#0" expanded="false" />
+            <element signature="e#9730#9828#0" expanded="false" />
+            <element signature="method#sideOfGrid#0;class#Grid#0" expanded="false" />
           </folding>
         </state>
       </provider>

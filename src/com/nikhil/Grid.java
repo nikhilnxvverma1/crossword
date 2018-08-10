@@ -204,35 +204,38 @@ public class Grid {
 
         for (Word word : this.wordList) {
 
-            if (word.row < minRow) {
-                minRow = word.row;
-            }
-
-            if (word.col < minCol) {
-                minCol = word.col;
-            }
-
-            // for max row and column find the end of the word
-
-            if(word.vertical){
-                if (word.row + word.name.length() > maxRow) {
-                    maxRow = word.row + word.name.length();
+            if(word.placed){
+                if (word.row < minRow) {
+                    minRow = word.row;
                 }
 
-                if (word.col > maxCol) {
-                    maxCol = word.col;
-                }
-            }else{
-                if (word.row > maxRow) {
-                    maxRow = word.row;
+                if (word.col < minCol) {
+                    minCol = word.col;
                 }
 
-                if (word.col + word.name.length() > maxCol) {
-                    maxCol = word.col + word.name.length();
+                // for max row and column find the end of the word
+
+                if(word.vertical){
+                    if (word.row + word.name.length() > maxRow) {
+                        maxRow = word.row + word.name.length();
+                    }
+
+                    if (word.col > maxCol) {
+                        maxCol = word.col;
+                    }
+                }else{
+                    if (word.row > maxRow) {
+                        maxRow = word.row;
+                    }
+
+                    if (word.col + word.name.length() > maxCol) {
+                        maxCol = word.col + word.name.length();
+                    }
                 }
             }
 
         }
+
 
         int height = Math.abs(maxRow - minRow);
         int width = Math.abs(maxCol - minCol);
@@ -243,23 +246,25 @@ public class Grid {
 
         // place words in this square grid
         for (Word word : this.wordList) {
-            int length = word.name.length();
-            for (int i = 0; i < length; i++) {
+            if (word.placed) {
+                int length = word.name.length();
+                for (int i = 0; i < length; i++) {
 
-                // holds index location of the characters in the word grid
-                int row, col;
-                if (word.vertical) {
-                    //place each character in the same column
-                    row = Math.abs(word.row - minRow) + i;
-                    col = Math.abs(word.col - minCol);
-                } else {
-                    //place each character in the same row
-                    row = Math.abs(word.row - minRow);
-                    col = Math.abs(word.col - minCol) + i;
+                    // holds index location of the characters in the word grid
+                    int row, col;
+                    if (word.vertical) {
+                        //place each character in the same column
+                        row = Math.abs(word.row - minRow) + i;
+                        col = Math.abs(word.col - minCol);
+                    } else {
+                        //place each character in the same row
+                        row = Math.abs(word.row - minRow);
+                        col = Math.abs(word.col - minCol) + i;
+                    }
+
+                    // place this character at the identified spot
+                    squareGrid[row][col] = word.name.charAt(i);
                 }
-
-                // place this character at the identified spot
-                squareGrid[row][col] = word.name.charAt(i);
             }
         }
 
