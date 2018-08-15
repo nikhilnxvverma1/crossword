@@ -1,5 +1,9 @@
 package com.nikhil;
 
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
+
 /** String to be inserted as part of the crossword puzzle.*/
 public class Word {
     String name;
@@ -33,5 +37,43 @@ public class Word {
         this.row += dRow;
         this.col += dCol;
     }
+
+    public List<IntersectionOption> findAllIntersectionOptions(List<Word> wordList, boolean skipPlacedWords){
+
+        List <IntersectionOption> intersectionOptions = new LinkedList<>();
+
+        int length = this.name.length();
+        for(int i=0;i<length;i++){
+
+            char current = this.name.charAt(i);
+
+            // find intersecting words for this character
+            for(Word word : wordList){
+
+                // skip placed words (if required) or skip if this word is actually itself
+                if((word.placed && skipPlacedWords)||(word==this)){
+                    continue;
+                }
+
+                //find all indices of the current character and for each create a new intersection option for this word
+                int wordLength = word.name.length();
+                for(int j=0;j<wordLength;j++){
+
+                    //if the letters of the two words match, it means there is an intersection
+                    if(word.name.charAt(j)==current){
+
+                        //create and add a new intersection option
+                        intersectionOptions.add(new IntersectionOption(this,i,word,j));
+                    }
+                }
+
+
+            }
+        }
+
+        return intersectionOptions;
+    }
+
+
 
 }

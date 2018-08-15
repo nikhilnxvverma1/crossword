@@ -25,6 +25,13 @@ public class Grid {
         trunk.placeAt(0, 0, true);
 
         print();
+
+        // find all the intersection options of the trunk
+        List<IntersectionOption> trunkIntersectingWords = trunk.findAllIntersectionOptions(this.wordList,true);
+
+        for(IntersectionOption intersectionOption : trunkIntersectingWords){
+            System.out.println(intersectionOption.toString());
+        }
     }
 
     private Word getLongestUnplacedWord() {
