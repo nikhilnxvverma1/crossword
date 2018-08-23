@@ -74,6 +74,46 @@ public class Word {
         return intersectionOptions;
     }
 
+    public boolean containsLettersWithGap(ArrayList<LetterGap> letterGapList){
 
+        // return false for empty/ null lists
+        if(letterGapList==null || letterGapList.size()==0){
+            return false;
+        }
+
+        //for each letter
+        int length = this.name.length();
+        for(int i=0;i<length;i++){
+
+            LetterGap firstLetterGap = letterGapList.get(0);
+            char current = this.name.charAt(i);
+
+            // check if it is matching with the first letter gap
+            if(current == firstLetterGap.letter){
+
+                //iterate across letter gaps to verify if they match
+                int j=i;
+                boolean letterSequenceBroken = false;
+                for(LetterGap letterGap : letterGapList){
+
+                    // for each letter gap the characters at respective indices should match, else break
+                    if(this.name.charAt(j)!=letterGap.letter){
+                        letterSequenceBroken = true;
+                        break;
+                    }
+
+                    // move to the next letter in the sequence by adding the gap of this letter gap
+                    j+=letterGap.gap;
+                }
+
+                // return true if letter sequence was not broken throughout the last loop
+                if(!letterSequenceBroken){
+                    return true;
+                }
+
+            }
+        }
+        return false;
+    }
 
 }
