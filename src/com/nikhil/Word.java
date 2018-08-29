@@ -103,7 +103,13 @@ public class Word {
                     }
 
                     // move to the next letter in the sequence by adding the gap of this letter gap
-                    j+=letterGap.gap;
+                    j+= (letterGap.gap + 1); //add 1 to jump over gap
+
+                    // if counter overflows through the length of the string, naturally, the sequence doesn't exist
+                    if(j>=length){
+                        letterSequenceBroken = true;
+                        break;
+                    }
                 }
 
                 // return true if letter sequence was not broken throughout the last loop
