@@ -304,6 +304,14 @@ public class Grid {
         return square;
     }
 
+    private int nextCircularIndex(int current,int length){
+        if(current+1>=length){
+            return 0;
+        }else{
+            return current + 1;
+        }
+    }
+
     @Deprecated
     private int sideOfGrid() {
 
@@ -351,6 +359,21 @@ public class Grid {
         int width = Math.abs(maxCol - minCol);
 
         return height > width ? height : width;
+    }
+
+    @Deprecated
+    private void wordByWordPlacement(){
+
+        //iterate through the word list randomly
+        Word word = getRandomUnplacedWord();
+        while(word!=null){
+
+
+
+
+            // move on to the next unplaced word
+            word = getRandomUnplacedWord();
+        }
     }
 
 }
