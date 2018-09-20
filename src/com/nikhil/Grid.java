@@ -87,7 +87,7 @@ public class Grid {
      * @param wordToPlaceIsVertical weather the word is vertical or horizontal
      * @return true if it is possible, false otherwise
      */
-    private boolean isPlacementOfWordAllowed(Word wordToPlace, int r, int c, boolean wordToPlaceIsVertical) {
+    public boolean isPlacementOfWordAllowed(Word wordToPlace, int r, int c, boolean wordToPlaceIsVertical) {
 
         boolean placementAllowed = true;
 
@@ -103,15 +103,22 @@ public class Grid {
 
 
             if (word.vertical && wordToPlaceIsVertical) { //both words are vertical
+
                 //check for same column and then coinciding of the words
                 if (word.col == c) {
                     placementAllowed = !isCoinciding(word, word.row, wordToPlace, r);
                 }
-            } else if (word.vertical && !wordToPlaceIsVertical) { // only word to place is horizontal
+            }
+            else if (word.vertical && !wordToPlaceIsVertical) { // only word to place is horizontal
+
                 placementAllowed = intersectionAllowed(wordToPlace, word, word.col - c, r - word.row);
-            } else if (!word.vertical && wordToPlaceIsVertical) { // only word to place is vertical
+            }
+            else if (!word.vertical && wordToPlaceIsVertical) { // only word to place is vertical
+
                 placementAllowed = intersectionAllowed(word, wordToPlace, c - word.col, word.row - r);
-            } else { // both words horizontal
+            }
+            else { // both words horizontal
+
                 //check for same row and then coinciding of the words
                 if (word.row == r) {
                     placementAllowed = !isCoinciding(word, word.col, wordToPlace, c);
