@@ -14,7 +14,7 @@ public class Word {
     boolean placed = false;
 
     public Word(String name, String description) {
-        this.name = name;
+        this.name = name.toUpperCase();
         this.description = description;
     }
 

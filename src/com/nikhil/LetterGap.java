@@ -16,7 +16,8 @@ public class LetterGap {
     int gap;
 
     public LetterGap(char letter, int gap) {
-        this.letter = letter;
+
+        this.letter = Character.toUpperCase(letter);
         this.gap = gap;
     }
 }
