@@ -91,7 +91,7 @@ class GridTest {
         assertFalse(grid.isPlacementOfWordAllowed(tapestry,4,-4,false));
 
         // bad
-        assertTrue(grid.isPlacementOfWordAllowed(bad,3,-1,false));
+        assertTrue(grid.isPlacementOfWordAllowed(bad,2,-1,false));
         assertTrue(grid.isPlacementOfWordAllowed(bad,6,1,true));
         assertTrue(grid.isPlacementOfWordAllowed(bad,0,2,false));
         assertTrue(grid.isPlacementOfWordAllowed(bad,5,6,true));
@@ -103,7 +103,7 @@ class GridTest {
 
         // lies
         assertTrue(grid.isPlacementOfWordAllowed(lies,6,6,false));
-        assertTrue(grid.isPlacementOfWordAllowed(lies,3,-3,false));
+        assertTrue(grid.isPlacementOfWordAllowed(lies,4,-3,false));
         assertTrue(grid.isPlacementOfWordAllowed(lies,-1,5,false));
 
         assertFalse(grid.isPlacementOfWordAllowed(lies,0,8,true));

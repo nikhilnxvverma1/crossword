@@ -119,4 +119,85 @@ public class Word {
         return false;
     }
 
+    /**
+     * For non intersecting or non coinciding words, this method checks for adjacency. This method does not check for
+     * intersection and coincidence. Words are considered not to be touching if one of the words is at least starting
+     * diagonally after the end of the other word
+     * @param wordToPlace an unplaced word
+     * @param row projected row
+     * @param col projected column
+     * @param wordToPlaceIsVertical true if unnplaced word is vertical, false if horizontal
+     * @return true if the unplaced wor is touching.
+     */
+    public boolean willAdjacentlyTouch(Word wordToPlace, int row, int col, boolean wordToPlaceIsVertical){
+
+        if ((this.vertical && wordToPlaceIsVertical) && //both words are vertical
+                ((this.col == col-1)||(this.col == col+1))) { // both words are adjacent
+
+            return doSpansOverlap(this.row,row,wordToPlace.name.length());
+        }
+        else if (this.vertical && !wordToPlaceIsVertical){  // only this word is vertical
+                 // horizontal word is within span of vertical word
+
+            return isHorizontalWordTouching(this.row,this.col,this.name.length(),row,col,wordToPlace.name.length());
+        }
+        else if (!this.vertical && wordToPlaceIsVertical){ // only word to place is vertical
+
+            return isHorizontalWordTouching(row,col,wordToPlace.name.length(),this.row,this.col,this.name.length());
+        }
+        else if((!this.vertical && !wordToPlaceIsVertical) && // both words horizontal
+                ((this.row == row+1)||(this.row == row-1))) { // both words are adjacent
+
+            return doSpansOverlap(this.col,col,wordToPlace.name.length());
+        }
+        else{
+            return false;
+        }
+    }
+
+    /**
+     * Determines which word starts first and checks if it ends before the beginning of the later word.
+     * This assumes that the other word is parallel to this word.
+     */
+    private boolean doSpansOverlap(int thisWordStart,int otherWordStart,int otherWordLength){
+
+        if(thisWordStart<otherWordStart){
+            return !((thisWordStart +this.name.length() - 1) < otherWordStart);
+        }else if(thisWordStart>otherWordStart){
+            return !((otherWordStart + otherWordLength - 1) < thisWordStart);
+        }else{
+            return true;
+        }
+    }
+
+    /**
+     * Checks all possible cases of a horizontal word touching a vertical word
+     * @param vr vertical word row
+     * @param vc vertical word column
+     * @param vl vertical word length
+     * @param hr horizontal word row
+     * @param hc horizontal word column
+     * @param hl horizontal word length
+     * @return True if the horizontal word touches above, below or around the side, false otherwise.
+     * False even if they intersect.
+     */
+    private boolean isHorizontalWordTouching(int vr,int vc,int vl,int hr,int hc,int hl){
+
+        if(hr>=vr && hr < (vr + vl)){// horizontal word is within span of vertical word
+
+            // either horizontal word is after vertical word or before
+            return ((vc+1==hc) || ((hc + hl - 1 + 1)==vc));
+        }
+        else if(((hr+1)==vr)||(hr==(vr+vl))){ // horizontal word just above or just below the vertical word
+
+            // check if the column of the vertical word lies with the span of the horizontal word
+            return vc>=hc && vc< (hc+hl);
+        }
+        else{ // not touching
+
+            return false;
+        }
+
+    }
+
 }

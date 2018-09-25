@@ -88,11 +88,11 @@ public class Grid {
      */
     public boolean isPlacementOfWordAllowed(Word wordToPlace, int r, int c, boolean wordToPlaceIsVertical) {
 
-        boolean placementAllowed = true;
-
         //check linearly against the word list
         //if any word is intersecting with word to place or not
         for (Word word : wordList) {
+
+            boolean placementAllowed = true;
 
             //skip this word if it is same as the word to place
             // or word is not placed
@@ -124,21 +124,30 @@ public class Grid {
                 }
             }
 
-            if (!placementAllowed) {
-                break;
+            if (!placementAllowed || word.willAdjacentlyTouch(wordToPlace,r,c,wordToPlaceIsVertical)) {
+                return false;
             }
 
         }
-        return placementAllowed;
+        return true;
     }
 
+    /**
+     * Checks if two parallel words coincide given their initial starting position. Coincidence also occurs if the
+     * words follow immediately in continuation.
+     * @param word1 first word
+     * @param word1Start starting position of the first word
+     * @param word2 second word
+     * @param word2Start starting position of the second word
+     * @return true if the words coincide, false otherwise
+     */
     private boolean isCoinciding(Word word1, int word1Start, Word word2, int word2Start) {
         if (word1Start < word2Start) {
             return !((word1Start + word1.name.length() - 1) < (word2Start - 1));
         } else if (word2Start < word1Start) {
             return !((word2Start + word2.name.length() - 1) < (word1Start - 1));
         } else {
-            return false;
+            return true;
         }
     }
 
@@ -158,7 +167,7 @@ public class Grid {
 
         boolean perpendicularCrossingBase =
                 relativeDisplacementFromBase >= 0 &&
-                (base.name.length() - relativeDisplacementFromBase) >= 0;
+                (base.name.length() - relativeDisplacementFromBase) > 0;
 
         boolean baseCrossingPerpendicular =
                 relativeDisplacementFromPerpendicular <= 0 &&
