@@ -13,7 +13,6 @@ public class Grid {
 
     public Grid(List<Word> wordList) {
         this.wordList = wordList;
-        this.placeWordsInGrid();
     }
 
     private void placeWordsInGrid() {
@@ -111,11 +110,11 @@ public class Grid {
             }
             else if (word.vertical && !wordToPlaceIsVertical) { // only word to place is horizontal
 
-                placementAllowed = intersectionAllowed(wordToPlace, word, word.col - c, r - word.row);
+                placementAllowed = intersectionAllowed(wordToPlace, word, word.col - c, word.row - r);
             }
             else if (!word.vertical && wordToPlaceIsVertical) { // only word to place is vertical
 
-                placementAllowed = intersectionAllowed(word, wordToPlace, c - word.col, word.row - r);
+                placementAllowed = intersectionAllowed(wordToPlace, word, word.row - r, word.col - c);
             }
             else { // both words horizontal
 
@@ -135,9 +134,9 @@ public class Grid {
 
     private boolean isCoinciding(Word word1, int word1Start, Word word2, int word2Start) {
         if (word1Start < word2Start) {
-            return !((word1Start + word1.name.length()) < (word2Start - 1));
+            return !((word1Start + word1.name.length() - 1) < (word2Start - 1));
         } else if (word2Start < word1Start) {
-            return !((word2Start + word2.name.length()) < (word1Start - 1));
+            return !((word2Start + word2.name.length() - 1) < (word1Start - 1));
         } else {
             return false;
         }
@@ -149,27 +148,33 @@ public class Grid {
      *
      * @param base                the fixed word of the intersection
      * @param perpendicular       the word whose relative coordinates to the base are given
-     * @param perpendicularOffset distance along the start of the base word towards the perpendicular
-     * @param baseDistance        distance of the start of the perpendicular word from the base. Because of relative
-     *                            positioning, this value can also be negative
+     * @param relativeDisplacementFromBase distance along the start of the base word towards the perpendicular
+     * @param relativeDisplacementFromPerpendicular distance of the start of the perpendicular word from the base.
+     *                                             Because of relative positioning, this value can also be negative
      * @return true if there is common letter or no intersection, false otherwise
      */
-    private boolean intersectionAllowed(Word base, Word perpendicular, int perpendicularOffset, int baseDistance) {
+    private boolean intersectionAllowed(Word base, Word perpendicular, int relativeDisplacementFromBase,
+                                        int relativeDisplacementFromPerpendicular) {
 
-        boolean perpendicularCrossingBase = perpendicularOffset >= 0 && (base.name.length() - perpendicularOffset) >= 0;
-        boolean baseCrossingPerpendicular = baseDistance <= 0 && (perpendicular.name.length() - Math.abs(baseDistance)) >= 0;
+        boolean perpendicularCrossingBase =
+                relativeDisplacementFromBase >= 0 &&
+                (base.name.length() - relativeDisplacementFromBase) >= 0;
+
+        boolean baseCrossingPerpendicular =
+                relativeDisplacementFromPerpendicular <= 0 &&
+                (perpendicular.name.length() - Math.abs(relativeDisplacementFromPerpendicular)) > 0;
 
         //check if there is actually an intersection
         boolean intersectionExists = perpendicularCrossingBase && baseCrossingPerpendicular;
 
         if (intersectionExists) {
             //find the letter for both the words
-            char letterAlongBase = base.name.charAt(perpendicularOffset);
-            int perpendicularLetterIndex = Math.abs(baseDistance);
+            char letterAlongBase = base.name.charAt(relativeDisplacementFromBase);
+            int perpendicularLetterIndex = Math.abs(relativeDisplacementFromPerpendicular);
             char letterAlongPerpendicular = perpendicular.name.charAt(perpendicularLetterIndex);
             return Character.toUpperCase(letterAlongBase) == Character.toUpperCase(letterAlongPerpendicular);
         } else {
-            return false;
+            return true;
         }
     }
 

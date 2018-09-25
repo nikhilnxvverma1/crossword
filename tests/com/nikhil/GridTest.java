@@ -33,7 +33,7 @@ class GridTest {
         // word placement
         mars.placeAt(1,0,true);
         earth.placeAt(7,0,false);
-        ear.placeAt(0,5,false);
+        ear.placeAt(1,5,false);
         eyes.placeAt(4,8,true);
         august.placeAt(0,3,true);
         mugger.placeAt(3,2,false);

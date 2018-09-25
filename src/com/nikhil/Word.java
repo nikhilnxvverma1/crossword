@@ -20,10 +20,7 @@ public class Word {
 
     @Override
     public String toString() {
-        return "Word{" +
-                "name='" + name + '\'' +
-                ", description='" + description + '\'' +
-                '}';
+        return name + "(" + row + "," + col + "," + (vertical ? "v" : "h") + ","+(placed ? "p" : "u")+")";
     }
 
     public void placeAt(int row,int col,boolean vertical){
