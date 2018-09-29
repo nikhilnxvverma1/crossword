@@ -1,13 +1,18 @@
 package com.nikhil;
 
 /**
- * Data Holder for storing intersection point data which is also responsible for computing projected intersection points
+ * Storing intersection point data which is also responsible for computing projected intersection points.
+ * Here the source word is always considered to be placed
  * Created by nikhilverma on 7/9/18.
  */
 public class IntersectionOption {
+    /** The placed word */
     Word source;
+    /** Index of the source word at which the intersection is taking place */
     int sourceIndex;
+    /** The unplaced word that is intersecting with the source word */
     Word crossing;
+    /** Index of the crossing word at which the intersection is taking place */
     int crossingIndex;
 
     public IntersectionOption(Word source, int sourceIndex, Word crossing, int crossingIndex) {
@@ -31,7 +36,8 @@ public class IntersectionOption {
      * Checks if the crossing word of the two intersection options, feasibly intersect
      * with each other at right angles or not. This does not check if the intersecting
      * crossing words are colliding with other words in the grid or not. The source word
-     * of both the intersection option's is assumed to be placed.
+     * of both the intersection option's is assumed to be placed but is not required to
+     * be intersecting one another.
      * @param perpendicular the other intersection option whose source word is perpendicular
      *                      to this intersection option's source word, whose crossing word will be
      *                      checked against this intersection option's crossing word
