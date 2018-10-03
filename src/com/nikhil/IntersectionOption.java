@@ -59,24 +59,37 @@ public class IntersectionOption {
         Location thisCrossingLocation = this.projectedLocationOfCrossingWord();
         Location otherCrossingLocation = perpendicular.projectedLocationOfCrossingWord();
 
-
+        // find out the common intersection point, letter at that intersection for both the crossing words
+        Location intersectionPoint;
+        char thisCrossingWordsLetter='0';
+        char otherCrossingWordsLetter='0';
         // TODO we don't know if they (crossing words) are definitively horizontal or not
 
-        // this crossing word is horizontal and the perpendicular is vertical
+        // this crossing word is vertical and the perpendicular is horizontal
         if(thisCrossingLocation.containsInSpan(otherCrossingLocation,this.crossing.name.length(),!this.source.vertical) &&
                 otherCrossingLocation.containsInSpan(thisCrossingLocation,perpendicular.crossing.name.length(),!perpendicular.source.vertical)
         ){
-            return new Location(thisCrossingLocation.row,otherCrossingLocation.col);
-
+            intersectionPoint = new Location(otherCrossingLocation.row,thisCrossingLocation.col);
+            thisCrossingWordsLetter = this.crossing.name.charAt(otherCrossingLocation.row - thisCrossingLocation.row);
+            otherCrossingWordsLetter = perpendicular.crossing.name.charAt(thisCrossingLocation.col - otherCrossingLocation.col);
         }
-        // perpendicular word is horizontal and this crossing word is vertical
+        // perpendicular word is vertical and this crossing word is horizontal
         else if(otherCrossingLocation.containsInSpan(thisCrossingLocation,perpendicular.crossing.name.length(),!perpendicular.source.vertical) &&
                 thisCrossingLocation.containsInSpan(otherCrossingLocation,this.crossing.name.length(),!this.source.vertical)
         ){
-            return new Location(otherCrossingLocation.row,thisCrossingLocation.col);
+            intersectionPoint = new Location(thisCrossingLocation.row,otherCrossingLocation.col);
+            thisCrossingWordsLetter = this.crossing.name.charAt(otherCrossingLocation.col - thisCrossingLocation.col);
+            otherCrossingWordsLetter = perpendicular.crossing.name.charAt(thisCrossingLocation.row - otherCrossingLocation.row);
         }
         // no intersection
         else{
+            intersectionPoint =null;
+        }
+
+        if(intersectionPoint!=null && thisCrossingWordsLetter == otherCrossingWordsLetter &&
+                !intersectionPoint.touches(this.source) && !intersectionPoint.touches(perpendicular.source)){
+            return intersectionPoint;
+        }else{
             return null;
         }
     }

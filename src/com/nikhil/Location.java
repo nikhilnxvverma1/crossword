@@ -27,4 +27,33 @@ public class Location {
             return this.col<=other.col && other.col<=(this.col+span);
         }
     }
+
+    /**
+     * Checks if this location lies in the touching/overlapping proximity to the given word
+     * @param word a placed word, with defined coordinates and alignment
+     * @return True if location is touching the word or word is unplaced.
+     * False if there is a gap or this location is situated diagonally at the tip of the word.
+     */
+    public boolean touches(Word word){
+        if(!word.placed){
+            return false;
+        }
+
+        if(word.vertical){
+            return (this.col>=(word.col-1) && this.col<=(word.col+1) && // side to side
+                    this.row>=word.row && this.row< (word.row+word.name.length())) || // within span
+                    (this.row == (word.row-1) && this.col == word.col)|| // above
+                    (this.row == (word.row+word.name.length()) && this.col == word.col); // below
+        }else{
+            return (this.row>=(word.row-1) && this.row<=(word.row+1) && // above and below
+                    this.col>=word.col && this.col< (word.col+word.name.length())) || // within span
+                    (this.row == word.row && this.col == (word.col-1))|| // left
+                    (this.row == word.row && this.col == (word.col + word.name.length())); // right
+        }
+    }
+
+    @Override
+    public String toString() {
+        return "Location(" + row +", " + col + ")";
+    }
 }

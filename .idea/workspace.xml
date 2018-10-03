@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="62e803dd-4cfa-4ea2-8922-95e894dee4a2" name="Default" comment="Added adjacency checks, fixed wrong assertions &amp; placement bugs">
-      <change afterPath="$PROJECT_DIR$/tests/com/nikhil/IntersectionOptionTest.java" afterDir="false" />
+    <list default="true" id="62e803dd-4cfa-4ea2-8922-95e894dee4a2" name="Default" comment="Wrote test cases for checking intersections amongst perpendicular options">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/nikhil/IntersectionOption.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/nikhil/IntersectionOption.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/nikhil/Location.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/nikhil/Location.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -20,35 +20,36 @@
     <session id="-1882544084">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="1" />
+          <entry key="project.closed" value="2" />
           <entry key="project.open.time.10" value="2" />
           <entry key="project.open.time.4" value="1" />
           <entry key="project.open.time.6" value="1" />
+          <entry key="project.open.time.7" value="1" />
           <entry key="project.open.time.9" value="1" />
-          <entry key="project.opened" value="5" />
+          <entry key="project.opened" value="6" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="15713" />
-          <entry key="txt" value="582" />
+          <entry key="java" value="17119" />
+          <entry key="txt" value="674" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="15713" />
-          <entry key="PLAIN_TEXT" value="582" />
+          <entry key="JAVA" value="17119" />
+          <entry key="PLAIN_TEXT" value="674" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="class" value="2" />
+          <entry key="class" value="3" />
           <entry key="java" value="14" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="CLASS" value="2" />
+          <entry key="CLASS" value="3" />
           <entry key="JAVA" value="14" />
         </counts>
       </usages-collector>
@@ -63,7 +64,7 @@
         <entry file="file://$PROJECT_DIR$/src/com/nikhil/Word.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="330">
-              <caret line="37" column="108" lean-forward="true" selection-start-line="37" selection-start-column="108" selection-end-line="37" selection-end-column="108" />
+              <caret line="37" column="108" selection-start-line="37" selection-start-column="108" selection-end-line="37" selection-end-column="108" />
               <folding>
                 <element signature="docComment;class#Word#0" />
                 <element signature="method#Word#0;class#Word#0" />
@@ -86,20 +87,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/nikhil/IntersectionOption.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="705">
-              <caret line="47" column="7" lean-forward="true" selection-start-line="47" selection-start-column="7" selection-end-line="47" selection-end-column="7" />
+            <state relative-caret-position="541">
+              <caret line="89" column="16" selection-start-line="89" selection-start-column="16" selection-end-line="89" selection-end-column="16" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tests/com/nikhil/IntersectionOptionTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="585">
-              <caret line="164" column="75" selection-start-line="164" selection-start-column="75" selection-end-line="164" selection-end-column="75" />
+            <state relative-caret-position="222">
+              <caret line="112" selection-start-line="112" selection-end-line="112" />
             </state>
           </provider>
         </entry>
@@ -107,8 +108,12 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/nikhil/Location.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="28" column="5" lean-forward="true" selection-start-line="28" selection-start-column="5" selection-end-line="28" selection-end-column="5" />
+            <state relative-caret-position="291">
+              <caret line="36" column="9" lean-forward="true" selection-start-line="36" selection-start-column="9" selection-end-line="36" selection-end-column="9" />
+              <folding>
+                <element signature="e#1169#1170#0" expanded="true" />
+                <element signature="e#1227#1228#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -183,13 +188,13 @@
         <option value="$PROJECT_DIR$/src/com/nikhil/Island.java" />
         <option value="$PROJECT_DIR$/src/com/nikhil/IslandFound.java" />
         <option value="$PROJECT_DIR$/src/com/nikhil/Box.java" />
-        <option value="$PROJECT_DIR$/src/com/nikhil/Location.java" />
         <option value="$PROJECT_DIR$/src/com/nikhil/LetterGap.java" />
         <option value="$PROJECT_DIR$/src/com/nikhil/Word.java" />
         <option value="$PROJECT_DIR$/tests/com/nikhil/GridTest.java" />
         <option value="$PROJECT_DIR$/src/com/nikhil/Grid.java" />
-        <option value="$PROJECT_DIR$/src/com/nikhil/IntersectionOption.java" />
         <option value="$PROJECT_DIR$/tests/com/nikhil/IntersectionOptionTest.java" />
+        <option value="$PROJECT_DIR$/src/com/nikhil/Location.java" />
+        <option value="$PROJECT_DIR$/src/com/nikhil/IntersectionOption.java" />
       </list>
     </option>
   </component>
@@ -236,16 +241,16 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
       <pane id="PackagesPane" />
       <pane id="AndroidView" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="Downloaded.Files.Path.Enabled" value="true" />
     <property name="Repository.Attach.JavaDocs" value="true" />
     <property name="Repository.Attach.Sources" value="false" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1538155036240" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1538555556243" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
     <property name="project.structure.last.edited" value="Modules" />
@@ -278,7 +283,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.GridTest.isPlacementOfWordAllowed">
+  <component name="RunManager" selected="JUnit.IntersectionOptionTest.intersectsWith">
     <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Tests">
       <module name="" />
       <option name="TESTING_TYPE" value="0" />
@@ -306,16 +311,6 @@
       </Profilers>
       <method />
     </configuration>
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true">
-      <option name="MAIN_CLASS_NAME" value="com.nikhil.Main" />
-      <module name="crossword" />
-      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
-      <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper RunnerId="Run" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="GridTest.isPlacementOfWordAllowed" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="crossword" />
       <extension name="coverage">
@@ -327,6 +322,42 @@
       <option name="PACKAGE_NAME" value="com.nikhil" />
       <option name="MAIN_CLASS_NAME" value="com.nikhil.GridTest" />
       <option name="METHOD_NAME" value="isPlacementOfWordAllowed" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="IntersectionOptionTest.intersectsWith" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="crossword" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.nikhil.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.nikhil" />
+      <option name="MAIN_CLASS_NAME" value="com.nikhil.IntersectionOptionTest" />
+      <option name="METHOD_NAME" value="intersectsWith" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="IntersectionOptionTest.projectedLocationOfCrossingWord" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="crossword" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.nikhil.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.nikhil" />
+      <option name="MAIN_CLASS_NAME" value="com.nikhil.IntersectionOptionTest" />
+      <option name="METHOD_NAME" value="projectedLocationOfCrossingWord" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" />
       <option name="WORKING_DIRECTORY" />
@@ -419,17 +450,19 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.Main" />
       <item itemvalue="JUnit.WordTest.containsLettersWithGap" />
       <item itemvalue="JUnit.WordTest" />
       <item itemvalue="JUnit.GridTest.isPlacementOfWordAllowed" />
+      <item itemvalue="JUnit.IntersectionOptionTest.intersectsWith" />
+      <item itemvalue="JUnit.IntersectionOptionTest.projectedLocationOfCrossingWord" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.IntersectionOptionTest.intersectsWith" />
+        <item itemvalue="JUnit.IntersectionOptionTest.projectedLocationOfCrossingWord" />
         <item itemvalue="JUnit.GridTest.isPlacementOfWordAllowed" />
         <item itemvalue="JUnit.WordTest.containsLettersWithGap" />
         <item itemvalue="JUnit.WordTest" />
-        <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
   </component>
@@ -598,46 +631,53 @@
       <option name="project" value="LOCAL" />
       <updated>1537902227598</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="Wrote test cases for checking intersections amongst perpendicular options">
+      <created>1538234405225</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1538234405225</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="GridTest_isPlacementOfWordAllowed - 2018.09.25 at 23h 45m 30s.xml">
-      <configuration name="GridTest.isPlacementOfWordAllowed" configurationId="JUnit" />
+    <history-entry file="IntersectionOptionTest_intersectsWith - 2018.10.03 at 12h 58m 23s.xml">
+      <configuration name="IntersectionOptionTest.intersectsWith" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="GridTest_isPlacementOfWordAllowed - 2018.09.26 at 00h 18m 37s.xml">
-      <configuration name="GridTest.isPlacementOfWordAllowed" configurationId="JUnit" />
+    <history-entry file="IntersectionOptionTest_intersectsWith - 2018.10.03 at 12h 58m 50s.xml">
+      <configuration name="IntersectionOptionTest.intersectsWith" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="GridTest_isPlacementOfWordAllowed - 2018.09.26 at 00h 20m 19s.xml">
-      <configuration name="GridTest.isPlacementOfWordAllowed" configurationId="JUnit" />
+    <history-entry file="IntersectionOptionTest_projectedLocationOfCrossingWord - 2018.10.03 at 12h 58m 59s.xml">
+      <configuration name="IntersectionOptionTest.projectedLocationOfCrossingWord" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="GridTest_isPlacementOfWordAllowed - 2018.09.26 at 00h 22m 51s.xml">
-      <configuration name="GridTest.isPlacementOfWordAllowed" configurationId="JUnit" />
+    <history-entry file="IntersectionOptionTest_intersectsWith - 2018.10.03 at 12h 59m 09s.xml">
+      <configuration name="IntersectionOptionTest.intersectsWith" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="GridTest_isPlacementOfWordAllowed - 2018.09.26 at 00h 24m 57s.xml">
-      <configuration name="GridTest.isPlacementOfWordAllowed" configurationId="JUnit" />
+    <history-entry file="IntersectionOptionTest_intersectsWith - 2018.10.03 at 12h 59m 46s.xml">
+      <configuration name="IntersectionOptionTest.intersectsWith" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="GridTest_isPlacementOfWordAllowed - 2018.09.26 at 00h 25m 18s.xml">
-      <configuration name="GridTest.isPlacementOfWordAllowed" configurationId="JUnit" />
+    <history-entry file="IntersectionOptionTest_intersectsWith - 2018.10.03 at 13h 02m 14s.xml">
+      <configuration name="IntersectionOptionTest.intersectsWith" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="GridTest_isPlacementOfWordAllowed - 2018.09.26 at 00h 27m 12s.xml">
-      <configuration name="GridTest.isPlacementOfWordAllowed" configurationId="JUnit" />
+    <history-entry file="IntersectionOptionTest_intersectsWith - 2018.10.03 at 13h 06m 54s.xml">
+      <configuration name="IntersectionOptionTest.intersectsWith" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="GridTest_isPlacementOfWordAllowed - 2018.09.26 at 00h 31m 03s.xml">
-      <configuration name="GridTest.isPlacementOfWordAllowed" configurationId="JUnit" />
+    <history-entry file="IntersectionOptionTest_intersectsWith - 2018.10.03 at 13h 15m 39s.xml">
+      <configuration name="IntersectionOptionTest.intersectsWith" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="GridTest_isPlacementOfWordAllowed - 2018.09.26 at 00h 31m 20s.xml">
-      <configuration name="GridTest.isPlacementOfWordAllowed" configurationId="JUnit" />
+    <history-entry file="IntersectionOptionTest_intersectsWith - 2018.10.03 at 13h 22m 57s.xml">
+      <configuration name="IntersectionOptionTest.intersectsWith" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="GridTest_isPlacementOfWordAllowed - 2018.09.26 at 00h 31m 33s.xml">
-      <configuration name="GridTest.isPlacementOfWordAllowed" configurationId="JUnit" />
+    <history-entry file="IntersectionOptionTest_intersectsWith - 2018.10.03 at 13h 23m 50s.xml">
+      <configuration name="IntersectionOptionTest.intersectsWith" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
     <frame x="-1920" y="0" width="1920" height="1080" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4941957" visible="true" weight="0.17465389" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4941957" visible="true" weight="0.15388711" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -648,7 +688,7 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3188119" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.45643565" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49791667" weight="0.29183674" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" sideWeight="0.49791667" visible="true" weight="0.29108912" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -695,7 +735,8 @@
     <MESSAGE value="Wrote test cases for word placement, fixed upper cases letters" />
     <MESSAGE value="Fixed bugs in intersection and coincide checks, sideway checks pending" />
     <MESSAGE value="Added adjacency checks, fixed wrong assertions &amp; placement bugs" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added adjacency checks, fixed wrong assertions &amp; placement bugs" />
+    <MESSAGE value="Wrote test cases for checking intersections amongst perpendicular options" />
+    <option name="LAST_COMMIT_MESSAGE" value="Wrote test cases for checking intersections amongst perpendicular options" />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
@@ -847,13 +888,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$PROJECT_DIR$/lib/junit-platform-commons-1.0.0-M4.jar!/org/junit/platform/commons/util/ReflectionUtils.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="211">
-          <caret line="44" column="133" selection-start-line="44" selection-start-column="133" selection-end-line="44" selection-end-column="133" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/random.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
@@ -874,6 +908,31 @@
           <caret column="19" selection-start-column="19" selection-end-column="19" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/nikhil/Word.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="37" column="108" selection-start-line="37" selection-start-column="108" selection-end-line="37" selection-end-column="108" />
+          <folding>
+            <element signature="docComment;class#Word#0" />
+            <element signature="method#Word#0;class#Word#0" />
+            <element signature="method#toString#0;class#Word#0" />
+            <element signature="method#placeAt#0;class#Word#0" />
+            <element signature="method#shiftBy#0;class#Word#0" />
+            <element signature="method#findAllIntersectionOptions#0;class#Word#0" />
+            <element signature="method#containsLettersWithGap#0;class#Word#0" />
+            <element signature="docComment;method#willAdjacentlyTouch#0;class#Word#0" />
+            <element signature="method#willAdjacentlyTouch#0;class#Word#0" />
+            <element signature="e#4834#4863#0" />
+            <element signature="docComment;method#doSpansOverlap#0;class#Word#0" />
+            <element signature="method#doSpansOverlap#0;class#Word#0" />
+            <element signature="docComment;method#isHorizontalWordTouching#0;class#Word#0" />
+            <element signature="method#isHorizontalWordTouching#0;class#Word#0" />
+            <element signature="e#6774#6824#0" />
+            <element signature="e#7013#7074#0" />
           </folding>
         </state>
       </provider>
@@ -913,49 +972,35 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/nikhil/Word.java">
+    <entry file="jar://$PROJECT_DIR$/lib/junit-platform-commons-1.0.0-M4.jar!/org/junit/platform/commons/util/ReflectionUtils.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="37" column="108" lean-forward="true" selection-start-line="37" selection-start-column="108" selection-end-line="37" selection-end-column="108" />
-          <folding>
-            <element signature="docComment;class#Word#0" />
-            <element signature="method#Word#0;class#Word#0" />
-            <element signature="method#toString#0;class#Word#0" />
-            <element signature="method#placeAt#0;class#Word#0" />
-            <element signature="method#shiftBy#0;class#Word#0" />
-            <element signature="method#findAllIntersectionOptions#0;class#Word#0" />
-            <element signature="method#containsLettersWithGap#0;class#Word#0" />
-            <element signature="docComment;method#willAdjacentlyTouch#0;class#Word#0" />
-            <element signature="method#willAdjacentlyTouch#0;class#Word#0" />
-            <element signature="e#4834#4863#0" />
-            <element signature="docComment;method#doSpansOverlap#0;class#Word#0" />
-            <element signature="method#doSpansOverlap#0;class#Word#0" />
-            <element signature="docComment;method#isHorizontalWordTouching#0;class#Word#0" />
-            <element signature="method#isHorizontalWordTouching#0;class#Word#0" />
-            <element signature="e#6774#6824#0" />
-            <element signature="e#7013#7074#0" />
-          </folding>
+        <state relative-caret-position="211">
+          <caret line="44" column="133" selection-start-line="44" selection-start-column="133" selection-end-line="44" selection-end-column="133" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/nikhil/Location.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="28" column="5" lean-forward="true" selection-start-line="28" selection-start-column="5" selection-end-line="28" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/nikhil/IntersectionOption.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="705">
-          <caret line="47" column="7" lean-forward="true" selection-start-line="47" selection-start-column="7" selection-end-line="47" selection-end-column="7" />
+        <state relative-caret-position="291">
+          <caret line="36" column="9" lean-forward="true" selection-start-line="36" selection-start-column="9" selection-end-line="36" selection-end-column="9" />
+          <folding>
+            <element signature="e#1169#1170#0" expanded="true" />
+            <element signature="e#1227#1228#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/tests/com/nikhil/IntersectionOptionTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="585">
-          <caret line="164" column="75" selection-start-line="164" selection-start-column="75" selection-end-line="164" selection-end-column="75" />
+        <state relative-caret-position="222">
+          <caret line="112" selection-start-line="112" selection-end-line="112" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/nikhil/IntersectionOption.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="541">
+          <caret line="89" column="16" selection-start-line="89" selection-start-column="16" selection-end-line="89" selection-end-column="16" />
         </state>
       </provider>
     </entry>
