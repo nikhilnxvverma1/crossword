@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="62e803dd-4cfa-4ea2-8922-95e894dee4a2" name="Default" comment="Added common intersection letter and adjacency checks. Fixed buggy return value">
+    <list default="true" id="62e803dd-4cfa-4ea2-8922-95e894dee4a2" name="Default" comment="Removed redundant span condition check &amp; fixed buggy intersection point calculation">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/nikhil/IntersectionOption.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/nikhil/IntersectionOption.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tests/com/nikhil/IntersectionOptionTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/tests/com/nikhil/IntersectionOptionTest.java" afterDir="false" />
@@ -31,25 +31,25 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="17279" />
-          <entry key="txt" value="783" />
+          <entry key="java" value="17623" />
+          <entry key="txt" value="908" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="17279" />
-          <entry key="PLAIN_TEXT" value="783" />
+          <entry key="JAVA" value="17623" />
+          <entry key="PLAIN_TEXT" value="908" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="class" value="4" />
+          <entry key="class" value="5" />
           <entry key="java" value="14" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="CLASS" value="4" />
+          <entry key="CLASS" value="5" />
           <entry key="JAVA" value="14" />
         </counts>
       </usages-collector>
@@ -86,20 +86,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/nikhil/IntersectionOption.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="252">
-              <caret line="75" column="79" lean-forward="true" selection-start-line="75" selection-start-column="79" selection-end-line="75" selection-end-column="79" />
+            <state relative-caret-position="648">
+              <caret line="91" selection-start-line="91" selection-end-line="91" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/tests/com/nikhil/IntersectionOptionTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="222">
-              <caret line="119" selection-start-line="119" selection-end-line="119" />
+            <state relative-caret-position="396">
+              <caret line="168" column="5" selection-start-line="168" selection-start-column="5" selection-end-line="168" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -198,8 +198,8 @@
         <option value="$PROJECT_DIR$/tests/com/nikhil/GridTest.java" />
         <option value="$PROJECT_DIR$/src/com/nikhil/Grid.java" />
         <option value="$PROJECT_DIR$/src/com/nikhil/Location.java" />
-        <option value="$PROJECT_DIR$/tests/com/nikhil/IntersectionOptionTest.java" />
         <option value="$PROJECT_DIR$/src/com/nikhil/IntersectionOption.java" />
+        <option value="$PROJECT_DIR$/tests/com/nikhil/IntersectionOptionTest.java" />
       </list>
     </option>
   </component>
@@ -255,7 +255,7 @@
     <property name="Downloaded.Files.Path.Enabled" value="true" />
     <property name="Repository.Attach.JavaDocs" value="true" />
     <property name="Repository.Attach.Sources" value="false" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1538627109049" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1538628909437" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
     <property name="project.structure.last.edited" value="Modules" />
@@ -650,38 +650,45 @@
       <option name="project" value="LOCAL" />
       <updated>1538555688159</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="Removed redundant span condition check &amp; fixed buggy intersection point calculation">
+      <created>1538627238348</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1538627238348</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="IntersectionOptionTest_intersectsWith - 2018.10.03 at 16h 21m 19s.xml">
+    <history-entry file="IntersectionOptionTest_intersectsWith - 2018.10.04 at 10h 00m 32s.xml">
       <configuration name="IntersectionOptionTest.intersectsWith" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="IntersectionOptionTest_intersectsWith - 2018.10.03 at 16h 22m 03s.xml">
+    <history-entry file="IntersectionOptionTest_intersectsWith - 2018.10.04 at 10h 01m 25s.xml">
       <configuration name="IntersectionOptionTest.intersectsWith" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="IntersectionOptionTest_intersectsWith - 2018.10.03 at 16h 22m 47s.xml">
+    <history-entry file="IntersectionOptionTest_intersectsWith - 2018.10.04 at 10h 03m 50s.xml">
       <configuration name="IntersectionOptionTest.intersectsWith" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="IntersectionOptionTest_intersectsWith - 2018.10.03 at 16h 26m 11s.xml">
+    <history-entry file="IntersectionOptionTest_intersectsWith - 2018.10.04 at 10h 16m 10s.xml">
       <configuration name="IntersectionOptionTest.intersectsWith" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="IntersectionOptionTest_intersectsWith - 2018.10.03 at 16h 26m 21s.xml">
+    <history-entry file="IntersectionOptionTest_intersectsWith - 2018.10.04 at 10h 17m 06s.xml">
       <configuration name="IntersectionOptionTest.intersectsWith" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="IntersectionOptionTest_intersectsWith - 2018.10.04 at 09h 31m 07s.xml">
+    <history-entry file="IntersectionOptionTest_intersectsWith - 2018.10.04 at 10h 17m 19s.xml">
       <configuration name="IntersectionOptionTest.intersectsWith" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="IntersectionOptionTest_intersectsWith - 2018.10.04 at 09h 31m 32s.xml">
+    <history-entry file="IntersectionOptionTest_intersectsWith - 2018.10.04 at 10h 20m 38s.xml">
       <configuration name="IntersectionOptionTest.intersectsWith" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="IntersectionOptionTest_intersectsWith - 2018.10.04 at 09h 31m 42s.xml">
+    <history-entry file="IntersectionOptionTest_intersectsWith - 2018.10.04 at 10h 21m 06s.xml">
       <configuration name="IntersectionOptionTest.intersectsWith" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="IntersectionOptionTest_intersectsWith - 2018.10.04 at 09h 32m 14s.xml">
+    <history-entry file="IntersectionOptionTest_intersectsWith - 2018.10.04 at 10h 24m 14s.xml">
       <configuration name="IntersectionOptionTest.intersectsWith" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="IntersectionOptionTest_intersectsWith - 2018.10.04 at 09h 49m 06s.xml">
+    <history-entry file="IntersectionOptionTest_intersectsWith - 2018.10.04 at 10h 24m 22s.xml">
       <configuration name="IntersectionOptionTest.intersectsWith" configurationId="JUnit" />
     </history-entry>
   </component>
@@ -749,19 +756,8 @@
     <MESSAGE value="Added adjacency checks, fixed wrong assertions &amp; placement bugs" />
     <MESSAGE value="Wrote test cases for checking intersections amongst perpendicular options" />
     <MESSAGE value="Added common intersection letter and adjacency checks. Fixed buggy return value" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added common intersection letter and adjacency checks. Fixed buggy return value" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/tests/com/nikhil/IntersectionOptionTest.java</url>
-          <line>119</line>
-          <properties />
-          <option name="timeStamp" value="11" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="Removed redundant span condition check &amp; fixed buggy intersection point calculation" />
+    <option name="LAST_COMMIT_MESSAGE" value="Removed redundant span condition check &amp; fixed buggy intersection point calculation" />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
@@ -993,13 +989,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$PROJECT_DIR$/lib/junit-platform-commons-1.0.0-M4.jar!/org/junit/platform/commons/util/ReflectionUtils.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="211">
-          <caret line="44" column="133" selection-start-line="44" selection-start-column="133" selection-end-line="44" selection-end-column="133" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/nikhil/Word.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="252">
@@ -1024,17 +1013,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tests/com/nikhil/IntersectionOptionTest.java">
+    <entry file="jar://$PROJECT_DIR$/lib/junit-platform-commons-1.0.0-M4.jar!/org/junit/platform/commons/util/ReflectionUtils.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="222">
-          <caret line="119" selection-start-line="119" selection-end-line="119" />
+        <state relative-caret-position="211">
+          <caret line="44" column="133" selection-start-line="44" selection-start-column="133" selection-end-line="44" selection-end-column="133" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/nikhil/IntersectionOption.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="75" column="79" lean-forward="true" selection-start-line="75" selection-start-column="79" selection-end-line="75" selection-end-column="79" />
+        <state relative-caret-position="648">
+          <caret line="91" selection-start-line="91" selection-end-line="91" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/com/nikhil/IntersectionOptionTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="168" column="5" selection-start-line="168" selection-start-column="5" selection-end-line="168" selection-end-column="5" />
         </state>
       </provider>
     </entry>

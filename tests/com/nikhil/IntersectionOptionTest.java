@@ -46,6 +46,7 @@ class IntersectionOptionTest {
                 "that is half horse, half man, shooting an arrow");
         Word romantic = new Word("Romantic","Conducive to or characterized by the expression of love");
         Word harmony = new Word("Harmony","The quality of forming a pleasing and consistent whole");
+        Word transparent = new Word("Transparent","Allowing light to pass through");
 
 
         // put words in list
@@ -75,11 +76,12 @@ class IntersectionOptionTest {
         wordList.add(sagittarius);
         wordList.add(romantic);
         wordList.add(harmony);
+        wordList.add(transparent);
 
         // place a few words
         // vertical words
         tapestry.placeAt(4,4,true);
-        lies.placeAt(6,-1,true);
+        lies.placeAt(6,-2,true);
         mars.placeAt(3,10,true);
         one.placeAt(6,8,true);
         ear.placeAt(11,7,true);
@@ -152,22 +154,17 @@ class IntersectionOptionTest {
         IntersectionOption teamMugger = findIntersectionOptionInList(muggerIntersections,0,team,3);
         assertNotNull(tutState.intersectsWith(teamMugger));
 
-        IntersectionOption tutGreat = findIntersectionOptionInList(greatIntersections,4,tut,0);
-        IntersectionOption earthMugger = findIntersectionOptionInList(muggerIntersections,4,earth,0);
-        assertNotNull(tutGreat.intersectsWith(earthMugger));
+        IntersectionOption transparentGreat = findIntersectionOptionInList(greatIntersections,4,transparent,0);
+        IntersectionOption romanticMugger = findIntersectionOptionInList(muggerIntersections,5,romantic,0);
+        assertNotNull(transparentGreat.intersectsWith(romanticMugger));
 
         IntersectionOption teamAugust = findIntersectionOptionInList(augustIntersections,0,team,2);
         IntersectionOption plateLies = findIntersectionOptionInList(liesIntersections,0,plate,1);
         assertNotNull(teamAugust.intersectsWith(plateLies));
 
         IntersectionOption sagittariusHarmony = findIntersectionOptionInList(harmonyIntersections,1,sagittarius,1);
-        IntersectionOption romanticTapestry = findIntersectionOptionInList(tapestryIntersections,0,romantic,4);
+        IntersectionOption romanticTapestry = findIntersectionOptionInList(tapestryIntersections,0,romantic,5);
         assertNotNull(sagittariusHarmony.intersectsWith(romanticTapestry));
-
-    }
-
-    @Test
-    void projectedLocationOfCrossingWord() {
 
     }
 

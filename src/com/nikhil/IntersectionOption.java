@@ -66,11 +66,13 @@ public class IntersectionOption {
         // TODO we don't know if they (crossing words) are definitively horizontal or not
 
         // check if these crossing words mutually lie in the span of each other
+        // note : For alignment of crossing word, we always check the alignment of the source word because
+        // crossing word is most likely unplaced
         if(thisCrossingLocation.containsInSpan(otherCrossingLocation,this.crossing.name.length(),!this.source.vertical) &&
                 otherCrossingLocation.containsInSpan(thisCrossingLocation,perpendicular.crossing.name.length(),!perpendicular.source.vertical)
         ){
             // this crossing word is vertical and the perpendicular is horizontal
-            if(this.crossing.vertical){
+            if(!this.source.vertical){
                 intersectionPoint = new Location(otherCrossingLocation.row,thisCrossingLocation.col);
                 thisCrossingWordsLetter = this.crossing.name.charAt(Math.abs(otherCrossingLocation.row - thisCrossingLocation.row));
                 otherCrossingWordsLetter = perpendicular.crossing.name.charAt(Math.abs(thisCrossingLocation.col - otherCrossingLocation.col));
