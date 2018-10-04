@@ -32,7 +32,7 @@ class IntersectionOptionTest {
                 " or lead");
         Word marsh = new Word("Marsh","an area of low-lying land which is flooded in wet seasons or" +
                 " at high tide, and typically remains waterlogged at all times");
-        Word state = new Word("","The particular condition that someone or something is in at a " +
+        Word state = new Word("State","The particular condition that someone or something is in at a " +
                 "specific time");
         Word rip = new Word("Rip","Tear or pull (something) quickly or forcibly away from something " +
                 "or someone");
@@ -112,7 +112,7 @@ class IntersectionOptionTest {
         IntersectionOption greyTapestry = findIntersectionOptionInList(tapestryIntersections,7,grey,3);
         assertNull(greyAugust.intersectsWith(greyTapestry));
 
-        IntersectionOption badBrer = findIntersectionOptionInList(brerIntersections,0,brer,0);
+        IntersectionOption badBrer = findIntersectionOptionInList(brerIntersections,0,bad,0);
         assertNull(badBrer.intersectsWith(badBrer));
 
         IntersectionOption meMars = findIntersectionOptionInList(marsIntersections,0,me,0);

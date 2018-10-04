@@ -65,21 +65,22 @@ public class IntersectionOption {
         char otherCrossingWordsLetter='0';
         // TODO we don't know if they (crossing words) are definitively horizontal or not
 
-        // this crossing word is vertical and the perpendicular is horizontal
+        // check if these crossing words mutually lie in the span of each other
         if(thisCrossingLocation.containsInSpan(otherCrossingLocation,this.crossing.name.length(),!this.source.vertical) &&
                 otherCrossingLocation.containsInSpan(thisCrossingLocation,perpendicular.crossing.name.length(),!perpendicular.source.vertical)
         ){
-            intersectionPoint = new Location(otherCrossingLocation.row,thisCrossingLocation.col);
-            thisCrossingWordsLetter = this.crossing.name.charAt(otherCrossingLocation.row - thisCrossingLocation.row);
-            otherCrossingWordsLetter = perpendicular.crossing.name.charAt(thisCrossingLocation.col - otherCrossingLocation.col);
-        }
-        // perpendicular word is vertical and this crossing word is horizontal
-        else if(otherCrossingLocation.containsInSpan(thisCrossingLocation,perpendicular.crossing.name.length(),!perpendicular.source.vertical) &&
-                thisCrossingLocation.containsInSpan(otherCrossingLocation,this.crossing.name.length(),!this.source.vertical)
-        ){
-            intersectionPoint = new Location(thisCrossingLocation.row,otherCrossingLocation.col);
-            thisCrossingWordsLetter = this.crossing.name.charAt(otherCrossingLocation.col - thisCrossingLocation.col);
-            otherCrossingWordsLetter = perpendicular.crossing.name.charAt(thisCrossingLocation.row - otherCrossingLocation.row);
+            // this crossing word is vertical and the perpendicular is horizontal
+            if(this.crossing.vertical){
+                intersectionPoint = new Location(otherCrossingLocation.row,thisCrossingLocation.col);
+                thisCrossingWordsLetter = this.crossing.name.charAt(Math.abs(otherCrossingLocation.row - thisCrossingLocation.row));
+                otherCrossingWordsLetter = perpendicular.crossing.name.charAt(Math.abs(thisCrossingLocation.col - otherCrossingLocation.col));
+            }
+            // perpendicular word is vertical and this crossing word is horizontal
+            else{
+                intersectionPoint = new Location(thisCrossingLocation.row,otherCrossingLocation.col);
+                thisCrossingWordsLetter = this.crossing.name.charAt(Math.abs(otherCrossingLocation.col - thisCrossingLocation.col));
+                otherCrossingWordsLetter = perpendicular.crossing.name.charAt(Math.abs(thisCrossingLocation.row - otherCrossingLocation.row));
+            }
         }
         // no intersection
         else{
