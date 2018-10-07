@@ -56,4 +56,9 @@ public class Location {
     public String toString() {
         return "Location(" + row +", " + col + ")";
     }
+
+    @Override
+    protected Location clone()  {
+        return new Location(this.row,this.col);
+    }
 }

@@ -9,6 +9,7 @@ import java.util.Random;
 public class Grid {
 
     private List<Word> wordList;
+    private int wordsPlaced = 0;
     private static Random random = new Random();
 
     public Grid(List<Word> wordList) {
