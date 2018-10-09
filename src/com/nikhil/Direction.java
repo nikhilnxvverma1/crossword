@@ -1,8 +1,8 @@
 package com.nikhil;
 
 public enum Direction {
-    TOP_LEFT,
-    BOTTOM_LEFT,
+    TOP_RIGHT,
     BOTTOM_RIGHT,
-    TOP_RIGHT
+    BOTTOM_LEFT,
+    TOP_LEFT,
 }

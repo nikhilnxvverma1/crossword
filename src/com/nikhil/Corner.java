@@ -18,13 +18,70 @@ public class Corner {
         this.direction = direction;
         this.limitingRow = limitingRow;
         this.limitingColumn = limitingColumn;
-        this.target = this.initialPoint.clone();
+        this.reset();
     }
 
+    /**
+     * If the area to be scanned is less than 2X2 it is considered small enough to give any useful intersections
+     * @return true if any dimension is less than  or equal to 2
+     */
     public boolean isTooSmall(){
         int across = Math.abs(limitingColumn - initialPoint.col);
         int down = Math.abs(limitingRow - initialPoint.row);
-        return across==2 && down==2;
+        return across<=2 && down<=2;
+    }
+
+    /**
+     * Moves the target point one step ahead row-wise
+     * @return true if the final row and column limit have been reached.
+     */
+    public boolean moveToNextIfPossible(){
+
+        switch (this.direction){
+
+            case TOP_RIGHT:
+                if(++this.target.col>=limitingColumn){
+                    this.target.col = this.initialPoint.col + 1;
+                    if(--this.target.row<=limitingRow){
+                        this.reset();
+                        return true;
+                    }
+                }
+                break;
+            case BOTTOM_RIGHT:
+                if(++this.target.col>=limitingColumn){
+                    this.target.col = this.initialPoint.col + 1;
+                    if(++this.target.row>=limitingRow){
+                        this.reset();
+                        return true;
+                    }
+                }
+                break;
+            case BOTTOM_LEFT:
+                if(--this.target.col<=limitingColumn){
+                    this.target.col = this.initialPoint.col - 1;
+                    if(++this.target.row>=limitingRow){
+                        this.reset();
+                        return true;
+                    }
+                }
+                break;
+            case TOP_LEFT:
+                if(--this.target.col<=limitingColumn){
+                    this.target.col = this.initialPoint.col - 1;
+                    if(--this.target.row>=limitingRow){
+                        this.reset();
+                        return true;
+                    }
+                }
+                break;
+        }
+        return false;
+    }
+
+    /** Resets target position back to initial point */
+    public void reset(){
+        this.target = this.initialPoint.clone();
     }
 
 }
