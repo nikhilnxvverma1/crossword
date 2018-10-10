@@ -35,12 +35,30 @@ public class Word {
         this.col += dCol;
     }
 
-    public List<IntersectionOption> findAllIntersectionOptions(List<Word> wordList, boolean skipPlacedWords){
+    /**
+     * Finds intersection options only for a particular index
+     * @param wordList words across which intersections will be checked character by character
+     * @param skipPlacedWords if true, discards placed words in the result
+     * @param index the index at which the resulting intersection options is to be found
+     * @return list of intersection options at a given index
+     */
+    public List<IntersectionOption> findAllIntersectionOptions(List<Word> wordList,boolean skipPlacedWords,int index){
+        return this.findAllIntersectionOptions(wordList,skipPlacedWords,index,1);
+    }
+
+    /**
+     * Finds intersection options for a given range within the length of this word
+     * @param wordList words across which intersections will be checked character by character
+     * @param skipPlacedWords if true, discards placed words in the result
+     * @param start the start index of the range
+     * @param length length of the range starting from the starting index
+     * @return list of intersection options for the given range of indices
+     */
+    public List<IntersectionOption> findAllIntersectionOptions(List<Word> wordList,boolean skipPlacedWords, int start,int length){
 
         List <IntersectionOption> intersectionOptions = new LinkedList<>();
 
-        int length = this.name.length();
-        for(int i=0;i<length;i++){
+        for(int i = start; (i < start + length) && (i < this.name.length()); i++){
 
             char current = this.name.charAt(i);
 
@@ -69,6 +87,16 @@ public class Word {
         }
 
         return intersectionOptions;
+    }
+
+    /**
+     * Finds all intersection options in this word
+     * @param wordList words across which intersections will be checked character by character
+     * @param skipPlacedWords if true, discards placed words in the result
+     * @return list of intersection options for the entire word index by index
+     */
+    public List<IntersectionOption> findAllIntersectionOptions(List<Word> wordList, boolean skipPlacedWords){
+        return this.findAllIntersectionOptions(wordList,skipPlacedWords,0,this.name.length());
     }
 
     public boolean containsLettersWithGap(ArrayList<LetterGap> letterGapList){
