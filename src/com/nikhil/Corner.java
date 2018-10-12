@@ -84,4 +84,7 @@ public class Corner {
         this.target = this.initialPoint.clone();
     }
 
+    public Location getTarget() {
+        return target;
+    }
 }

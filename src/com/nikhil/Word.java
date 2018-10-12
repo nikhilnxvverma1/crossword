@@ -38,23 +38,33 @@ public class Word {
     /**
      * Finds intersection options only for a particular index
      * @param wordList words across which intersections will be checked character by character
-     * @param skipPlacedWords if true, discards placed words in the result
+     * @param amongstPlacedWordsOnly tells weather to check within the group of placed words(true) or ALL words(false)
      * @param index the index at which the resulting intersection options is to be found
      * @return list of intersection options at a given index
      */
-    public List<IntersectionOption> findAllIntersectionOptions(List<Word> wordList,boolean skipPlacedWords,int index){
-        return this.findAllIntersectionOptions(wordList,skipPlacedWords,index,1);
+    public List<IntersectionOption> findAllIntersectionOptions(List<Word> wordList,boolean amongstPlacedWordsOnly,int index){
+        return this.findAllIntersectionOptions(wordList,amongstPlacedWordsOnly,index,1);
+    }
+
+    /**
+     * Finds all intersection options in this word
+     * @param wordList words across which intersections will be checked character by character
+     * @param amongstPlacedWordsOnly tells weather to check within the group of placed words(true) or ALL words(false)
+     * @return list of intersection options for the entire word index by index
+     */
+    public List<IntersectionOption> findAllIntersectionOptions(List<Word> wordList, boolean amongstPlacedWordsOnly){
+        return this.findAllIntersectionOptions(wordList,amongstPlacedWordsOnly,0,this.name.length());
     }
 
     /**
      * Finds intersection options for a given range within the length of this word
      * @param wordList words across which intersections will be checked character by character
-     * @param skipPlacedWords if true, discards placed words in the result
+     * @param amongstPlacedWordsOnly tells weather to check within the group of placed words(true) or ALL words(false)
      * @param start the start index of the range
      * @param length length of the range starting from the starting index
      * @return list of intersection options for the given range of indices
      */
-    public List<IntersectionOption> findAllIntersectionOptions(List<Word> wordList,boolean skipPlacedWords, int start,int length){
+    public List<IntersectionOption> findAllIntersectionOptions(List<Word> wordList,boolean amongstPlacedWordsOnly, int start,int length){
 
         List <IntersectionOption> intersectionOptions = new LinkedList<>();
 
@@ -65,8 +75,8 @@ public class Word {
             // find intersecting words for this character
             for(Word word : wordList){
 
-                // skip placed words (if required) or skip if this word is actually itself
-                if((word.placed && skipPlacedWords)||(word==this)){
+                // skip word if its unplaced and we only need to check against placed words, also skip this word itself
+                if((!word.placed && amongstPlacedWordsOnly)||(word==this)){
                     continue;
                 }
 
@@ -87,16 +97,6 @@ public class Word {
         }
 
         return intersectionOptions;
-    }
-
-    /**
-     * Finds all intersection options in this word
-     * @param wordList words across which intersections will be checked character by character
-     * @param skipPlacedWords if true, discards placed words in the result
-     * @return list of intersection options for the entire word index by index
-     */
-    public List<IntersectionOption> findAllIntersectionOptions(List<Word> wordList, boolean skipPlacedWords){
-        return this.findAllIntersectionOptions(wordList,skipPlacedWords,0,this.name.length());
     }
 
     public boolean containsLettersWithGap(ArrayList<LetterGap> letterGapList){

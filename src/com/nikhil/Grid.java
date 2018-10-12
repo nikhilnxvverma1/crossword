@@ -24,14 +24,11 @@ public class Grid {
         // place this word vertically in the grid
         trunk.placeAt(0, 0, true);
 
-        print();
+        // find a random intersection option and commit it
+        int randomIndex = random.nextInt(trunk.name.length());
+        List<IntersectionOption> intersectionOptions = trunk.findAllIntersectionOptions(this.wordList,true,randomIndex);
 
-        // find all the intersection options of the trunk
-        List<IntersectionOption> trunkIntersectingWords = trunk.findAllIntersectionOptions(this.wordList,true);
 
-        for(IntersectionOption intersectionOption : trunkIntersectingWords){
-            System.out.println(intersectionOption.toString());
-        }
     }
 
     private Word getLongestUnplacedWord() {
@@ -381,21 +378,6 @@ public class Grid {
         int width = Math.abs(maxCol - minCol);
 
         return height > width ? height : width;
-    }
-
-    @Deprecated
-    private void wordByWordPlacement(){
-
-        //iterate through the word list randomly
-        Word word = getRandomUnplacedWord();
-        while(word!=null){
-
-
-
-
-            // move on to the next unplaced word
-            word = getRandomUnplacedWord();
-        }
     }
 
 }

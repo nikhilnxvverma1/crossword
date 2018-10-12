@@ -1,5 +1,8 @@
 package com.nikhil;
 
+import java.util.LinkedList;
+import java.util.List;
+
 /**
  * Storing intersection point data which is also responsible for computing projected intersection points.
  * Here the source word is always considered to be placed
@@ -63,7 +66,6 @@ public class IntersectionOption {
         Location intersectionPoint;
         char thisCrossingWordsLetter='0';
         char otherCrossingWordsLetter='0';
-        // TODO we don't know if they (crossing words) are definitively horizontal or not
 
         // check if these crossing words mutually lie in the span of each other
         // note : For alignment of crossing word, we always check the alignment of the source word because
@@ -116,5 +118,26 @@ public class IntersectionOption {
         }
 
         return location;
+    }
+
+
+    /**
+     * Places the crossing word with respect to source word. Source word is assumed to be placed
+     * @param wordList list of words in the grid
+     * @return List of acute corners formed as a result of this placement
+     */
+    @Deprecated
+    public List<Corner> commit(List<Word> wordList){
+
+        // place crossing word
+        Location crossingLocation = this.projectedLocationOfCrossingWord();
+        this.crossing.placeAt(crossingLocation.row,crossingLocation.col,!this.source.vertical);
+
+        // add all corners
+        List<Corner> cornerList = new LinkedList<>();
+
+        // TODO find the intersection amongst all placed words
+
+        return cornerList;
     }
 }
