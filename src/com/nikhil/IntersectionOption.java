@@ -50,7 +50,8 @@ public class IntersectionOption {
 
         // if either source words is not placed, preemptively return false
         if( !this.source.placed || !perpendicular.source.placed){
-            return null;
+            throw new RuntimeException("One or more source words is not placed while finding intersection " +
+                    "with another intersection option");
         }
 
         // return false, if source words of the two intersection options is parallel
@@ -101,6 +102,11 @@ public class IntersectionOption {
 
     /** Computes the location of the crossing word based on the location of the source word */
     public Location projectedLocationOfCrossingWord(){
+
+        if(!source.placed){
+            throw new RuntimeException("Source word is not placed in finding projected location of crossing word");
+        }
+
         Location location = new Location();
 
         // projected row
@@ -120,6 +126,126 @@ public class IntersectionOption {
         return location;
     }
 
+    /**
+     * Finds the intersection point of the two words. Source word is assumed to be placed
+     * @return The intersection point depending on the position, alignment and sourceIndex of the source word
+     */
+    public Location getIntersectionPoint(){
+        if(!source.placed){
+            throw new RuntimeException("Source word is not placed in the computation of intersection point");
+        }
+
+        Location intersectionPoint = new Location();
+        //vertical source word
+        if(this.source.vertical){
+            intersectionPoint.row = this.source.row + this.sourceIndex;
+            intersectionPoint.col = this.source.col;
+        }
+        // horizontal source word
+        else{
+            intersectionPoint.row = this.source.row;
+            intersectionPoint.col = this.source.col + this.sourceIndex;
+        }
+
+        return intersectionPoint;
+    }
+
+    /**
+     * Finds all corners based on the alignment and placement of the source word (which is assumed to be placed)
+     * @return A list of corners made by this intersection option.
+     */
+    public List<Corner> computeCorners(){
+        if(!source.placed){
+            throw new RuntimeException("Source word is not placed while finding corners");
+        }
+
+        LinkedList<Corner> cornerList = new LinkedList<>();
+
+        Location projectedCrossingLocation = projectedLocationOfCrossingWord();
+        Location intersectionPoint = getIntersectionPoint();
+
+        if(sourceIndex==0){ // beginning of source word
+            if(crossingIndex==0){ // beginning of crossing word
+
+                 if(source.vertical){
+                     Corner bottomRight = new Corner(intersectionPoint,
+                             Direction.BOTTOM_RIGHT,
+                             source.row + source.name.length(),
+                             projectedCrossingLocation.col + crossing.name.length());
+                     cornerList.add(bottomRight);
+                 }else{
+                     Corner bottomRight = new Corner(intersectionPoint,
+                             Direction.BOTTOM_RIGHT,
+                             projectedCrossingLocation.row + crossing.name.length(),
+                             source.col + source.name.length());
+                     cornerList.add(bottomRight);
+                 }
+
+            }else if(crossingIndex== (crossing.name.length()-1)){ // end of crossing word
+
+                if(source.vertical){
+                    Corner bottomLeft = new Corner(intersectionPoint,
+                            Direction.BOTTOM_LEFT,
+                            source.row + source.name.length(),
+                            projectedCrossingLocation.col);
+
+                    cornerList.add(bottomLeft);
+                }else{
+                    Corner topRight = new Corner(intersectionPoint,
+                            Direction.TOP_RIGHT,
+                            projectedCrossingLocation.row,
+                            source.col + source.name.length());
+                    cornerList.add(topRight);
+                }
+            }else{ // in the middle of the crossing word
+                if(source.vertical){
+                    Corner bottomLeft = new Corner(intersectionPoint,
+                            Direction.BOTTOM_LEFT,
+                            source.row + source.name.length(),
+                            projectedCrossingLocation.col);
+
+                    cornerList.add(bottomLeft);
+
+                    Corner bottomRight = new Corner(intersectionPoint,
+                            Direction.BOTTOM_RIGHT,
+                            source.row + source.name.length(),
+                            projectedCrossingLocation.col + crossing.name.length());
+                    cornerList.add(bottomRight);
+                }else{
+                    Corner topRight = new Corner(intersectionPoint,
+                            Direction.TOP_RIGHT,
+                            projectedCrossingLocation.row,
+                            source.col + source.name.length());
+                    cornerList.add(topRight);
+
+                    Corner bottomRight = new Corner(intersectionPoint,
+                            Direction.BOTTOM_RIGHT,
+                            projectedCrossingLocation.row + crossing.name.length(),
+                            source.col + source.name.length());
+                    cornerList.add(bottomRight);
+                }
+
+            }
+        }else if(sourceIndex== (source.name.length()-1)){ // end of source word
+            if(crossingIndex==0){ // beginning of crossing word
+
+            }else if(crossingIndex== (crossing.name.length()-1)){ // end of crossing word
+
+            }else{ // in the middle of the crossing word
+
+            }
+        }else{ // in the middle of the source word
+            if(crossingIndex==0){ // beginning of crossing word
+
+            }else if(crossingIndex== (crossing.name.length()-1)){ // end of crossing word
+
+            }else{ // in the middle of the crossing word
+
+            }
+        }
+
+        return cornerList;
+    }
 
     /**
      * Places the crossing word with respect to source word. Source word is assumed to be placed

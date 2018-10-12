@@ -228,4 +228,22 @@ public class Word {
 
     }
 
+    /**
+     * Finds all corners amongst the placed words in the list. Corners are identified by the right angles formed in the
+     * intersection of two crossing words.
+     * @param wordList A full list of words.Only placed words will be checked against for intersections
+     * @return List of corners amongst the already placed words in the grid. If no corners are present, the list will
+     * be of size 0
+     */
+    public List<Corner> findAllCorners(List<Word> wordList){
+        LinkedList<Corner> cornerList = new LinkedList<>();
+        List<IntersectionOption> gridIntersections=this.findAllIntersectionOptions(wordList,true);
+
+        for(IntersectionOption intersectionOption : gridIntersections){
+
+        }
+
+        return cornerList;
+    }
+
 }
