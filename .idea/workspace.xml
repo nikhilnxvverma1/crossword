@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="62e803dd-4cfa-4ea2-8922-95e894dee4a2" name="Default" comment="Modified method for finding intersection options for checking against placed words only">
+    <list default="true" id="62e803dd-4cfa-4ea2-8922-95e894dee4a2" name="Default" comment="Method to find corners in an intersection, minor method improvements">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/nikhil/IntersectionOption.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/nikhil/IntersectionOption.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/nikhil/Word.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/nikhil/Word.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -31,14 +30,14 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="24804" />
-          <entry key="txt" value="1420" />
+          <entry key="java" value="26474" />
+          <entry key="txt" value="1513" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="24804" />
-          <entry key="PLAIN_TEXT" value="1420" />
+          <entry key="JAVA" value="26474" />
+          <entry key="PLAIN_TEXT" value="1513" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -104,8 +103,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/nikhil/IntersectionOption.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="377">
-              <caret line="158" column="12" selection-start-line="158" selection-start-column="12" selection-end-line="158" selection-end-column="12" />
+            <state relative-caret-position="583">
+              <caret line="376" column="47" lean-forward="true" selection-start-line="376" selection-start-column="47" selection-end-line="376" selection-end-column="47" />
               <folding>
                 <element signature="docComment;field#source#0;class#IntersectionOption#0" />
                 <element signature="docComment;field#sourceIndex#0;class#IntersectionOption#0" />
@@ -188,7 +187,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" fullScreen="true">
+  <component name="ProjectFrameBounds" extendedState="6" fullScreen="true">
     <option name="x" value="1680" />
     <option name="y" value="-517" />
     <option name="width" value="1920" />
@@ -241,7 +240,7 @@
     <property name="Downloaded.Files.Path.Enabled" value="true" />
     <property name="Repository.Attach.JavaDocs" value="true" />
     <property name="Repository.Attach.Sources" value="false" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1539361310744" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1539442660366" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
     <property name="project.structure.last.edited" value="Modules" />
@@ -678,7 +677,14 @@
       <option name="project" value="LOCAL" />
       <updated>1539349141630</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="Method to find corners in an intersection, minor method improvements">
+      <created>1539361375637</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1539361375637</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -714,7 +720,7 @@
     </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="1680" y="-517" width="1920" height="1080" extended-state="0" />
+    <frame x="1680" y="-517" width="1920" height="1080" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4941957" visible="true" weight="0.15388711" />
@@ -753,7 +759,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Incomplete word placement check and intersection option class" />
     <MESSAGE value="Word intersection method check, coinciding of words check" />
     <MESSAGE value="Simple methods in word class, modifications in grid placement" />
     <MESSAGE value="Methods for helping in printing the grid" />
@@ -778,7 +783,8 @@
     <MESSAGE value="Added method to move target, minor bugfix and refactoring" />
     <MESSAGE value="Overloaded methods for finding intersections within a range &amp; an index" />
     <MESSAGE value="Modified method for finding intersection options for checking against placed words only" />
-    <option name="LAST_COMMIT_MESSAGE" value="Modified method for finding intersection options for checking against placed words only" />
+    <MESSAGE value="Method to find corners in an intersection, minor method improvements" />
+    <option name="LAST_COMMIT_MESSAGE" value="Method to find corners in an intersection, minor method improvements" />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
@@ -1072,8 +1078,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/nikhil/IntersectionOption.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="377">
-          <caret line="158" column="12" selection-start-line="158" selection-start-column="12" selection-end-line="158" selection-end-column="12" />
+        <state relative-caret-position="583">
+          <caret line="376" column="47" lean-forward="true" selection-start-line="376" selection-start-column="47" selection-end-line="376" selection-end-column="47" />
           <folding>
             <element signature="docComment;field#source#0;class#IntersectionOption#0" />
             <element signature="docComment;field#sourceIndex#0;class#IntersectionOption#0" />

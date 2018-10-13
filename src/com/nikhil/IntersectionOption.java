@@ -228,19 +228,154 @@ public class IntersectionOption {
             }
         }else if(sourceIndex== (source.name.length()-1)){ // end of source word
             if(crossingIndex==0){ // beginning of crossing word
+                if(source.vertical){
+                    Corner topRight = new Corner(intersectionPoint,
+                            Direction.TOP_RIGHT,
+                            source.row,
+                            projectedCrossingLocation.col+crossing.name.length());
+                    cornerList.add(topRight);
+                }else{
+                    Corner bottomLeft = new Corner(intersectionPoint,
+                            Direction.BOTTOM_LEFT,
+                            projectedCrossingLocation.row+crossing.name.length(),
+                            source.col);
+                    cornerList.add(bottomLeft);
+                }
 
             }else if(crossingIndex== (crossing.name.length()-1)){ // end of crossing word
-
+                if(source.vertical){
+                    Corner topLeft = new Corner(intersectionPoint,
+                            Direction.TOP_LEFT,
+                            source.row,
+                            projectedCrossingLocation.col);
+                    cornerList.add(topLeft);
+                }else{
+                    Corner topLeft = new Corner(intersectionPoint,
+                            Direction.TOP_LEFT,
+                            projectedCrossingLocation.row,
+                            source.col);
+                    cornerList.add(topLeft);
+                }
             }else{ // in the middle of the crossing word
+                if(source.vertical){
+                    Corner topLeft = new Corner(intersectionPoint,
+                            Direction.TOP_LEFT,
+                            source.row,
+                            projectedCrossingLocation.col);
+                    cornerList.add(topLeft);
 
+                    Corner topRight = new Corner(intersectionPoint,
+                            Direction.TOP_RIGHT,
+                            source.row,
+                            projectedCrossingLocation.col+crossing.name.length());
+                    cornerList.add(topRight);
+                }else {
+                    Corner topLeft = new Corner(intersectionPoint,
+                            Direction.TOP_LEFT,
+                            projectedCrossingLocation.row,
+                            source.col);
+                    cornerList.add(topLeft);
+
+                    Corner bottomLeft = new Corner(intersectionPoint,
+                            Direction.BOTTOM_LEFT,
+                            projectedCrossingLocation.row+crossing.name.length(),
+                            source.col);
+                    cornerList.add(bottomLeft);
+                }
             }
         }else{ // in the middle of the source word
             if(crossingIndex==0){ // beginning of crossing word
+                if(source.vertical){
+                    Corner topRight = new Corner(intersectionPoint,
+                            Direction.TOP_RIGHT,
+                            source.row,
+                            projectedCrossingLocation.col+crossing.name.length());
+                    cornerList.add(topRight);
 
+                    Corner bottomRight = new Corner(intersectionPoint,
+                            Direction.BOTTOM_RIGHT,
+                            source.row+source.name.length(),
+                            projectedCrossingLocation.col+crossing.name.length());
+                    cornerList.add(bottomRight);
+                }else{
+                    Corner bottomLeft = new Corner(intersectionPoint,
+                            Direction.BOTTOM_LEFT,
+                            projectedCrossingLocation.row+crossing.name.length(),
+                            source.col);
+                    cornerList.add(bottomLeft);
+
+                    Corner bottomRight = new Corner(intersectionPoint,Direction.BOTTOM_RIGHT,
+                            projectedCrossingLocation.col+crossing.name.length(),
+                            source.col+source.name.length());
+                    cornerList.add(bottomRight);
+                }
             }else if(crossingIndex== (crossing.name.length()-1)){ // end of crossing word
+                if(source.vertical){
+                    Corner topLeft = new Corner(intersectionPoint, Direction.TOP_LEFT,
+                           source.row,
+                            projectedCrossingLocation.col);
+                    cornerList.add(topLeft);
 
+                    Corner bottomLeft = new Corner(intersectionPoint,Direction.BOTTOM_LEFT,
+                            source.row+source.name.length(),
+                            projectedCrossingLocation.col);
+                    cornerList.add(bottomLeft);
+                }else{
+                    Corner topLeft = new Corner(intersectionPoint,Direction.TOP_LEFT,
+                            projectedCrossingLocation.row,
+                            source.col);
+                    cornerList.add(topLeft);
+
+                    Corner topRight = new Corner(intersectionPoint,Direction.TOP_RIGHT,
+                            projectedCrossingLocation.row,
+                            source.col+source.name.length());
+                    cornerList.add(topRight);
+                }
             }else{ // in the middle of the crossing word
+                if(source.vertical){
+                    Corner topRight = new Corner(intersectionPoint,
+                            Direction.TOP_RIGHT,
+                            source.row,
+                            projectedCrossingLocation.col+crossing.name.length());
+                    cornerList.add(topRight);
 
+                    Corner bottomRight = new Corner(intersectionPoint,
+                            Direction.BOTTOM_RIGHT,
+                            source.row+source.name.length(),
+                            projectedCrossingLocation.col+crossing.name.length());
+                    cornerList.add(bottomRight);
+
+                    Corner topLeft = new Corner(intersectionPoint, Direction.TOP_LEFT,
+                            source.row,
+                            projectedCrossingLocation.col);
+                    cornerList.add(topLeft);
+
+                    Corner bottomLeft = new Corner(intersectionPoint,Direction.BOTTOM_LEFT,
+                            source.row+source.name.length(),
+                            projectedCrossingLocation.col);
+                    cornerList.add(bottomLeft);
+                }else{
+                    Corner topLeft = new Corner(intersectionPoint,Direction.TOP_LEFT,
+                            projectedCrossingLocation.row,
+                            source.col);
+                    cornerList.add(topLeft);
+
+                    Corner topRight = new Corner(intersectionPoint,Direction.TOP_RIGHT,
+                            projectedCrossingLocation.row,
+                            source.col+source.name.length());
+                    cornerList.add(topRight);
+
+                    Corner bottomRight = new Corner(intersectionPoint,Direction.BOTTOM_RIGHT,
+                            projectedCrossingLocation.col+crossing.name.length(),
+                            source.col+source.name.length());
+                    cornerList.add(bottomRight);
+
+                    Corner bottomLeft = new Corner(intersectionPoint,
+                            Direction.BOTTOM_LEFT,
+                            projectedCrossingLocation.row+crossing.name.length(),
+                            source.col);
+                    cornerList.add(bottomLeft);
+                }
             }
         }
 
