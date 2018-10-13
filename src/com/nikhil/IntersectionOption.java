@@ -154,7 +154,7 @@ public class IntersectionOption {
      * Finds all corners based on the alignment and placement of the source word (which is assumed to be placed)
      * @return A list of corners made by this intersection option.
      */
-    public List<Corner> computeCorners(){
+    public LinkedList<Corner> computeCorners(){
         if(!source.placed){
             throw new RuntimeException("Source word is not placed while finding corners");
         }
@@ -387,18 +387,17 @@ public class IntersectionOption {
      * @param wordList list of words in the grid
      * @return List of acute corners formed as a result of this placement
      */
-    @Deprecated
-    public List<Corner> commit(List<Word> wordList){
+    public List<Corner> placeCrossingWord(List<Word> wordList){
+
+        if(!source.placed){
+            throw new RuntimeException("Source word is not placed while placing crossing word");
+        }
 
         // place crossing word
         Location crossingLocation = this.projectedLocationOfCrossingWord();
         this.crossing.placeAt(crossingLocation.row,crossingLocation.col,!this.source.vertical);
 
-        // add all corners
-        List<Corner> cornerList = new LinkedList<>();
-
-        // TODO find the intersection amongst all placed words
-
-        return cornerList;
+        // find and return all corners with the placed words in the list
+        return this.crossing.findAllCorners(wordList);
     }
 }

@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="62e803dd-4cfa-4ea2-8922-95e894dee4a2" name="Default" comment="Method to find corners in an intersection, minor method improvements">
+    <list default="true" id="62e803dd-4cfa-4ea2-8922-95e894dee4a2" name="Default" comment="Finished method for finding corners in the intersection of two words">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/nikhil/IntersectionOption.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/nikhil/IntersectionOption.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/nikhil/Word.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/nikhil/Word.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -30,14 +31,14 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="26474" />
-          <entry key="txt" value="1513" />
+          <entry key="java" value="28803" />
+          <entry key="txt" value="1605" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="26474" />
-          <entry key="PLAIN_TEXT" value="1513" />
+          <entry key="JAVA" value="28803" />
+          <entry key="PLAIN_TEXT" value="1605" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -59,23 +60,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/nikhil/Word.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="598">
-              <caret line="242" selection-start-line="242" selection-end-line="242" />
+            <state relative-caret-position="671">
+              <caret line="77" column="7" lean-forward="true" selection-start-line="77" selection-start-column="7" selection-end-line="77" selection-end-column="7" />
               <folding>
                 <element signature="docComment;class#Word#0" />
                 <element signature="method#Word#0;class#Word#0" />
                 <element signature="method#toString#0;class#Word#0" />
-                <element signature="method#placeAt#0;class#Word#0" />
-                <element signature="method#shiftBy#0;class#Word#0" />
                 <element signature="docComment;method#findAllIntersectionOptions#0;class#Word#0" />
                 <element signature="method#findAllIntersectionOptions#0;class#Word#0" />
                 <element signature="docComment;method#findAllIntersectionOptions#1;class#Word#0" />
                 <element signature="method#findAllIntersectionOptions#1;class#Word#0" />
-                <element signature="docComment;method#findAllIntersectionOptions#1;class#Word#0" />
-                <element signature="method#findAllIntersectionOptions#1;class#Word#0" />
+                <element signature="docComment;method#findAllIntersectionOptions#2;class#Word#0" />
+                <element signature="method#findAllIntersectionOptions#2;class#Word#0" />
                 <element signature="method#containsLettersWithGap#0;class#Word#0" />
                 <element signature="docComment;method#willAdjacentlyTouch#0;class#Word#0" />
                 <element signature="method#willAdjacentlyTouch#0;class#Word#0" />
@@ -86,6 +85,10 @@
                 <element signature="method#isHorizontalWordTouching#0;class#Word#0" />
                 <element signature="e#6774#6824#0" />
                 <element signature="e#7013#7074#0" />
+                <element signature="docComment;method#findAllCorners#0;class#Word#0" />
+                <element signature="method#findAllCorners#0;class#Word#0" />
+                <element signature="docComment;method#computeIntersectionOptions#0;class#Word#0" />
+                <element signature="method#computeIntersectionOptions#0;class#Word#0" />
               </folding>
             </state>
           </provider>
@@ -100,12 +103,13 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/nikhil/IntersectionOption.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="583">
-              <caret line="376" column="47" lean-forward="true" selection-start-line="376" selection-start-column="47" selection-end-line="376" selection-end-column="47" />
+            <state relative-caret-position="523">
+              <caret line="397" column="95" lean-forward="true" selection-start-line="397" selection-start-column="95" selection-end-line="397" selection-end-column="95" />
               <folding>
+                <element signature="docComment;class#IntersectionOption#0" />
                 <element signature="docComment;field#source#0;class#IntersectionOption#0" />
                 <element signature="docComment;field#sourceIndex#0;class#IntersectionOption#0" />
                 <element signature="docComment;field#crossing#0;class#IntersectionOption#0" />
@@ -115,8 +119,11 @@
                 <element signature="docComment;method#intersectsWith#0;class#IntersectionOption#0" />
                 <element signature="method#intersectsWith#0;class#IntersectionOption#0" />
                 <element signature="e#2919#2990#0" />
-                <element signature="docComment;method#commit#0;class#IntersectionOption#0" />
-                <element signature="method#commit#0;class#IntersectionOption#0" />
+                <element signature="docComment;method#projectedLocationOfCrossingWord#0;class#IntersectionOption#0" />
+                <element signature="method#projectedLocationOfCrossingWord#0;class#IntersectionOption#0" />
+                <element signature="docComment;method#getIntersectionPoint#0;class#IntersectionOption#0" />
+                <element signature="method#getIntersectionPoint#0;class#IntersectionOption#0" />
+                <element signature="docComment;method#computeCorners#0;class#IntersectionOption#0" />
               </folding>
             </state>
           </provider>
@@ -125,11 +132,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/nikhil/Corner.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="234">
-              <caret line="37" column="19" selection-start-line="37" selection-start-column="19" selection-end-line="37" selection-end-column="19" />
+            <state relative-caret-position="270">
+              <caret line="37" column="19" lean-forward="true" selection-start-line="37" selection-start-column="19" selection-end-line="37" selection-end-column="19" />
               <folding>
-                <element signature="e#2936#2937#0" expanded="true" />
-                <element signature="e#2965#2966#0" expanded="true" />
+                <element signature="docComment;class#Island#0" />
+                <element signature="docComment;field#initialPoint#0;class#Corner#0" />
+                <element signature="method#Corner#0;class#Corner#0" />
+                <element signature="docComment;method#isTooSmall#0;class#Corner#0" />
+                <element signature="method#isTooSmall#0;class#Corner#0" />
+                <element signature="docComment;method#moveToNextIfPossible#0;class#Corner#0" />
+                <element signature="method#moveToNextIfPossible#0;class#Corner#0" />
+                <element signature="docComment;method#reset#0;class#Corner#0" />
               </folding>
             </state>
           </provider>
@@ -182,8 +195,8 @@
         <option value="$PROJECT_DIR$/src/com/nikhil/Direction.java" />
         <option value="$PROJECT_DIR$/src/com/nikhil/Grid.java" />
         <option value="$PROJECT_DIR$/src/com/nikhil/Corner.java" />
-        <option value="$PROJECT_DIR$/src/com/nikhil/Word.java" />
         <option value="$PROJECT_DIR$/src/com/nikhil/IntersectionOption.java" />
+        <option value="$PROJECT_DIR$/src/com/nikhil/Word.java" />
       </list>
     </option>
   </component>
@@ -240,7 +253,7 @@
     <property name="Downloaded.Files.Path.Enabled" value="true" />
     <property name="Repository.Attach.JavaDocs" value="true" />
     <property name="Repository.Attach.Sources" value="false" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1539442660366" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1539444886553" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
     <property name="project.structure.last.edited" value="Modules" />
@@ -684,7 +697,14 @@
       <option name="project" value="LOCAL" />
       <updated>1539361375637</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="Finished method for finding corners in the intersection of two words">
+      <created>1539442921512</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1539442921512</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -759,7 +779,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Word intersection method check, coinciding of words check" />
     <MESSAGE value="Simple methods in word class, modifications in grid placement" />
     <MESSAGE value="Methods for helping in printing the grid" />
     <MESSAGE value="Untested implementation of print method. Minor refactoring" />
@@ -784,7 +803,8 @@
     <MESSAGE value="Overloaded methods for finding intersections within a range &amp; an index" />
     <MESSAGE value="Modified method for finding intersection options for checking against placed words only" />
     <MESSAGE value="Method to find corners in an intersection, minor method improvements" />
-    <option name="LAST_COMMIT_MESSAGE" value="Method to find corners in an intersection, minor method improvements" />
+    <MESSAGE value="Finished method for finding corners in the intersection of two words" />
+    <option name="LAST_COMMIT_MESSAGE" value="Finished method for finding corners in the intersection of two words" />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
@@ -1028,32 +1048,43 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/nikhil/Word.java">
+    <entry file="file://$PROJECT_DIR$/src/com/nikhil/Corner.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="598">
-          <caret line="242" selection-start-line="242" selection-end-line="242" />
+        <state relative-caret-position="270">
+          <caret line="37" column="19" lean-forward="true" selection-start-line="37" selection-start-column="19" selection-end-line="37" selection-end-column="19" />
           <folding>
-            <element signature="docComment;class#Word#0" />
-            <element signature="method#Word#0;class#Word#0" />
-            <element signature="method#toString#0;class#Word#0" />
-            <element signature="method#placeAt#0;class#Word#0" />
-            <element signature="method#shiftBy#0;class#Word#0" />
-            <element signature="docComment;method#findAllIntersectionOptions#0;class#Word#0" />
-            <element signature="method#findAllIntersectionOptions#0;class#Word#0" />
-            <element signature="docComment;method#findAllIntersectionOptions#1;class#Word#0" />
-            <element signature="method#findAllIntersectionOptions#1;class#Word#0" />
-            <element signature="docComment;method#findAllIntersectionOptions#1;class#Word#0" />
-            <element signature="method#findAllIntersectionOptions#1;class#Word#0" />
-            <element signature="method#containsLettersWithGap#0;class#Word#0" />
-            <element signature="docComment;method#willAdjacentlyTouch#0;class#Word#0" />
-            <element signature="method#willAdjacentlyTouch#0;class#Word#0" />
-            <element signature="e#4834#4863#0" />
-            <element signature="docComment;method#doSpansOverlap#0;class#Word#0" />
-            <element signature="method#doSpansOverlap#0;class#Word#0" />
-            <element signature="docComment;method#isHorizontalWordTouching#0;class#Word#0" />
-            <element signature="method#isHorizontalWordTouching#0;class#Word#0" />
-            <element signature="e#6774#6824#0" />
-            <element signature="e#7013#7074#0" />
+            <element signature="docComment;class#Island#0" />
+            <element signature="docComment;field#initialPoint#0;class#Corner#0" />
+            <element signature="method#Corner#0;class#Corner#0" />
+            <element signature="docComment;method#isTooSmall#0;class#Corner#0" />
+            <element signature="method#isTooSmall#0;class#Corner#0" />
+            <element signature="docComment;method#moveToNextIfPossible#0;class#Corner#0" />
+            <element signature="method#moveToNextIfPossible#0;class#Corner#0" />
+            <element signature="docComment;method#reset#0;class#Corner#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/nikhil/IntersectionOption.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="523">
+          <caret line="397" column="95" lean-forward="true" selection-start-line="397" selection-start-column="95" selection-end-line="397" selection-end-column="95" />
+          <folding>
+            <element signature="docComment;class#IntersectionOption#0" />
+            <element signature="docComment;field#source#0;class#IntersectionOption#0" />
+            <element signature="docComment;field#sourceIndex#0;class#IntersectionOption#0" />
+            <element signature="docComment;field#crossing#0;class#IntersectionOption#0" />
+            <element signature="docComment;field#crossingIndex#0;class#IntersectionOption#0" />
+            <element signature="method#IntersectionOption#0;class#IntersectionOption#0" />
+            <element signature="method#toString#0;class#IntersectionOption#0" />
+            <element signature="docComment;method#intersectsWith#0;class#IntersectionOption#0" />
+            <element signature="method#intersectsWith#0;class#IntersectionOption#0" />
+            <element signature="e#2919#2990#0" />
+            <element signature="docComment;method#projectedLocationOfCrossingWord#0;class#IntersectionOption#0" />
+            <element signature="method#projectedLocationOfCrossingWord#0;class#IntersectionOption#0" />
+            <element signature="docComment;method#getIntersectionPoint#0;class#IntersectionOption#0" />
+            <element signature="method#getIntersectionPoint#0;class#IntersectionOption#0" />
+            <element signature="docComment;method#computeCorners#0;class#IntersectionOption#0" />
           </folding>
         </state>
       </provider>
@@ -1065,33 +1096,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/nikhil/Corner.java">
+    <entry file="file://$PROJECT_DIR$/src/com/nikhil/Word.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="37" column="19" selection-start-line="37" selection-start-column="19" selection-end-line="37" selection-end-column="19" />
+        <state relative-caret-position="671">
+          <caret line="77" column="7" lean-forward="true" selection-start-line="77" selection-start-column="7" selection-end-line="77" selection-end-column="7" />
           <folding>
-            <element signature="e#2936#2937#0" expanded="true" />
-            <element signature="e#2965#2966#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/nikhil/IntersectionOption.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="583">
-          <caret line="376" column="47" lean-forward="true" selection-start-line="376" selection-start-column="47" selection-end-line="376" selection-end-column="47" />
-          <folding>
-            <element signature="docComment;field#source#0;class#IntersectionOption#0" />
-            <element signature="docComment;field#sourceIndex#0;class#IntersectionOption#0" />
-            <element signature="docComment;field#crossing#0;class#IntersectionOption#0" />
-            <element signature="docComment;field#crossingIndex#0;class#IntersectionOption#0" />
-            <element signature="method#IntersectionOption#0;class#IntersectionOption#0" />
-            <element signature="method#toString#0;class#IntersectionOption#0" />
-            <element signature="docComment;method#intersectsWith#0;class#IntersectionOption#0" />
-            <element signature="method#intersectsWith#0;class#IntersectionOption#0" />
-            <element signature="e#2919#2990#0" />
-            <element signature="docComment;method#commit#0;class#IntersectionOption#0" />
-            <element signature="method#commit#0;class#IntersectionOption#0" />
+            <element signature="docComment;class#Word#0" />
+            <element signature="method#Word#0;class#Word#0" />
+            <element signature="method#toString#0;class#Word#0" />
+            <element signature="docComment;method#findAllIntersectionOptions#0;class#Word#0" />
+            <element signature="method#findAllIntersectionOptions#0;class#Word#0" />
+            <element signature="docComment;method#findAllIntersectionOptions#1;class#Word#0" />
+            <element signature="method#findAllIntersectionOptions#1;class#Word#0" />
+            <element signature="docComment;method#findAllIntersectionOptions#2;class#Word#0" />
+            <element signature="method#findAllIntersectionOptions#2;class#Word#0" />
+            <element signature="method#containsLettersWithGap#0;class#Word#0" />
+            <element signature="docComment;method#willAdjacentlyTouch#0;class#Word#0" />
+            <element signature="method#willAdjacentlyTouch#0;class#Word#0" />
+            <element signature="e#4834#4863#0" />
+            <element signature="docComment;method#doSpansOverlap#0;class#Word#0" />
+            <element signature="method#doSpansOverlap#0;class#Word#0" />
+            <element signature="docComment;method#isHorizontalWordTouching#0;class#Word#0" />
+            <element signature="method#isHorizontalWordTouching#0;class#Word#0" />
+            <element signature="e#6774#6824#0" />
+            <element signature="e#7013#7074#0" />
+            <element signature="docComment;method#findAllCorners#0;class#Word#0" />
+            <element signature="method#findAllCorners#0;class#Word#0" />
+            <element signature="docComment;method#computeIntersectionOptions#0;class#Word#0" />
+            <element signature="method#computeIntersectionOptions#0;class#Word#0" />
           </folding>
         </state>
       </provider>

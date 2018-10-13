@@ -1,6 +1,7 @@
 package com.nikhil;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -12,6 +13,7 @@ public class Word {
     int col;
     boolean vertical;
     boolean placed = false;
+    private LinkedList<IntersectionOption> unplacedIntersectionOptions;
 
     public Word(String name, String description) {
         this.name = name.toUpperCase();
@@ -23,16 +25,48 @@ public class Word {
         return name + "(" + row + "," + col + "," + (vertical ? "v" : "h") + ","+(placed ? "p" : "u")+")";
     }
 
+    /**
+     * Places the word in the list by setting position and placement of flag. Beyond this it also, removes itself
+     * as an intersection option from other words by looking at the crossing word's intersection options list.
+     * Once placed, the list of unplaced intersection options of this word are entirely nullified.
+     * @param row row of the first letter of this word
+     * @param col col of the first letter of this word
+     * @param vertical alignment of the word
+     */
     public void placeAt(int row,int col,boolean vertical){
         this.row = row;
         this.col = col;
         this.vertical = vertical;
         this.placed = true;
-    }
 
-    public void shiftBy(int dRow,int dCol){
-        this.row += dRow;
-        this.col += dCol;
+        Word lastWord = null;
+        // remove all intersection options where this word is the crossing word
+        for(IntersectionOption intersectionOption : this.unplacedIntersectionOptions){
+
+            // check for unique words with which it is intersecting
+            if(intersectionOption.crossing != lastWord && intersectionOption.crossing.unplacedIntersectionOptions!=null){
+
+                // iterate across the list of the crossing word and eliminate every option that has this
+                // word present as the crossing word
+                Iterator<IntersectionOption> crossingWordIntersectionOptions = intersectionOption.crossing.unplacedIntersectionOptions.iterator();
+                while(crossingWordIntersectionOptions.hasNext()){
+
+                    // when two words intersect, they appear on both the words list. They are thus symmetric
+                    IntersectionOption symmetricIntersectionOption = crossingWordIntersectionOptions.next();
+
+                    // check if the crossing word of the other word's intersection option is this word. if so, remove
+                    if(symmetricIntersectionOption.crossing==this){
+                        crossingWordIntersectionOptions.remove();
+                    }
+                }
+
+                // there might by multiple intersection options with this word, but we remove all of them in one go
+                lastWord = intersectionOption.crossing;
+            }
+        }
+
+        //once this word is placed, we intentionally nullify unplaced intersection options list
+        this.unplacedIntersectionOptions = null;
     }
 
     /**
@@ -42,7 +76,7 @@ public class Word {
      * @param index the index at which the resulting intersection options is to be found
      * @return list of intersection options at a given index
      */
-    public List<IntersectionOption> findAllIntersectionOptions(List<Word> wordList,boolean amongstPlacedWordsOnly,int index){
+    public LinkedList<IntersectionOption> findAllIntersectionOptions(List<Word> wordList,boolean amongstPlacedWordsOnly,int index){
         return this.findAllIntersectionOptions(wordList,amongstPlacedWordsOnly,index,1);
     }
 
@@ -52,7 +86,7 @@ public class Word {
      * @param amongstPlacedWordsOnly tells weather to check within the group of placed words(true) or ALL words(false)
      * @return list of intersection options for the entire word index by index
      */
-    public List<IntersectionOption> findAllIntersectionOptions(List<Word> wordList, boolean amongstPlacedWordsOnly){
+    public LinkedList<IntersectionOption> findAllIntersectionOptions(List<Word> wordList, boolean amongstPlacedWordsOnly){
         return this.findAllIntersectionOptions(wordList,amongstPlacedWordsOnly,0,this.name.length());
     }
 
@@ -64,9 +98,9 @@ public class Word {
      * @param length length of the range starting from the starting index
      * @return list of intersection options for the given range of indices
      */
-    public List<IntersectionOption> findAllIntersectionOptions(List<Word> wordList,boolean amongstPlacedWordsOnly, int start,int length){
+    public LinkedList<IntersectionOption> findAllIntersectionOptions(List<Word> wordList,boolean amongstPlacedWordsOnly, int start,int length){
 
-        List <IntersectionOption> intersectionOptions = new LinkedList<>();
+        LinkedList <IntersectionOption> intersectionOptions = new LinkedList<>();
 
         for(int i = start; (i < start + length) && (i < this.name.length()); i++){
 
@@ -240,10 +274,20 @@ public class Word {
         List<IntersectionOption> gridIntersections=this.findAllIntersectionOptions(wordList,true);
 
         for(IntersectionOption intersectionOption : gridIntersections){
-
+            List<Corner> cornersFromThisIntersection = intersectionOption.computeCorners();
+            cornerList.addAll(cornersFromThisIntersection);
         }
 
         return cornerList;
+    }
+
+    /**
+     * Finds intersection options amongst all words including placed words. This method is intended to be used at the
+     * beginning of the placement algorithm
+     * @param wordList the list of words in the grid
+     */
+    public void computeIntersectionOptions(List<Word> wordList){
+        this.unplacedIntersectionOptions = this.findAllIntersectionOptions(wordList,false);
     }
 
 }
