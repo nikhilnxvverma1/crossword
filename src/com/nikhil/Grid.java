@@ -1,5 +1,7 @@
 package com.nikhil;
 
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Random;
 
@@ -16,17 +18,25 @@ public class Grid {
         this.wordList = wordList;
     }
 
-    private void placeWordsInGrid() {
+    public void placeWordsInGrid() {
 
-        //place the longest word in the grid
-        Word trunk = getLongestUnplacedWord();
+        // calling this method more than once will be a no-op
+        if(this.wordsPlaced==this.wordList.size()){
+            return;
+        }
 
-        // place this word vertically in the grid
-        trunk.placeAt(0, 0, true);
+        // compute the intersection options of all the words in the list
+        for(Word word : this.wordList){
+            word.computeIntersectionOptions(this.wordList);
+        }
 
-        // find a random intersection option and commit it
-        int randomIndex = random.nextInt(trunk.name.length());
-        List<IntersectionOption> intersectionOptions = trunk.findAllIntersectionOptions(this.wordList,true,randomIndex);
+        //sort this list in increasing order of their number of intersection options
+        Collections.sort(this.wordList,new CompareTotalIntersections());
+
+        //print the list
+        for(Word word : this.wordList){
+            System.out.println(word.name+" : "+word.getTotalIntersections());
+        }
 
 
     }
@@ -380,4 +390,10 @@ public class Grid {
         return height > width ? height : width;
     }
 
+    private class CompareTotalIntersections implements Comparator<Word> {
+        @Override
+        public int compare(Word word1, Word word2) {
+            return word1.getTotalIntersections()-word2.getTotalIntersections();
+        }
+    }
 }

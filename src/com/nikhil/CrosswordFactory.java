@@ -13,7 +13,7 @@ public class CrosswordFactory {
 
         try{
             List<Word> wordList = readWordList(filename);
-            printWordList(wordList);
+//            printWordList(wordList);
             return new Grid(wordList);
         }catch (IOException ex){
             throw ex;

@@ -70,6 +70,16 @@ public class Word {
     }
 
     /**
+     * Shifts the words' location by specified amount
+     * @param dRow displacement in row
+     * @param dCol displacement in column
+     */
+    public void shiftBy(int dRow,int dCol){
+        this.row += dRow;
+        this.col += dCol;
+    }
+
+    /**
      * Finds intersection options only for a particular index
      * @param wordList words across which intersections will be checked character by character
      * @param amongstPlacedWordsOnly tells weather to check within the group of placed words(true) or ALL words(false)
@@ -288,6 +298,19 @@ public class Word {
      */
     public void computeIntersectionOptions(List<Word> wordList){
         this.unplacedIntersectionOptions = this.findAllIntersectionOptions(wordList,false);
+    }
+
+    /**
+     * Returns total unplaced intersections
+     * @return Placed words return 0 despite their intersection option list being nullified.
+     * Unplaced words return size of the total number of intersection options available
+     */
+    public int getTotalIntersections(){
+        if(this.unplacedIntersectionOptions==null){
+            return 0;
+        }else{
+            return this.unplacedIntersectionOptions.size();
+        }
     }
 
 }

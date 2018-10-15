@@ -9,7 +9,9 @@ public class Main {
         String filename = "random.txt";
 
         try {
-            CrosswordFactory.generateCrosswordFromCSV(filename);
+            Grid grid = CrosswordFactory.generateCrosswordFromCSV(filename);
+            grid.placeWordsInGrid();
+
         } catch (IOException e) {
             System.out.println("It seems like the file "+filename+" does not exist");
             e.printStackTrace();
