@@ -1,20 +1,17 @@
 package com.nikhil;
 
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.List;
-import java.util.Random;
+import java.util.*;
 
 /**
  * Final rendition of the crossword puzzle.
  */
 public class Grid {
 
-    private List<Word> wordList;
+    private LinkedList<Word> wordList;
     private int wordsPlaced = 0;
     private static Random random = new Random();
 
-    public Grid(List<Word> wordList) {
+    public Grid(LinkedList<Word> wordList) {
         this.wordList = wordList;
     }
 
@@ -33,12 +30,56 @@ public class Grid {
         //sort this list in increasing order of their number of intersection options
         Collections.sort(this.wordList,new CompareTotalIntersections());
 
-        //print the list
-        for(Word word : this.wordList){
-            System.out.println(word.name+" : "+word.getTotalIntersections());
+        // find the highest and lowest words that actually match with an intersection option
+        IntersectionOption highAndLowIntersection = this.findIntersectionBetweenLowestAndHighestIntersectingWords();
+
+
+    }
+
+    /**
+     * Finds intersection between 2 unplaced crossing words assuming the word list is sorted
+     * @return 2 crossing words in the word list starting from the opposite ends of the list
+     */
+    private IntersectionOption findIntersectionBetweenLowestAndHighestIntersectingWords(){
+
+        Iterator<Word> ascendingIterator = wordList.iterator();
+
+        while(ascendingIterator.hasNext()){
+
+            // word with lesser intersections
+            Word lowWord = ascendingIterator.next();
+
+            // skip words with no intersections and ones that have already been placed
+            if(lowWord.getTotalIntersections()<=0 || lowWord.placed){
+                continue;
+            }
+
+            // starting from the highest number of intersection options (high word),
+            // go down to get a match with a low word
+            Iterator<Word> descendingIterator = wordList.descendingIterator();
+            while(descendingIterator.hasNext()){
+
+                // word with greater intersections
+                Word highWord = descendingIterator.next();
+
+                //skip placed words
+                if(highWord.placed){
+                    continue;
+                }
+
+                // same word means that highest and lowest ends have met in the middle, therefore return nil
+                if(highWord==lowWord){
+                    return null;
+                }
+
+                //check if intersection exists, and if so, return that intersection
+                IntersectionOption intersectionExists = lowWord.intersectsWtih(highWord);
+                if(intersectionExists!=null){
+                    return intersectionExists;
+                }
+            }
         }
-
-
+        return null;
     }
 
     private Word getLongestUnplacedWord() {

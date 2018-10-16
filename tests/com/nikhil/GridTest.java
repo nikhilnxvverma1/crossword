@@ -3,6 +3,7 @@ package com.nikhil;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -22,7 +23,7 @@ class GridTest {
         Word mugger = new Word("Mugger","A person who attacks and robs another in a public place");
 
         // put words in list
-        ArrayList<Word> wordList = new ArrayList<>();
+        LinkedList<Word> wordList = new LinkedList<>();
         wordList.add(mars);
         wordList.add(earth);
         wordList.add(ear);

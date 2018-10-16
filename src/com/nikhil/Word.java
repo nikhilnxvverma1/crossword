@@ -313,4 +313,18 @@ public class Word {
         }
     }
 
+    /**
+     * Checks if there exists an intersection with another word in the list of unplaced intersection option
+     * @param word an possibly intersecting word
+     * @return null if no intersection option exist, otherwise the intersection option itself
+     */
+    public IntersectionOption intersectsWtih(Word word){
+        for(IntersectionOption intersectionOption : this.unplacedIntersectionOptions){
+            if(intersectionOption.crossing == word){
+                return intersectionOption;
+            }
+        }
+        return null;
+    }
+
 }

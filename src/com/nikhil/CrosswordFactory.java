@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 /** Responsible for reading word list and generating main crossword. */
@@ -12,7 +13,7 @@ public class CrosswordFactory {
     public static Grid generateCrosswordFromCSV(String filename) throws IOException{
 
         try{
-            List<Word> wordList = readWordList(filename);
+            LinkedList<Word> wordList = readWordList(filename);
 //            printWordList(wordList);
             return new Grid(wordList);
         }catch (IOException ex){
@@ -21,8 +22,8 @@ public class CrosswordFactory {
 
     }
 
-    private static List<Word> readWordList(String filename) throws IOException{
-        ArrayList<Word> wordList = new ArrayList<>();
+    private static LinkedList<Word> readWordList(String filename) throws IOException{
+        LinkedList<Word> wordList = new LinkedList<>();
 
         //read all words with their meanings/descriptions line by line
         try(BufferedReader br = new BufferedReader(new FileReader(filename))){

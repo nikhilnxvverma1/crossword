@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="62e803dd-4cfa-4ea2-8922-95e894dee4a2" name="Default" comment="Added unplaced intersection options with removal on placement">
+    <list default="true" id="62e803dd-4cfa-4ea2-8922-95e894dee4a2" name="Default" comment="Sorted word list based on number of intersection option">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/crossword/com/nikhil/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/crossword/com/nikhil/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/nikhil/CrosswordFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/nikhil/CrosswordFactory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/nikhil/Grid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/nikhil/Grid.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/nikhil/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/nikhil/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/nikhil/Word.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/nikhil/Word.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/com/nikhil/GridTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/tests/com/nikhil/GridTest.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -33,26 +34,26 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="29919" />
-          <entry key="txt" value="1676" />
+          <entry key="java" value="31898" />
+          <entry key="txt" value="1733" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="29919" />
-          <entry key="PLAIN_TEXT" value="1676" />
+          <entry key="JAVA" value="31898" />
+          <entry key="PLAIN_TEXT" value="1733" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="class" value="6" />
-          <entry key="java" value="28" />
+          <entry key="java" value="29" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CLASS" value="6" />
-          <entry key="JAVA" value="28" />
+          <entry key="JAVA" value="29" />
         </counts>
       </usages-collector>
     </session>
@@ -65,8 +66,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/nikhil/Word.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="613">
-              <caret line="309" column="7" selection-start-line="309" selection-start-column="7" selection-end-line="309" selection-end-column="7" />
+            <state relative-caret-position="598">
+              <caret line="318" column="93" selection-start-line="318" selection-start-column="93" selection-end-line="318" selection-end-column="93" />
               <folding>
                 <element signature="docComment;class#Word#0" />
                 <element signature="method#Word#0;class#Word#0" />
@@ -123,8 +124,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/nikhil/Grid.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="495">
-              <caret line="40" lean-forward="true" selection-start-line="40" selection-end-line="40" />
+            <state relative-caret-position="376">
+              <caret line="37" lean-forward="true" selection-start-line="37" selection-end-line="37" />
               <folding>
                 <element signature="docComment;class#Grid#0" />
                 <element signature="method#getLongestUnplacedWord#0;class#Grid#0" />
@@ -164,10 +165,19 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tests/com/nikhil/GridTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="90">
+              <caret line="11" column="9" lean-forward="true" selection-start-line="11" selection-start-column="9" selection-end-line="11" selection-end-column="9" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/nikhil/CrosswordFactory.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="17" column="32" lean-forward="true" selection-start-line="17" selection-start-column="32" selection-end-line="17" selection-end-column="32" />
+            <state relative-caret-position="270">
+              <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
             </state>
           </provider>
         </entry>
@@ -210,21 +220,21 @@
         <option value="$PROJECT_DIR$/src/com/nikhil/IslandFound.java" />
         <option value="$PROJECT_DIR$/src/com/nikhil/Box.java" />
         <option value="$PROJECT_DIR$/src/com/nikhil/LetterGap.java" />
-        <option value="$PROJECT_DIR$/tests/com/nikhil/GridTest.java" />
         <option value="$PROJECT_DIR$/tests/com/nikhil/IntersectionOptionTest.java" />
         <option value="$PROJECT_DIR$/src/com/nikhil/Island.java" />
         <option value="$PROJECT_DIR$/src/com/nikhil/Location.java" />
         <option value="$PROJECT_DIR$/src/com/nikhil/Direction.java" />
         <option value="$PROJECT_DIR$/src/com/nikhil/Corner.java" />
         <option value="$PROJECT_DIR$/src/com/nikhil/IntersectionOption.java" />
+        <option value="$PROJECT_DIR$/src/com/nikhil/Main.java" />
         <option value="$PROJECT_DIR$/src/com/nikhil/Word.java" />
         <option value="$PROJECT_DIR$/src/com/nikhil/CrosswordFactory.java" />
-        <option value="$PROJECT_DIR$/src/com/nikhil/Main.java" />
+        <option value="$PROJECT_DIR$/tests/com/nikhil/GridTest.java" />
         <option value="$PROJECT_DIR$/src/com/nikhil/Grid.java" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" fullScreen="true">
+  <component name="ProjectFrameBounds" extendedState="6" fullScreen="true">
     <option name="x" value="1680" />
     <option name="y" value="-517" />
     <option name="width" value="1920" />
@@ -277,7 +287,7 @@
     <property name="Downloaded.Files.Path.Enabled" value="true" />
     <property name="Repository.Attach.JavaDocs" value="true" />
     <property name="Repository.Attach.Sources" value="false" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1539603672539" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1539687843080" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
     <property name="project.structure.last.edited" value="Modules" />
@@ -732,7 +742,14 @@
       <option name="project" value="LOCAL" />
       <updated>1539445002212</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="Sorted word list based on number of intersection option">
+      <created>1539603726936</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1539603726936</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -768,7 +785,7 @@
     </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="1680" y="-517" width="1920" height="1080" extended-state="0" />
+    <frame x="1680" y="-517" width="1920" height="1080" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4941957" visible="true" weight="0.15388711" />
@@ -781,15 +798,15 @@
       <window_info id="Nl-Palette" order="7" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3188119" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.25445545" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49791667" weight="0.29108912" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.25445545" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" sideWeight="0.49791667" visible="true" weight="0.29108912" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.2962246" />
       <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.50208336" side_tool="true" weight="0.39883834" />
       <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info anchor="bottom" id="Messages" order="10" weight="0.32959184" />
+      <window_info anchor="bottom" id="Messages" order="10" weight="0.32871288" />
       <window_info anchor="bottom" id="Thumbnails" order="11" weight="0.32901296" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -807,7 +824,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Methods for helping in printing the grid" />
     <MESSAGE value="Untested implementation of print method. Minor refactoring" />
     <MESSAGE value="Debugging print method of grid class" />
     <MESSAGE value="Print method of grid class working as needed" />
@@ -832,7 +848,8 @@
     <MESSAGE value="Method to find corners in an intersection, minor method improvements" />
     <MESSAGE value="Finished method for finding corners in the intersection of two words" />
     <MESSAGE value="Added unplaced intersection options with removal on placement" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added unplaced intersection options with removal on placement" />
+    <MESSAGE value="Sorted word list based on number of intersection option" />
+    <option name="LAST_COMMIT_MESSAGE" value="Sorted word list based on number of intersection option" />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
@@ -990,13 +1007,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tests/com/nikhil/GridTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="40" column="8" selection-start-line="40" selection-start-column="8" selection-end-line="63" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_112.jdk/Contents/Home/lib/tools.jar!/com/sun/tools/internal/xjc/addon/locator/SourceLocationAddOn.class">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -1082,10 +1092,31 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/nikhil/CrosswordFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/nikhil/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/com/nikhil/GridTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="11" column="9" lean-forward="true" selection-start-line="11" selection-start-column="9" selection-end-line="11" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/nikhil/Word.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="613">
-          <caret line="309" column="7" selection-start-line="309" selection-start-column="7" selection-end-line="309" selection-end-column="7" />
+        <state relative-caret-position="598">
+          <caret line="318" column="93" selection-start-line="318" selection-start-column="93" selection-end-line="318" selection-end-column="93" />
           <folding>
             <element signature="docComment;class#Word#0" />
             <element signature="method#Word#0;class#Word#0" />
@@ -1119,24 +1150,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/nikhil/CrosswordFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="17" column="32" lean-forward="true" selection-start-line="17" selection-start-column="32" selection-end-line="17" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/nikhil/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/nikhil/Grid.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="495">
-          <caret line="40" lean-forward="true" selection-start-line="40" selection-end-line="40" />
+        <state relative-caret-position="376">
+          <caret line="37" lean-forward="true" selection-start-line="37" selection-end-line="37" />
           <folding>
             <element signature="docComment;class#Grid#0" />
             <element signature="method#getLongestUnplacedWord#0;class#Grid#0" />
