@@ -30,10 +30,39 @@ public class Grid {
         //sort this list in increasing order of their number of intersection options
         Collections.sort(this.wordList,new CompareTotalIntersections());
 
-        // find the highest and lowest words that actually match with an intersection option
-        IntersectionOption highAndLowIntersection = this.findIntersectionBetweenLowestAndHighestIntersectingWords();
+        while(wordsPlaced<wordList.size()){
+
+            // find the highest and lowest words that actually match with an intersection option
+            IntersectionOption highAndLowIntersection = this.findIntersectionBetweenLowestAndHighestIntersectingWords();
+
+            highAndLowIntersection.source.placeAt(0,0,true);
+            highAndLowIntersection.placeCrossingWord(this.wordList);
+            LinkedList<Corner> generatedCorners = highAndLowIntersection.placeCrossingWord(this.wordList);
+
+            //exhaust out the stack
+            while(!generatedCorners.isEmpty()){
+                Corner corner = generatedCorners.pop();
+                if(corner.isTooSmall()){
+                    continue;
+                }
+
+                while(corner.moveToNextIfPossible()){
+                    boolean foundDoubleIntersection = corner.findPossibleIntersections();
+
+                    if(foundDoubleIntersection){
+                        // TODO check to see if they can be placed or not in the grid.
+                        // If not find a way to resume scanning of the corner area
+                    }
+
+                }
 
 
+            }
+
+        }
+
+
+        print();
     }
 
     /**

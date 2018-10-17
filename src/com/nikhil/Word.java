@@ -279,7 +279,7 @@ public class Word {
      * @return List of corners amongst the already placed words in the grid. If no corners are present, the list will
      * be of size 0
      */
-    public List<Corner> findAllCorners(List<Word> wordList){
+    public LinkedList<Corner> findAllCorners(List<Word> wordList){
         LinkedList<Corner> cornerList = new LinkedList<>();
         List<IntersectionOption> gridIntersections=this.findAllIntersectionOptions(wordList,true);
 
