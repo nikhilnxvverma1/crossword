@@ -127,9 +127,7 @@ public class Corner {
      * @return true if the current target retrieved a double intersection. Places those intersections in
      * fromVerticalWord and fromHorizontalWord
      */
-    public boolean findPossibleIntersections(){
-
-        // TODO introduce callbacks on finding double intersections.
+    public boolean findPossibleIntersections(DoubleIntersectionFound doubleIntersectionHandler){
 
         // TODO search for index at that point and retrieve all intersections Options on that index
         if(intersectionOption.source.vertical){
@@ -138,5 +136,17 @@ public class Corner {
 
         }
         return false;
+    }
+
+    /** Functional interface for handling a double intersection */
+    interface DoubleIntersectionFound{
+        /**
+         * Callback on finding a double intersection
+         * @param fromVerticalWord Stores the intersection occurring from the vertical word of a double intersection
+         * @param fromHorizontalWord Stores the intersection occurring from the horizontal word of a double intersection
+         * @return true if the caller has to break for a successful placement of this double intersection,
+         * if false is returned, caller will resume and look for another double intersection.
+         */
+        boolean onDoubleIntersection(Corner corner,IntersectionOption fromVerticalWord,IntersectionOption fromHorizontalWord );
     }
 }

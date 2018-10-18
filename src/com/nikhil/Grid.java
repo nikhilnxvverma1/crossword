@@ -5,7 +5,7 @@ import java.util.*;
 /**
  * Final rendition of the crossword puzzle.
  */
-public class Grid {
+public class Grid implements Corner.DoubleIntersectionFound{
 
     private LinkedList<Word> wordList;
     private int wordsPlaced = 0;
@@ -47,7 +47,7 @@ public class Grid {
                 }
 
                 while(corner.moveToNextIfPossible()){
-                    boolean foundDoubleIntersection = corner.findPossibleIntersections();
+                    boolean foundDoubleIntersection = corner.findPossibleIntersections(this);
 
                     if(foundDoubleIntersection){
                         // TODO check to see if they can be placed or not in the grid.
@@ -64,6 +64,12 @@ public class Grid {
 
         print();
     }
+
+    @Override
+    public boolean onDoubleIntersection(Corner corner, IntersectionOption fromVerticalWord, IntersectionOption fromHorizontalWord) {
+        return false;
+    }
+
 
     /**
      * Finds intersection between 2 unplaced crossing words assuming the word list is sorted
@@ -459,6 +465,7 @@ public class Grid {
 
         return height > width ? height : width;
     }
+
 
     private class CompareTotalIntersections implements Comparator<Word> {
         @Override

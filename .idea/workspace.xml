@@ -1,14 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="62e803dd-4cfa-4ea2-8922-95e894dee4a2" name="Default" comment="Method for match b/w words with highest &amp; lowest intersections">
-      <change afterPath="$PROJECT_DIR$/src/com/nikhil/DoubleIntersection.java" afterDir="false" />
+    <list default="true" id="62e803dd-4cfa-4ea2-8922-95e894dee4a2" name="Default" comment="Main algorithm partially complete, intersection handing pending">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/nikhil/Box.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/nikhil/Corner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/nikhil/Corner.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/nikhil/Grid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/nikhil/Grid.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/nikhil/IntersectionOption.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/nikhil/IntersectionOption.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/nikhil/Word.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/nikhil/Word.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -35,14 +31,14 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="34520" />
-          <entry key="txt" value="1926" />
+          <entry key="java" value="35056" />
+          <entry key="txt" value="2064" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="34520" />
-          <entry key="PLAIN_TEXT" value="1926" />
+          <entry key="JAVA" value="35056" />
+          <entry key="PLAIN_TEXT" value="2064" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -105,8 +101,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/nikhil/IntersectionOption.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="369">
-              <caret line="420" column="68" lean-forward="true" selection-start-line="420" selection-start-column="68" selection-end-line="420" selection-end-column="68" />
+            <state relative-caret-position="-451">
+              <caret line="50" column="57" lean-forward="true" selection-start-line="50" selection-start-column="57" selection-end-line="50" selection-end-column="57" />
               <folding>
                 <element signature="docComment;class#IntersectionOption#0" />
                 <element signature="docComment;field#source#0;class#IntersectionOption#0" />
@@ -118,7 +114,6 @@
                 <element signature="docComment;method#intersectsWith#0;class#IntersectionOption#0" />
                 <element signature="e#3113#3184#0" />
                 <element signature="docComment;method#projectedLocationOfCrossingWord#0;class#IntersectionOption#0" />
-                <element signature="method#projectedLocationOfCrossingWord#0;class#IntersectionOption#0" />
                 <element signature="docComment;method#getIntersectionPoint#0;class#IntersectionOption#0" />
                 <element signature="method#getIntersectionPoint#0;class#IntersectionOption#0" />
                 <element signature="docComment;method#computeCorners#0;class#IntersectionOption#0" />
@@ -129,20 +124,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/nikhil/DoubleIntersection.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" selection-start-line="2" selection-end-line="4" selection-end-column="3" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/nikhil/Corner.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="456">
-              <caret line="133" column="99" selection-start-line="133" selection-start-column="99" selection-end-line="133" selection-end-column="99" />
+            <state relative-caret-position="231">
+              <caret line="129" column="96" selection-start-line="129" selection-start-column="96" selection-end-line="129" selection-end-column="96" />
               <folding>
                 <element signature="docComment;field#initialPoint#0;class#Corner#0" />
                 <element signature="docComment;method#isTooSmall#0;class#Corner#0" />
@@ -165,8 +151,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/nikhil/Grid.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="546">
-              <caret line="51" column="48" lean-forward="true" selection-start-line="51" selection-start-column="48" selection-end-line="51" selection-end-column="48" />
+            <state relative-caret-position="349">
+              <caret line="54" column="21" lean-forward="true" selection-start-line="54" selection-start-column="21" selection-end-line="54" selection-end-column="21" />
             </state>
           </provider>
         </entry>
@@ -224,9 +210,11 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6" fullScreen="true">
-    <option name="width" value="1680" />
-    <option name="height" value="1050" />
+  <component name="ProjectFrameBounds" fullScreen="true">
+    <option name="x" value="1680" />
+    <option name="y" value="-517" />
+    <option name="width" value="1920" />
+    <option name="height" value="1080" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -275,7 +263,7 @@
     <property name="Downloaded.Files.Path.Enabled" value="true" />
     <property name="Repository.Attach.JavaDocs" value="true" />
     <property name="Repository.Attach.Sources" value="false" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1539798767120" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1539863259397" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
     <property name="project.structure.last.edited" value="Modules" />
@@ -744,7 +732,14 @@
       <option name="project" value="LOCAL" />
       <updated>1539688019012</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="Main algorithm partially complete, intersection handing pending">
+      <created>1539798947405</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1539798947405</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -780,10 +775,10 @@
     </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1680" height="1050" extended-state="6" />
+    <frame x="1680" y="-517" width="1920" height="1080" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4941957" visible="true" weight="0.17643468" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4941957" visible="true" weight="0.15388711" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -794,7 +789,7 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3188119" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.25445545" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49791667" visible="true" weight="0.3" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49791667" visible="true" weight="0.29108912" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -819,7 +814,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Debugging print method of grid class" />
     <MESSAGE value="Print method of grid class working as needed" />
     <MESSAGE value="Method to find all intersection options of a given word" />
     <MESSAGE value="Untested implementation of checking if letter gap sequence" />
@@ -844,7 +838,8 @@
     <MESSAGE value="Added unplaced intersection options with removal on placement" />
     <MESSAGE value="Sorted word list based on number of intersection option" />
     <MESSAGE value="Method for match b/w words with highest &amp; lowest intersections" />
-    <option name="LAST_COMMIT_MESSAGE" value="Method for match b/w words with highest &amp; lowest intersections" />
+    <MESSAGE value="Main algorithm partially complete, intersection handing pending" />
+    <option name="LAST_COMMIT_MESSAGE" value="Main algorithm partially complete, intersection handing pending" />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
@@ -1103,10 +1098,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/nikhil/DoubleIntersection.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="50" selection-start-line="9" selection-start-column="50" selection-end-line="9" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/nikhil/IntersectionOption.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="369">
-          <caret line="420" column="68" lean-forward="true" selection-start-line="420" selection-start-column="68" selection-end-line="420" selection-end-column="68" />
+        <state relative-caret-position="-451">
+          <caret line="50" column="57" lean-forward="true" selection-start-line="50" selection-start-column="57" selection-end-line="50" selection-end-column="57" />
           <folding>
             <element signature="docComment;class#IntersectionOption#0" />
             <element signature="docComment;field#source#0;class#IntersectionOption#0" />
@@ -1118,7 +1120,6 @@
             <element signature="docComment;method#intersectsWith#0;class#IntersectionOption#0" />
             <element signature="e#3113#3184#0" />
             <element signature="docComment;method#projectedLocationOfCrossingWord#0;class#IntersectionOption#0" />
-            <element signature="method#projectedLocationOfCrossingWord#0;class#IntersectionOption#0" />
             <element signature="docComment;method#getIntersectionPoint#0;class#IntersectionOption#0" />
             <element signature="method#getIntersectionPoint#0;class#IntersectionOption#0" />
             <element signature="docComment;method#computeCorners#0;class#IntersectionOption#0" />
@@ -1128,24 +1129,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/nikhil/DoubleIntersection.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" selection-start-line="2" selection-end-line="4" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/nikhil/Grid.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="546">
-          <caret line="51" column="48" lean-forward="true" selection-start-line="51" selection-start-column="48" selection-end-line="51" selection-end-column="48" />
+        <state relative-caret-position="349">
+          <caret line="54" column="21" lean-forward="true" selection-start-line="54" selection-start-column="21" selection-end-line="54" selection-end-column="21" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/nikhil/Corner.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="456">
-          <caret line="133" column="99" selection-start-line="133" selection-start-column="99" selection-end-line="133" selection-end-column="99" />
+        <state relative-caret-position="231">
+          <caret line="129" column="96" selection-start-line="129" selection-start-column="96" selection-end-line="129" selection-end-column="96" />
           <folding>
             <element signature="docComment;field#initialPoint#0;class#Corner#0" />
             <element signature="docComment;method#isTooSmall#0;class#Corner#0" />
