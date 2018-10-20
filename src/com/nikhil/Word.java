@@ -13,7 +13,7 @@ public class Word {
     int col;
     boolean vertical;
     boolean placed = false;
-    private LinkedList<IntersectionOption> unplacedIntersectionOptions;
+    private LinkedList<IntersectionOption> unplacedIntersectionOptions = new LinkedList<>();  // empty list
 
     public Word(String name, String description) {
         this.name = name.toUpperCase();

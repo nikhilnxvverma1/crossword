@@ -124,29 +124,96 @@ public class Corner {
 
     /**
      * Finds all intersections at the current target in the area and stores them in a singleIntersections
-     * @return true if the current target retrieved a double intersection. Places those intersections in
-     * fromVerticalWord and fromHorizontalWord
+     * @param doubleIntersectionHandler callback for handling a double intersection
+     * @return true if the current target retrieved a double intersection and it was accepted by the handler.
      */
     public boolean findPossibleIntersections(DoubleIntersectionFound doubleIntersectionHandler){
 
-        // TODO search for index at that point and retrieve all intersections Options on that index
-        if(intersectionOption.source.vertical){
+        // search for index at that point and retrieve all intersections Options on that index
+        int projectedIndexOnSource = intersectionOption.source.projectingIndex(target);
+        LinkedList<IntersectionOption> sourceIntersections = intersectionOption.source.getAvailableIntersectionOptionsAt(projectedIndexOnSource);
 
+        int projectedIndexOnCrossing = intersectionOption.crossing.projectingIndex(target);
+        LinkedList<IntersectionOption> crossingIntersections = intersectionOption.crossing.getAvailableIntersectionOptionsAt(projectedIndexOnCrossing);
+
+
+        //check to see if any of the source intersections are intersecting with a crossing intersection
+        for(IntersectionOption sourceIntersection : sourceIntersections){
+            for(IntersectionOption crossingIntersection : crossingIntersections){
+
+                // double intersection check
+                if(sourceIntersection.intersectsWith(crossingIntersection)!=null){
+
+                    // if double intersection is accepted, return true to end any further checks
+                    if(doubleIntersectionHandler.onDoubleIntersection(this,sourceIntersection,crossingIntersection)){
+                        return true;
+                    }
+
+                }
+
+            }
+        }
+
+        // by this point we know that the double intersections were either not found, or were rejected
+        // we will just add the single intersections to the list
+
+        for(IntersectionOption sourceIntersection: sourceIntersections){
+            addToSingleIntersectionsIfQualifies(sourceIntersection);
+        }
+
+        for(IntersectionOption crossingIntersection: crossingIntersections){
+            addToSingleIntersectionsIfQualifies(crossingIntersection);
+        }
+
+        return false;
+    }
+
+    /**
+     * Adds an intersection option to the list of single intersections provided the crossing word of which is
+     * overlapping the current target.
+     * @param intersectionOption the intersection which has no double intersection or was rejected from
+     *                           double intersection
+     * @return true if the list added the intersection, false if the list already contained the intersection
+     * or the crossing word of the intersection option was not overlapping with the current target
+     */
+    private boolean addToSingleIntersectionsIfQualifies(IntersectionOption intersectionOption){
+
+        // check to see if the crossing word of this intersection option touches the current target
+        // here we will assume that the crossing word is unplaced
+        Location crossingLocation = intersectionOption.projectedLocationOfCrossingWord();
+        int row = crossingLocation.row;
+        int col = crossingLocation.col;
+        int length = intersectionOption.crossing.name.length();
+        boolean vertical = !intersectionOption.source.vertical;
+
+        boolean overlapsTarget = false;
+        if(vertical){
+            overlapsTarget = (target.col==col && // same column
+                    target.row>=row && target.row< (row+length)); // within span
         }else{
+            overlapsTarget = (target.row==row && // same row
+                    target.col>=col && target.col< (col+length)); // within span
 
         }
-        return false;
+
+        // if this intersection overlaps target, and single intersections don't contain this, then add
+        if(overlapsTarget && !singleIntersections.contains(intersectionOption)){
+            singleIntersections.add(intersectionOption);
+            return true;
+        }else{
+            return false;
+        }
     }
 
     /** Functional interface for handling a double intersection */
     interface DoubleIntersectionFound{
         /**
          * Callback on finding a double intersection
-         * @param fromVerticalWord Stores the intersection occurring from the vertical word of a double intersection
-         * @param fromHorizontalWord Stores the intersection occurring from the horizontal word of a double intersection
+         * @param fromSourceWord Stores the intersection occurring from the source word of a double intersection
+         * @param fromCrossingWord Stores the intersection occurring from the crossing word of a double intersection
          * @return true if the caller has to break for a successful placement of this double intersection,
          * if false is returned, caller will resume and look for another double intersection.
          */
-        boolean onDoubleIntersection(Corner corner,IntersectionOption fromVerticalWord,IntersectionOption fromHorizontalWord );
+        boolean onDoubleIntersection(Corner corner,IntersectionOption fromSourceWord,IntersectionOption fromCrossingWord );
     }
 }

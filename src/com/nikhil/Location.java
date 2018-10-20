@@ -39,16 +39,29 @@ public class Location {
             return false;
         }
 
-        if(word.vertical){
-            return (this.col>=(word.col-1) && this.col<=(word.col+1) && // side to side
-                    this.row>=word.row && this.row< (word.row+word.name.length())) || // within span
-                    (this.row == (word.row-1) && this.col == word.col)|| // above
-                    (this.row == (word.row+word.name.length()) && this.col == word.col); // below
+        return this.touches(word.row,word.col,word.name.length(),word.vertical);
+    }
+
+    /**
+     * Checks if this location lies in the touching/overlapping proximity to the given range
+     * @param row row
+     * @param col column
+     * @param length length of the range
+     * @param vertical alignment, true if vertical, false if horizontal
+     * @return True if location is touching the range.
+     * False if there is a gap or this location is situated diagonally at the tip of the range.
+     */
+    public boolean touches(int row,int col,int length,boolean vertical){
+        if(vertical){
+            return (this.col>=(col-1) && this.col<=(col+1) && // side to side
+                    this.row>=row && this.row< (row+length)) || // within span
+                    (this.row == (row-1) && this.col == col)|| // above
+                    (this.row == (row+length) && this.col == col); // below
         }else{
-            return (this.row>=(word.row-1) && this.row<=(word.row+1) && // above and below
-                    this.col>=word.col && this.col< (word.col+word.name.length())) || // within span
-                    (this.row == word.row && this.col == (word.col-1))|| // left
-                    (this.row == word.row && this.col == (word.col + word.name.length())); // right
+            return (this.row>=(row-1) && this.row<=(row+1) && // above and below
+                    this.col>=col && this.col< (col+length)) || // within span
+                    (this.row == row && this.col == (col-1))|| // left
+                    (this.row == row && this.col == (col +length)); // right
         }
     }
 

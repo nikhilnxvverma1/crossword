@@ -68,7 +68,7 @@ public class Grid implements Corner.DoubleIntersectionFound{
     }
 
     @Override
-    public boolean onDoubleIntersection(Corner corner, IntersectionOption fromVerticalWord, IntersectionOption fromHorizontalWord) {
+    public boolean onDoubleIntersection(Corner corner, IntersectionOption fromSourceWord, IntersectionOption fromCrossingWord) {
         // TODO check to see if they can be placed or not in the grid.
         return false;
     }
