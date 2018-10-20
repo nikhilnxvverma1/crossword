@@ -46,12 +46,14 @@ public class Grid implements Corner.DoubleIntersectionFound{
                     continue;
                 }
 
+                // scan the area covered by this corner
                 while(corner.moveToNextIfPossible()){
                     boolean foundDoubleIntersection = corner.findPossibleIntersections(this);
 
-                    if(foundDoubleIntersection){
-                        // TODO check to see if they can be placed or not in the grid.
-                        // If not find a way to resume scanning of the corner area
+                    if(!foundDoubleIntersection){
+
+                        // get the least intersecting word in the list of single intersections and
+                        // place them if possible
                     }
 
                 }
@@ -67,6 +69,7 @@ public class Grid implements Corner.DoubleIntersectionFound{
 
     @Override
     public boolean onDoubleIntersection(Corner corner, IntersectionOption fromVerticalWord, IntersectionOption fromHorizontalWord) {
+        // TODO check to see if they can be placed or not in the grid.
         return false;
     }
 

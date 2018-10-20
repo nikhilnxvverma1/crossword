@@ -327,4 +327,49 @@ public class Word {
         return null;
     }
 
+    /**
+     * Finds the index that a point is making when it projects directly perpendicular to the word. This word
+     * is assumed to be placed
+     * @param point the location about which the projecting location is to be found
+     * @return index from the projection. -1 if the projection is not within the range.
+     */
+    public int projectingIndex(Location point){
+        if(!this.placed){
+            throw new RuntimeException("Trying to find projecting index while the word is not placed");
+        }
+
+        int index = -1;
+        if (this.vertical){
+            if (point.row >= this.row && point.row < (this.row + this.name.length())) { // within range
+                index = point.row - this.row;
+            }
+        } else {
+            if (point.col >= this.col && point.col < (this.col + this.name.length())) { //within range
+                index = point.col - this.col;
+            }
+        }
+        return index;
+    }
+
+    /**
+     * Collects all the intersection options at an index amongst the list of unplaced intersection options.
+     * @param index the index at which all the intersection options are to be found
+     * @return a linked list of available intersection options at the given index
+     */
+    public LinkedList<IntersectionOption> getAvailableIntersectionOptionsAt(int index){
+        LinkedList<IntersectionOption> availableIntersections = new LinkedList<>();
+
+        //scan the list
+        for(IntersectionOption intersectionOption : this.unplacedIntersectionOptions){
+
+            // if the source index matches,
+            if(intersectionOption.sourceIndex==index){
+
+                // add them to the collection
+                availableIntersections.add(intersectionOption);
+            }
+        }
+        return availableIntersections;
+    }
+
 }
