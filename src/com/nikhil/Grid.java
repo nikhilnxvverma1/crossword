@@ -7,9 +7,12 @@ import java.util.*;
  */
 public class Grid implements Corner.DoubleIntersectionFound{
 
+    private static Random random = new Random();
+
     private LinkedList<Word> wordList;
     private int wordsPlaced = 0;
-    private static Random random = new Random();
+    private ArrayList<LetterFrequency> letterFrequencyPointers = new ArrayList<>(30);
+    private ArrayList<LetterFrequency> letterFrequencies = new ArrayList<>(30);
 
     public Grid(LinkedList<Word> wordList) {
         this.wordList = wordList;
@@ -118,6 +121,32 @@ public class Grid implements Corner.DoubleIntersectionFound{
             }
         }
         return null;
+    }
+
+    /**
+     * Counts and keeps track of the frequency of each alphabet in the word list,
+     * sorts them and makes them addressable by index
+     */
+    private void computeAndSortLetterFrequencies(){
+
+        // we are only doing it for each (capital) alphabet, case can be made for outer characters
+        for(char alphabet = 'A';alphabet<='Z';alphabet++){
+
+            LetterFrequency letterFrequency = new LetterFrequency(alphabet);
+            letterFrequencies.add(letterFrequency);
+
+            // check for frequency of this alphabet
+            for(Word word: wordList){
+                letterFrequency.addToCountIfLetterIsPresent(word);
+            }
+        }
+
+        Collections.sort(letterFrequencies);
+
+        // assign the sorted list to correct pointers so that they these letter frequencies are addressable by index
+        for(LetterFrequency letterFrequency : letterFrequencies){
+            letterFrequencyPointers.add(letterFrequency.letter-'A',letterFrequency);
+        }
     }
 
     private Word getLongestUnplacedWord() {
