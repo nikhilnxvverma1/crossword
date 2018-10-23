@@ -415,7 +415,8 @@ public class IntersectionOption {
 
     /**
      * Places the crossing word with respect to source word. Source word is assumed to be placed
-     * @param wordList list of words in the grid
+     * @param wordList list of words in the grid. This will be used in finding new corners generated with
+     *                 existing placed words
      * @return List of acute corners formed as a result of this placement
      */
     public LinkedList<Corner> placeCrossingWord(List<Word> wordList){

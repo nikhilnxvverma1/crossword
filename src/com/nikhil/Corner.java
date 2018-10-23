@@ -208,7 +208,7 @@ public class Corner {
     /** Functional interface for handling a double intersection */
     interface DoubleIntersectionFound{
         /**
-         * Callback on finding a double intersection
+         * Callback on finding a double intersection. Source word of both argument intersection options is placed
          * @param fromSourceWord Stores the intersection occurring from the source word of a double intersection
          * @param fromCrossingWord Stores the intersection occurring from the crossing word of a double intersection
          * @return true if the caller has to break for a successful placement of this double intersection,

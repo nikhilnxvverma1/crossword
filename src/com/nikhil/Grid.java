@@ -12,7 +12,8 @@ public class Grid implements Corner.DoubleIntersectionFound{
     private LinkedList<Word> wordList;
     private int wordsPlaced = 0;
     private ArrayList<LetterFrequency> letterFrequencyPointers = new ArrayList<>(30);
-    private ArrayList<LetterFrequency> letterFrequencies = new ArrayList<>(30);
+    private ArrayList<LetterFrequency> sortedLetterFrequencies = new ArrayList<>(30);
+    private LinkedList<Corner> generatedCorners = new LinkedList<>();
 
     public Grid(LinkedList<Word> wordList) {
         this.wordList = wordList;
@@ -40,7 +41,7 @@ public class Grid implements Corner.DoubleIntersectionFound{
 
             highAndLowIntersection.source.placeAt(0,0,true);
             highAndLowIntersection.placeCrossingWord(this.wordList);
-            LinkedList<Corner> generatedCorners = highAndLowIntersection.placeCrossingWord(this.wordList);
+            generatedCorners.addAll(highAndLowIntersection.placeCrossingWord(this.wordList));
 
             //exhaust out the stack
             while(!generatedCorners.isEmpty()){
@@ -51,12 +52,14 @@ public class Grid implements Corner.DoubleIntersectionFound{
 
                 // scan the area covered by this corner
                 while(corner.moveToNextIfPossible()){
+
+                    // look for double intersection that can be placed in this grid
                     boolean foundDoubleIntersection = corner.findPossibleIntersections(this);
 
                     if(!foundDoubleIntersection){
-
                         // get the least intersecting word in the list of single intersections and
                         // place them if possible
+
                     }
 
                 }
@@ -72,10 +75,56 @@ public class Grid implements Corner.DoubleIntersectionFound{
 
     @Override
     public boolean onDoubleIntersection(Corner corner, IntersectionOption fromSourceWord, IntersectionOption fromCrossingWord) {
-        // TODO check to see if they can be placed or not in the grid.
+
+        // make sure that the crossing coming from the two intersection options is not the same
+        if(fromSourceWord.crossing==fromCrossingWord.crossing){
+            return false;
+        }
+
+        // whereabouts of the crossing word coming from the source word intersection of the corner
+        Location sourceCrossingProjectedLocation = fromSourceWord.projectedLocationOfCrossingWord();
+        Word sourceCrossingWord = fromSourceWord.crossing;
+        int rsc = sourceCrossingProjectedLocation.row;
+        int csc = sourceCrossingProjectedLocation.col;
+        boolean vsc = !fromSourceWord.source.vertical;
+
+        // whereabouts of the crossing word coming from the crossing word intersection of the corner
+        Location crossingCrossingProjectedLocation = fromCrossingWord.projectedLocationOfCrossingWord();
+        Word crossingCrossingWord = fromCrossingWord.crossing;
+        int rcc = crossingCrossingProjectedLocation.row;
+        int ccc = crossingCrossingProjectedLocation.col;
+        boolean vcc = !fromCrossingWord.source.vertical;
+
+        // check to see if both the words can be placed in the grid or not
+        if(
+                isPlacementOfWordAllowed(sourceCrossingWord,rsc,csc,vsc) &&
+                        isPlacementOfWordAllowed(crossingCrossingWord,rcc,ccc,vcc)){
+
+            //place booth the words
+            generatedCorners.addAll(fromSourceWord.placeCrossingWord(this.wordList));
+            generatedCorners.addAll(fromCrossingWord.placeCrossingWord(this.wordList));
+            this.wordsPlaced+=2;
+            return true;
+        }
         return false;
     }
 
+
+    private IntersectionOption findAvailableIntersectionPreferringUncommonLetter(){
+
+        Word source = null;
+        Word crossing = null;
+
+        // traverse the letter frequency in the increasing order of their frequency
+        for(LetterFrequency letterFrequency : sortedLetterFrequencies){
+
+            // look for two distinct words at least one of which should be unplaced
+            // such that placement should be allowed for each unplaced word
+            // TODO
+        }
+
+        return null;
+    }
 
     /**
      * Finds intersection between 2 unplaced crossing words assuming the word list is sorted
@@ -133,7 +182,7 @@ public class Grid implements Corner.DoubleIntersectionFound{
         for(char alphabet = 'A';alphabet<='Z';alphabet++){
 
             LetterFrequency letterFrequency = new LetterFrequency(alphabet);
-            letterFrequencies.add(letterFrequency);
+            sortedLetterFrequencies.add(letterFrequency);
 
             // check for frequency of this alphabet
             for(Word word: wordList){
@@ -141,10 +190,10 @@ public class Grid implements Corner.DoubleIntersectionFound{
             }
         }
 
-        Collections.sort(letterFrequencies);
+        Collections.sort(sortedLetterFrequencies);
 
         // assign the sorted list to correct pointers so that they these letter frequencies are addressable by index
-        for(LetterFrequency letterFrequency : letterFrequencies){
+        for(LetterFrequency letterFrequency : sortedLetterFrequencies){
             letterFrequencyPointers.add(letterFrequency.letter-'A',letterFrequency);
         }
     }

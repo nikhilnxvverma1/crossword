@@ -6,7 +6,6 @@ import java.util.LinkedList;
 /** Holds a the frequency and occurrences of a letter across a word list. */
 public class LetterFrequency implements Comparable<LetterFrequency>{
     final char letter;
-    private int count;
     final LinkedList<LetterOccurrence> occurrences = new LinkedList<>();
 
     public LetterFrequency(char letter) {
@@ -29,12 +28,12 @@ public class LetterFrequency implements Comparable<LetterFrequency>{
         return letterFound;
     }
 
-    public int getCount() {
-        return count;
-    }
-
     @Override
     public int compareTo(LetterFrequency other) {
-        return this.count-other.count;
+        return this.occurrences.size()-other.occurrences.size();
+    }
+
+    public int getFrequency(){
+        return occurrences.size();
     }
 }
