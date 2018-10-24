@@ -110,17 +110,19 @@ public class Grid implements Corner.DoubleIntersectionFound{
     }
 
 
+    /**
+     * traverse the letter frequency in the increasing order of their frequency to look for an intersection option
+     * @return a feasible intersection option preferring an uncommon letter
+     */
     private IntersectionOption findAvailableIntersectionPreferringUncommonLetter(){
-
-        Word source = null;
-        Word crossing = null;
 
         // traverse the letter frequency in the increasing order of their frequency
         for(LetterFrequency letterFrequency : sortedLetterFrequencies){
 
-            // look for two distinct words at least one of which should be unplaced
-            // such that placement should be allowed for each unplaced word
-            // TODO
+           IntersectionOption intersectionOption = letterFrequency.findAvailableIntersectionOption(this);
+           if(intersectionOption!=null){
+               return intersectionOption;
+           }
         }
 
         return null;
@@ -383,7 +385,7 @@ public class Grid implements Corner.DoubleIntersectionFound{
     /**
      * Prints the status of the grid by traversing each word and placing its characters in a square grid
      */
-    public void print() {
+    private void print() {
 
         System.out.println("Grid:");
 
