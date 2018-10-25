@@ -39,18 +39,21 @@ public class LetterFrequency implements Comparable<LetterFrequency>{
 
     /**
      * Finds an intersection option amongst all the occurrences of this letter frequency such that their placement is
-     * feasible in the grid. Preference is given to intersection options with both words being unplaced
+     * feasible in the grid. Preference is given to a joint intersection options (only one word unplaced) instead of
+     * disjoint intersection option(both word unplaced)
      * @param grid the grid which will be used to check for placement of the intersection option
-     * @return a feasible intersection option with at least one word unplaced. Null if no such intersection option is found.
+     * @return a feasible intersection option with at least one word unplaced. Null if no such intersection option is
+     * found.
      */
     public IntersectionOption findAvailableIntersectionOption(Grid grid){
 
         LetterOccurrence crossingWordFirstOccurrence = null;
         int crossingWordFirstOccurrenceIndex = -1;
 
+        IntersectionOption disjointIntersectionOption = null;
 
         // (priority) look for two distinct unplaced words, otherwise (see below)
-        int index =0;
+        int index = 0;
         for(LetterOccurrence letterOccurrence : this.occurrences){
 
             // find unplaced word(s)
@@ -64,7 +67,12 @@ public class LetterFrequency implements Comparable<LetterFrequency>{
 
                 } else if(letterOccurrence.getWord()!=crossingWordFirstOccurrence.getWord()){ // source word found
 
-                    return new IntersectionOption(letterOccurrence.getWord(),letterOccurrence.getIndex(),crossingWordFirstOccurrence.getWord(),crossingWordFirstOccurrence.getIndex());
+                    disjointIntersectionOption = new IntersectionOption(
+                            letterOccurrence.getWord(),
+                            letterOccurrence.getIndex(),
+                            crossingWordFirstOccurrence.getWord(),
+                            crossingWordFirstOccurrence.getIndex());
+                    break;
                 }
             }
             index++;
@@ -110,6 +118,6 @@ public class LetterFrequency implements Comparable<LetterFrequency>{
             }
         }
 
-        return null;
+        return disjointIntersectionOption; // if one doesn't exist, return's null
     }
 }

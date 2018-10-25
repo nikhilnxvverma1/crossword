@@ -1,5 +1,6 @@
 package com.nikhil;
 
+import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -410,6 +411,26 @@ public class IntersectionOption {
                 }
             }
         }
+
+//        // put corners with preferred directions on top
+//        Direction preferredDirection = null;
+//        LinkedList<Corner> topOptions = new LinkedList<>();
+//
+//        // scan through the list and remove all preferred options (there will be only one)
+//        Iterator<Corner> iterator = cornerList.iterator();
+//        while(iterator.hasNext()){
+//            Corner current = iterator.next();
+//            if(current.getDirection() == preferredDirection){
+//                topOptions.push(current);
+//                iterator.remove();
+//            }
+//        }
+//
+//        // put all top options on the top of the stack
+//        for(Corner corner : topOptions){
+//            cornerList.push(corner);
+//        }
+
         return cornerList;
     }
 

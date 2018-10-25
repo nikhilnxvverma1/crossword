@@ -37,11 +37,22 @@ public class Grid implements Corner.DoubleIntersectionFound{
         while(wordsPlaced<wordList.size()){
 
             // find the highest and lowest words that actually match with an intersection option
-            IntersectionOption highAndLowIntersection = this.findIntersectionBetweenLowestAndHighestIntersectingWords();
+            IntersectionOption crossingAtRareLetter = this.findAvailableIntersectionPreferringRareLetters();
 
-            highAndLowIntersection.source.placeAt(0,0,true);
-            highAndLowIntersection.placeCrossingWord(this.wordList);
-            generatedCorners.addAll(highAndLowIntersection.placeCrossingWord(this.wordList));
+            if(crossingAtRareLetter==null){ // no available intersections, only disjoint words
+                // place all remaining words at such locations that they fill up the deficient dimension and
+                // try to make an even square grid
+
+            }else if(!crossingAtRareLetter.source.placed){
+                // place at a location such that, it fills the deficient dimension of the total area covered by the
+                // current grid configuration and the extreme end of this intersection option touches the boundary
+                // of the current configuration.
+            }else{
+                // just place the crossing word as usual and go by filling in as many corners as possible
+                generatedCorners.addAll(crossingAtRareLetter.placeCrossingWord(this.wordList));
+            }
+
+//            crossingAtRareLetter.source.placeAt(0,0,true);
 
             //exhaust out the stack
             while(!generatedCorners.isEmpty()){
@@ -111,21 +122,30 @@ public class Grid implements Corner.DoubleIntersectionFound{
 
 
     /**
-     * traverse the letter frequency in the increasing order of their frequency to look for an intersection option
+     * Traverse the letter frequency in the increasing order of their frequency to look for an intersection option
      * @return a feasible intersection option preferring an uncommon letter
      */
-    private IntersectionOption findAvailableIntersectionPreferringUncommonLetter(){
+    private IntersectionOption findAvailableIntersectionPreferringRareLetters(){
+
+        IntersectionOption firstDisjointIntersectionOption = null;
 
         // traverse the letter frequency in the increasing order of their frequency
         for(LetterFrequency letterFrequency : sortedLetterFrequencies){
 
            IntersectionOption intersectionOption = letterFrequency.findAvailableIntersectionOption(this);
-           if(intersectionOption!=null){
-               return intersectionOption;
+
+            // Disjoint intersection options can be placed freely in the grid because both words are unplaced
+           if(!intersectionOption.source.placed && firstDisjointIntersectionOption==null){
+               firstDisjointIntersectionOption = intersectionOption;
            }
+           // we prefer joint intersection options because we want to avoid creating a new generation point
+           else if(intersectionOption.source.placed && !intersectionOption.crossing.placed){
+               return intersectionOption; // joint intersection option
+           }
+
         }
 
-        return null;
+        return firstDisjointIntersectionOption;
     }
 
     /**

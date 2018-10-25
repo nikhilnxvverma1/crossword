@@ -122,6 +122,10 @@ public class Corner {
         return fromHorizontalWord;
     }
 
+    public Direction getDirection() {
+        return direction;
+    }
+
     /**
      * Finds all intersections at the current target in the area and stores them in a singleIntersections
      * @param doubleIntersectionHandler callback for handling a double intersection
