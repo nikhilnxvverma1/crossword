@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="62e803dd-4cfa-4ea2-8922-95e894dee4a2" name="Default" comment="Changed the preference of intersection option in letter frequency">
-      <change afterPath="$PROJECT_DIR$/tests/com/nikhil/DirectionTest.java" afterDir="false" />
+    <list default="true" id="62e803dd-4cfa-4ea2-8922-95e894dee4a2" name="Default" comment="Disjoint intersection placement &amp; direction enum methods with tests">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/nikhil/Direction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/nikhil/Direction.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/nikhil/Grid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/nikhil/Grid.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -23,7 +21,7 @@
     </SUITE>
   </component>
   <component name="CoverageViewManager">
-    <option name="myElementSize" value="241" />
+    <option name="myElementSize" value="271" />
   </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
@@ -43,14 +41,14 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="52396" />
-          <entry key="txt" value="2598" />
+          <entry key="java" value="53105" />
+          <entry key="txt" value="2669" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="52396" />
-          <entry key="PLAIN_TEXT" value="2598" />
+          <entry key="JAVA" value="53105" />
+          <entry key="PLAIN_TEXT" value="2669" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -185,11 +183,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/nikhil/Grid.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="296">
-              <caret line="272" column="83" selection-start-line="272" selection-start-column="83" selection-end-line="272" selection-end-column="83" />
+            <state relative-caret-position="443">
+              <caret line="299" column="32" selection-start-line="299" selection-start-column="32" selection-end-line="299" selection-end-column="32" />
               <folding>
                 <element signature="docComment;class#Grid#0" />
                 <element signature="method#placeWordsInGrid#0;class#Grid#0" />
@@ -227,30 +225,25 @@
                 <element signature="e#14073#14171#0" />
                 <element signature="method#nextCircularIndex#0;class#Grid#0" />
                 <element signature="method#sideOfGrid#0;class#Grid#0" />
-                <element signature="class#CompareTotalIntersections#0;class#Grid#0" />
                 <element signature="method#compare#0;class#CompareTotalIntersections#0;class#Grid#0" />
+                <element signature="e#25142#25143#0" expanded="true" />
+                <element signature="e#25241#25242#0" expanded="true" />
+                <element signature="e#25278#25279#0" expanded="true" />
+                <element signature="e#25377#25378#0" expanded="true" />
+                <element signature="e#26144#26145#0" expanded="true" />
+                <element signature="e#26243#26244#0" expanded="true" />
+                <element signature="e#26276#26277#0" expanded="true" />
+                <element signature="e#26383#26384#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/com/nikhil/Direction.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="324">
-              <caret line="23" column="67" lean-forward="true" selection-start-line="23" selection-start-column="67" selection-end-line="23" selection-end-column="67" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tests/com/nikhil/DirectionTest.java">
+        <entry file="file://$PROJECT_DIR$/src/com/nikhil/Direction.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="15" column="36" lean-forward="true" selection-start-line="15" selection-start-column="36" selection-end-line="15" selection-end-column="36" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="690">
+              <caret line="46" lean-forward="true" selection-start-line="46" selection-end-line="46" />
             </state>
           </provider>
         </entry>
@@ -345,9 +338,9 @@
         <option value="$PROJECT_DIR$/src/com/nikhil/LetterFrequency.java" />
         <option value="$PROJECT_DIR$/src/com/nikhil/Corner.java" />
         <option value="$PROJECT_DIR$/src/com/nikhil/IntersectionOption.java" />
-        <option value="$PROJECT_DIR$/src/com/nikhil/Grid.java" />
         <option value="$PROJECT_DIR$/tests/com/nikhil/DirectionTest.java" />
         <option value="$PROJECT_DIR$/src/com/nikhil/Direction.java" />
+        <option value="$PROJECT_DIR$/src/com/nikhil/Grid.java" />
       </list>
     </option>
   </component>
@@ -404,7 +397,7 @@
     <property name="Downloaded.Files.Path.Enabled" value="true" />
     <property name="Repository.Attach.JavaDocs" value="true" />
     <property name="Repository.Attach.Sources" value="false" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1540640955194" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1540643278972" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
     <property name="project.structure.last.edited" value="Modules" />
@@ -927,19 +920,17 @@
       <option name="project" value="LOCAL" />
       <updated>1540452961520</updated>
     </task>
-    <option name="localTasksCounter" value="44" />
+    <task id="LOCAL-00044" summary="Disjoint intersection placement &amp; direction enum methods with tests">
+      <created>1540641157692</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1540641157692</updated>
+    </task>
+    <option name="localTasksCounter" value="45" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="IntersectionOptionTest_intersectsWith - 2018.10.12 at 18h 17m 12s.xml">
-      <configuration name="IntersectionOptionTest.intersectsWith" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="IntersectionOptionTest_intersectsWith - 2018.10.12 at 18h 17m 57s.xml">
-      <configuration name="IntersectionOptionTest.intersectsWith" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="IntersectionOptionTest_intersectsWith - 2018.10.12 at 18h 25m 34s.xml">
-      <configuration name="IntersectionOptionTest.intersectsWith" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="GridTest_isPlacementOfWordAllowed - 2018.10.12 at 18h 26m 08s.xml">
       <configuration name="GridTest.isPlacementOfWordAllowed" configurationId="JUnit" />
     </history-entry>
@@ -961,6 +952,15 @@
     <history-entry file="DirectionTest_siblingOf - 2018.10.27 at 17h 16m 55s.xml">
       <configuration name="DirectionTest.siblingOf" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="DirectionTest_siblingOf - 2018.10.27 at 17h 18m 37s.xml">
+      <configuration name="DirectionTest.siblingOf" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="DirectionTest - 2018.10.27 at 17h 19m 06s.xml">
+      <configuration name="DirectionTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="DirectionTest_siblingOf - 2018.10.27 at 17h 19m 16s.xml">
+      <configuration name="DirectionTest.siblingOf" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="ToolWindowManager">
     <frame x="1680" y="-517" width="1920" height="1080" extended-state="0" />
@@ -976,7 +976,7 @@
       <window_info id="Nl-Palette" order="7" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32772276" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.25445545" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.25445545" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49791667" weight="0.29108912" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -1003,7 +1003,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Setup of data in test case of word placement" />
     <MESSAGE value="Wrote test cases for word placement, fixed upper cases letters" />
     <MESSAGE value="Fixed bugs in intersection and coincide checks, sideway checks pending" />
     <MESSAGE value="Added adjacency checks, fixed wrong assertions &amp; placement bugs" />
@@ -1028,7 +1027,8 @@
     <MESSAGE value="Placement of double intersection &amp; minor bug fixes" />
     <MESSAGE value="Method for finding an available intersection option in letter frequency" />
     <MESSAGE value="Changed the preference of intersection option in letter frequency" />
-    <option name="LAST_COMMIT_MESSAGE" value="Changed the preference of intersection option in letter frequency" />
+    <MESSAGE value="Disjoint intersection placement &amp; direction enum methods with tests" />
+    <option name="LAST_COMMIT_MESSAGE" value="Disjoint intersection placement &amp; direction enum methods with tests" />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
@@ -1359,10 +1359,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/tests/com/nikhil/DirectionTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="465">
+          <caret line="31" lean-forward="true" selection-start-line="31" selection-end-line="31" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/nikhil/Direction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="690">
+          <caret line="46" lean-forward="true" selection-start-line="46" selection-end-line="46" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/nikhil/Grid.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="296">
-          <caret line="272" column="83" selection-start-line="272" selection-start-column="83" selection-end-line="272" selection-end-column="83" />
+        <state relative-caret-position="443">
+          <caret line="299" column="32" selection-start-line="299" selection-start-column="32" selection-end-line="299" selection-end-column="32" />
           <folding>
             <element signature="docComment;class#Grid#0" />
             <element signature="method#placeWordsInGrid#0;class#Grid#0" />
@@ -1400,26 +1417,16 @@
             <element signature="e#14073#14171#0" />
             <element signature="method#nextCircularIndex#0;class#Grid#0" />
             <element signature="method#sideOfGrid#0;class#Grid#0" />
-            <element signature="class#CompareTotalIntersections#0;class#Grid#0" />
             <element signature="method#compare#0;class#CompareTotalIntersections#0;class#Grid#0" />
+            <element signature="e#25142#25143#0" expanded="true" />
+            <element signature="e#25241#25242#0" expanded="true" />
+            <element signature="e#25278#25279#0" expanded="true" />
+            <element signature="e#25377#25378#0" expanded="true" />
+            <element signature="e#26144#26145#0" expanded="true" />
+            <element signature="e#26243#26244#0" expanded="true" />
+            <element signature="e#26276#26277#0" expanded="true" />
+            <element signature="e#26383#26384#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/com/nikhil/DirectionTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="36" lean-forward="true" selection-start-line="15" selection-start-column="36" selection-end-line="15" selection-end-column="36" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/nikhil/Direction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="23" column="67" lean-forward="true" selection-start-line="23" selection-start-column="67" selection-end-line="23" selection-end-column="67" />
         </state>
       </provider>
     </entry>

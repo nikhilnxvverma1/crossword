@@ -231,34 +231,15 @@ public class Grid implements Corner.DoubleIntersectionFound{
     private void placedDisjoint(IntersectionOption disjointIntersectionOption){
 
         // find out(amongst placed words) the words that are touching boundaries of the grid
-        Word touchingTop = null;
-        Word touchingRight = null;
-        Word touchingBottom = null;
-        Word touchingLeft = null;
-
-        for(Word word : wordList){
-
-            if(touchingTop == null || word.row<touchingTop.row){
-                touchingTop = word;
-            }
-
-            if(touchingRight == null || ((word.col + word.name.length()) > (touchingRight.col + touchingRight.name.length()))){
-                touchingRight = word;
-            }
-
-            if(touchingBottom == null || ((word.row + word.name.length()) > (touchingBottom.row + touchingBottom.name.length()))){
-                touchingBottom = word;
-            }
-
-            if(touchingLeft == null || word.col<touchingLeft.col){
-                touchingLeft = word;
-            }
-
-        }
+        WordsOnBoundary wordsOnBoundary = new WordsOnBoundary();
+        Word touchingTop = wordsOnBoundary.touchingTop;
+        Word touchingRight = wordsOnBoundary.touchingRight;
+        Word touchingBottom = wordsOnBoundary.touchingBottom;
+        Word touchingLeft = wordsOnBoundary.touchingLeft;
 
         //figure out the deficient dimension
-        int width = (touchingRight.col + touchingRight.name.length()) - touchingLeft.col;
-        int height = (touchingBottom.row + touchingBottom.name.length()) - touchingTop.row;
+        int width = wordsOnBoundary.widthSpanned();
+        int height = wordsOnBoundary.heightSpanned();
         boolean verticallyDeficient = height < width;
         Direction preferredCornerScanning;
 
@@ -267,14 +248,14 @@ public class Grid implements Corner.DoubleIntersectionFound{
 
         if(verticallyDeficient){
             // to avoid possible touch with one or more topmost word, we skip one row
-            int sourceRow = (touchingTop.row - 1) - disjointIntersectionOption.source.name.length();
+            int sourceRow = (touchingTop.row - 2) - disjointIntersectionOption.source.name.length();
 
             // place the source word above the topmost word such that it is center aligned
             disjointIntersectionOption.source.placeAt(sourceRow,centerColumn,true);
 
         }else{
             // to avoid possible touch with one or more leftmost word, we skip one column
-            int sourceColumn = (touchingLeft.col - 1) - disjointIntersectionOption.source.name.length();
+            int sourceColumn = (touchingLeft.col - 2) - disjointIntersectionOption.source.name.length();
 
             // place the source word above the left word such that it is center aligned
             disjointIntersectionOption.source.placeAt(centerRow,sourceColumn,false);
@@ -300,6 +281,29 @@ public class Grid implements Corner.DoubleIntersectionFound{
             //pop from argument and push to generated corner
             Corner each = reverseOrder.next();
             generatedCorners.push(each);
+        }
+    }
+
+
+    private void placeDisjoint(Word word){
+
+        // find out(amongst placed words) the words that are touching boundaries of the grid
+        WordsOnBoundary wordsOnBoundary = new WordsOnBoundary();
+        Word touchingTop = wordsOnBoundary.touchingTop;
+        Word touchingLeft = wordsOnBoundary.touchingLeft;
+
+        //figure out the deficient dimension
+        int width = wordsOnBoundary.widthSpanned();
+        int height = wordsOnBoundary.heightSpanned();
+        boolean verticallyDeficient = height < width;
+
+        if(verticallyDeficient){
+            // place one row above the topmost word but laid horizontally such that it is center aligned
+            word.placeAt(touchingTop.row-2,wordsOnBoundary.centerColumn()-word.name.length()/2,false);
+
+        }else{
+            // place one column before the leftmost word but laid vertically such that it is center aligned
+            word.placeAt(wordsOnBoundary.centerRow()-word.name.length()/2,touchingLeft.row-2,true);
         }
     }
 
@@ -657,6 +661,54 @@ public class Grid implements Corner.DoubleIntersectionFound{
         @Override
         public int compare(Word word1, Word word2) {
             return word1.getTotalIntersections()-word2.getTotalIntersections();
+        }
+    }
+
+    private class WordsOnBoundary{
+
+        Word touchingTop = null;
+        Word touchingRight = null;
+        Word touchingBottom = null;
+        Word touchingLeft = null;
+
+        WordsOnBoundary() {
+
+            // find out(amongst placed words) the words that are touching boundaries of the grid
+            for(Word word : wordList){
+
+                if(touchingTop == null || word.row<touchingTop.row){
+                    touchingTop = word;
+                }
+
+                if(touchingRight == null || ((word.col + word.name.length()) > (touchingRight.col + touchingRight.name.length()))){
+                    touchingRight = word;
+                }
+
+                if(touchingBottom == null || ((word.row + word.name.length()) > (touchingBottom.row + touchingBottom.name.length()))){
+                    touchingBottom = word;
+                }
+
+                if(touchingLeft == null || word.col<touchingLeft.col){
+                    touchingLeft = word;
+                }
+
+            }
+        }
+
+        int widthSpanned(){
+            return (touchingRight.col + touchingRight.name.length()) - touchingLeft.col;
+        }
+
+        int heightSpanned(){
+            return (touchingBottom.row + touchingBottom.name.length()) - touchingTop.row;
+        }
+
+        int centerRow(){
+            return (touchingTop.row + (touchingBottom.row + touchingBottom.name.length())) / 2;
+        }
+
+        int centerColumn(){
+            return (touchingLeft.col + (touchingRight.col + touchingRight.name.length())) / 2;
         }
     }
 }
