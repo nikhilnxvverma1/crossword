@@ -1,5 +1,6 @@
 package com.nikhil;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
 
 /**
@@ -17,14 +18,13 @@ public class Corner {
     private Location target;
 
     /** Simple data holder for storing single intersections by scanning the area covered by this {@link Corner} */
-    private LinkedList<IntersectionOption> singleIntersections = new LinkedList<>();
+    private ArrayList<IntersectionOption> singleIntersections = new ArrayList<>();
 
     /** Stores the intersection occurring from the vertical word of a double intersection */
     private IntersectionOption fromVerticalWord = null;
 
     /** Stores the intersection occurring from the horizontal word of a double intersection */
     private IntersectionOption fromHorizontalWord = null;
-
 
     /**
      * Creates a corner from two placed words
@@ -110,7 +110,7 @@ public class Corner {
         this.target = this.initialPoint.clone();
     }
 
-    public LinkedList<IntersectionOption> getSingleIntersections() {
+    public ArrayList<IntersectionOption> getSingleIntersections() {
         return singleIntersections;
     }
 

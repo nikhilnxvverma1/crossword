@@ -26,13 +26,13 @@ public class Grid implements Corner.DoubleIntersectionFound{
             return;
         }
 
-        // compute the intersection options of all the words in the list
-        for(Word word : this.wordList){
-            word.computeIntersectionOptions(this.wordList);
-        }
-
-        //sort this list in increasing order of their number of intersection options
-        Collections.sort(this.wordList,new CompareTotalIntersections());
+//        // compute the intersection options of all the words in the list
+//        for(Word word : this.wordList){
+//            word.computeIntersectionOptions(this.wordList);
+//        }
+//
+//        //sort this list in increasing order of their number of intersection options
+//        Collections.sort(this.wordList,new CompareTotalIntersections());
 
         computeAndSortLetterFrequencies();
 
@@ -42,19 +42,28 @@ public class Grid implements Corner.DoubleIntersectionFound{
             IntersectionOption crossingAtRareLetter = this.findAvailableIntersectionPreferringRareLetters();
 
             if(crossingAtRareLetter==null){ // no available intersections, only disjoint words
+
                 // place all remaining words at such locations that they fill up the deficient dimension and
                 // try to make an even square grid
+                for(Word word : wordList){
+
+                    // only disjoint words remain at this point
+                    if(!word.placed){
+                        placeDisjoint(word);
+                    }
+                }
 
             }else if(!crossingAtRareLetter.source.placed){
+
                 // place at a location such that, it fills the deficient dimension of the total area covered by the
                 // current grid configuration and the extreme end of this intersection option touches the boundary
                 // of the current configuration.
+                placeDisjoint(crossingAtRareLetter);
+
             }else{
                 // just place the crossing word as usual and go by filling in as many corners as possible
-                generatedCorners.addAll(crossingAtRareLetter.placeCrossingWord(this.wordList));
+                generatedCorners.addAll(crossingAtRareLetter.placeCrossingWord(this.wordList)); // TODO mind the order of the stack on add all
             }
-
-//            crossingAtRareLetter.source.placeAt(0,0,true);
 
             //exhaust out the stack
             while(!generatedCorners.isEmpty()){
@@ -70,8 +79,29 @@ public class Grid implements Corner.DoubleIntersectionFound{
                     boolean foundDoubleIntersection = corner.findPossibleIntersections(this);
 
                     if(!foundDoubleIntersection){
-                        // get the least intersecting word in the list of single intersections and
-                        // place them if possible
+
+                        // get the intersection which crosses with a rarer letter
+                        ArrayList<IntersectionOption> singleIntersections = corner.getSingleIntersections();
+
+                        // sort in the increasing order of letter frequencies
+                        singleIntersections.sort(new RareLettersFirst());
+
+                        for(IntersectionOption singleIntersection : singleIntersections){
+
+                            // place them if possible
+                            Location location = singleIntersection.projectedLocationOfCrossingWord();
+                            if(isPlacementOfWordAllowed(
+                                    singleIntersection.crossing,
+                                    location.row,
+                                    location.col,
+                                    !singleIntersection.source.vertical)){
+                                LinkedList<Corner> cornerStack = singleIntersection.placeCrossingWord(wordList);
+                                pushEntireStack(cornerStack);
+                                wordsPlaced++;
+                                break;
+                            }
+                        }
+
 
                     }
 
@@ -228,7 +258,7 @@ public class Grid implements Corner.DoubleIntersectionFound{
      * suitably fills the deficient dimension of the growing boundaries of this grid
      * @param disjointIntersectionOption an intersection option with both words unplaced
      */
-    private void placedDisjoint(IntersectionOption disjointIntersectionOption){
+    private void placeDisjoint(IntersectionOption disjointIntersectionOption){
 
         // find out(amongst placed words) the words that are touching boundaries of the grid
         WordsOnBoundary wordsOnBoundary = new WordsOnBoundary();
@@ -263,16 +293,16 @@ public class Grid implements Corner.DoubleIntersectionFound{
 
         // place crossing word and push corners
         LinkedList<Corner> cornerStack = disjointIntersectionOption.placeCrossingWord(this.wordList);// TODO direction preference
-        pushToCornerStack(cornerStack);
+        pushEntireStack(cornerStack);
         wordsPlaced += 2;
 
     }
 
     /**
-     * Pushes argument stack in order onto the generated stack such that their order is retained
+     * Pushes argument stack in order onto the generated corner stack such that their order is retained
      * @param stack a stack of corners with a presumed order
      */
-    private void pushToCornerStack(LinkedList<Corner> stack){
+    private void pushEntireStack(LinkedList<Corner> stack){
 
         // traverse this stack in reverse order to get the bottom of the stack first
         Iterator<Corner> reverseOrder = stack.descendingIterator();
@@ -305,6 +335,8 @@ public class Grid implements Corner.DoubleIntersectionFound{
             // place one column before the leftmost word but laid vertically such that it is center aligned
             word.placeAt(wordsOnBoundary.centerRow()-word.name.length()/2,touchingLeft.row-2,true);
         }
+
+        wordsPlaced++;
     }
 
     private Word getLongestUnplacedWord() {
@@ -661,6 +693,19 @@ public class Grid implements Corner.DoubleIntersectionFound{
         @Override
         public int compare(Word word1, Word word2) {
             return word1.getTotalIntersections()-word2.getTotalIntersections();
+        }
+    }
+
+    private class RareLettersFirst implements Comparator<IntersectionOption>{
+
+        @Override
+        public int compare(IntersectionOption o1, IntersectionOption o2) {
+            int o1LetterIndex = letterFrequencyPointers.indexOf(o1.letter()-'A');
+            int o1Occurrences = sortedLetterFrequencies.get(o1LetterIndex).getFrequency();
+            int o2LetterIndex = letterFrequencyPointers.indexOf(o2.letter()-'A');
+            int o2Occurrences = sortedLetterFrequencies.get(o2LetterIndex).getFrequency();
+
+            return o1Occurrences - o2Occurrences;
         }
     }
 

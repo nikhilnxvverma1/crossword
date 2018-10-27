@@ -5,8 +5,8 @@ import java.util.LinkedList;
 import java.util.List;
 
 /**
+ * Crossing of two intersecting words at a common letter.
  * Storing intersection point data which is also responsible for computing projected intersection points.
- * Here the source word is always considered to be placed
  * Created by nikhilverma on 7/9/18.
  */
 public class IntersectionOption {
@@ -452,5 +452,9 @@ public class IntersectionOption {
 
         // find and return all corners with the placed words in the list
         return this.crossing.findAllCorners(wordList);
+    }
+
+    public char letter(){
+        return source.name.charAt(sourceIndex);
     }
 }
