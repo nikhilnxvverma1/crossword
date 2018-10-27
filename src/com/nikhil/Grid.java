@@ -34,6 +34,8 @@ public class Grid implements Corner.DoubleIntersectionFound{
         //sort this list in increasing order of their number of intersection options
         Collections.sort(this.wordList,new CompareTotalIntersections());
 
+        computeAndSortLetterFrequencies();
+
         while(wordsPlaced<wordList.size()){
 
             // find the highest and lowest words that actually match with an intersection option
@@ -217,6 +219,87 @@ public class Grid implements Corner.DoubleIntersectionFound{
         // assign the sorted list to correct pointers so that they these letter frequencies are addressable by index
         for(LetterFrequency letterFrequency : sortedLetterFrequencies){
             letterFrequencyPointers.add(letterFrequency.letter-'A',letterFrequency);
+        }
+    }
+
+    /**
+     * For the current configuration of the grid, finds a suitable location to place a disjoint intersection option.
+     * A location for the source word is one such that the entire intersection option is placeable and that it
+     * suitably fills the deficient dimension of the growing boundaries of this grid
+     * @param disjointIntersectionOption an intersection option with both words unplaced
+     */
+    private void placedDisjoint(IntersectionOption disjointIntersectionOption){
+
+        // find out(amongst placed words) the words that are touching boundaries of the grid
+        Word touchingTop = null;
+        Word touchingRight = null;
+        Word touchingBottom = null;
+        Word touchingLeft = null;
+
+        for(Word word : wordList){
+
+            if(touchingTop == null || word.row<touchingTop.row){
+                touchingTop = word;
+            }
+
+            if(touchingRight == null || ((word.col + word.name.length()) > (touchingRight.col + touchingRight.name.length()))){
+                touchingRight = word;
+            }
+
+            if(touchingBottom == null || ((word.row + word.name.length()) > (touchingBottom.row + touchingBottom.name.length()))){
+                touchingBottom = word;
+            }
+
+            if(touchingLeft == null || word.col<touchingLeft.col){
+                touchingLeft = word;
+            }
+
+        }
+
+        //figure out the deficient dimension
+        int width = (touchingRight.col + touchingRight.name.length()) - touchingLeft.col;
+        int height = (touchingBottom.row + touchingBottom.name.length()) - touchingTop.row;
+        boolean verticallyDeficient = height < width;
+        Direction preferredCornerScanning;
+
+        int centerRow = (touchingTop.row + (touchingBottom.row + touchingBottom.name.length())) / 2;
+        int centerColumn = (touchingLeft.col + (touchingRight.col + touchingRight.name.length())) / 2;
+
+        if(verticallyDeficient){
+            // to avoid possible touch with one or more topmost word, we skip one row
+            int sourceRow = (touchingTop.row - 1) - disjointIntersectionOption.source.name.length();
+
+            // place the source word above the topmost word such that it is center aligned
+            disjointIntersectionOption.source.placeAt(sourceRow,centerColumn,true);
+
+        }else{
+            // to avoid possible touch with one or more leftmost word, we skip one column
+            int sourceColumn = (touchingLeft.col - 1) - disjointIntersectionOption.source.name.length();
+
+            // place the source word above the left word such that it is center aligned
+            disjointIntersectionOption.source.placeAt(centerRow,sourceColumn,false);
+        }
+
+        // place crossing word and push corners
+        LinkedList<Corner> cornerStack = disjointIntersectionOption.placeCrossingWord(this.wordList);// TODO direction preference
+        pushToCornerStack(cornerStack);
+        wordsPlaced += 2;
+
+    }
+
+    /**
+     * Pushes argument stack in order onto the generated stack such that their order is retained
+     * @param stack a stack of corners with a presumed order
+     */
+    private void pushToCornerStack(LinkedList<Corner> stack){
+
+        // traverse this stack in reverse order to get the bottom of the stack first
+        Iterator<Corner> reverseOrder = stack.descendingIterator();
+        while(reverseOrder.hasNext()){
+
+            //pop from argument and push to generated corner
+            Corner each = reverseOrder.next();
+            generatedCorners.push(each);
         }
     }
 
